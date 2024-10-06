@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="OrganicProductBase">
+		<defName>DA_TrollMeat</defName>
+		<label>troll slab</label>
+		<description>Raw slab of meat from a troll.\n\nExceptionally tender, juicy and quite nutritious, just be sure to remove the fur first.</description>
+		<graphicData>
+			<texPath>Item/Resource/TrollMeat</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		
+		<statBases>
+			<Mass>0.05</Mass>
+			<MarketValue>4</MarketValue>
+			<Nutrition>0.1</Nutrition>
+			<Flammability>1</Flammability>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+		</statBases>
+		
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+		
+		<ingestible>
+			<foodType>Meat</foodType>
+			<preferability>DesperateOnly</preferability>
+			<ingestEffect>EatMeat</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>	
+			<specialThoughtDirect>DA_AteRawTrollMeat</specialThoughtDirect>
+			<specialThoughtAsIngredient>DA_AteCookedTrollMeat</specialThoughtAsIngredient>
+		</ingestible>
+		
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>3</daysToRotStart>
+				<rotDestroys>True</rotDestroys>
+			</li>
+		</comps>
+		
+	</ThingDef>
+	
+	
+
+
+</Defs>

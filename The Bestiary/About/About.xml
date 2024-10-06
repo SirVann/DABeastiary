@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Dark Ages : Beasts</name>
+	<author>SirVan</author>
+	<url/>
+	<supportedVersions>
+
+		<li>1.5</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Ideology</packageId>
+			<displayName>Ideology</displayName>
+			
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld.Ideology</li>
+	</loadAfter>
+	<packageId>Van.Beasts</packageId>
+	<description>Slaverystuff</description>
+</ModMetaData>

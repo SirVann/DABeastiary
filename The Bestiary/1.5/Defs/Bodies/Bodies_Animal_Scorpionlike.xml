@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <BodyDef>
+    <defName>DA_ScorpionLike</defName>
+    <label>scorpion</label>
+    <corePart>
+      <def>Shell</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>Stomach</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>InsectHeart</def>
+          <coverage>0.02</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>Pronotum</def>
+          <coverage>0.18</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>InsectHead</def>
+              <coverage>0.65</coverage>
+              <groups>
+                <li>HeadAttackTool</li>
+              </groups>
+              <parts>
+                <li>
+                  <def>Brain</def>
+                  <coverage>0.2</coverage>
+                  <depth>Inside</depth>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>left lateral eye</customLabel>
+                  <coverage>0.15</coverage>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>right lateral eye</customLabel>
+                  <coverage>0.15</coverage>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>left median eye</customLabel>
+                  <coverage>0.10</coverage>
+                </li>
+                <li>
+                  <def>Eye</def>
+                  <customLabel>right median eye</customLabel>
+                  <coverage>0.10</coverage>
+                </li>
+                <li>
+                  <def>InsectNostril</def>
+                  <coverage>0.07</coverage>
+                </li>
+                <li>
+                  <def>InsectMouth</def>
+                  <coverage>0.10</coverage>
+                  <groups>
+                    <li>Mouth</li>
+                  </groups>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>DA_InsectTail</def>
+          <coverage>0.13</coverage>
+          <height>Top</height>
+          <parts>
+            <li>
+              <def>DA_InsectStinger</def>
+              <coverage>0.45</coverage>
+              <groups>
+                <li>DA_Sting</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>front left leg</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>front right leg</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>middle left leg</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>middle right leg</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>rear left leg</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>InsectLeg</def>
+          <customLabel>rear right leg</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+        </li>
+		<li>
+          <def>DA_Pincer</def>
+          <customLabel>left pincer</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>DA_PincerPinch</li>
+          </groups>
+        </li>
+        <li>
+          <def>DA_Pincer</def>
+          <customLabel>right pincer</customLabel>
+          <coverage>0.04</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>DA_PincerPinch</li>
+          </groups>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+</Defs>

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseInsect">
+    <defName>DA_BlackScribe</defName>
+    <label>black scribe</label>
+    <description>The deadliest assassin of the desert. The black scribe is a large scorpion-like insectoid, capable of taking down creatures much larger than itself with its dreadful sting. Its venom quickly shuts down the muscles, slowing down the target and rendering it more susceptible to damages.\n\nThe name of scribe comes from his feather-like stinger, composed of countless small quills that he uses to quickly inject his toxic venom.</description>
+	<statBases>
+      <MoveSpeed>4.3</MoveSpeed>
+      <MarketValue>400</MarketValue>
+      <ComfyTemperatureMax>45</ComfyTemperatureMax>
+      <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.15</ArmorRating_Heat>
+    </statBases>
+    <uiIconScale>2.25</uiIconScale>
+   
+	<tools>
+			<li>
+				<label>left pincer</label>
+				<cooldownTime>1.5</cooldownTime>
+				<power>8</power>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<linkedBodyPartsGroup>DA_PincerPinch</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right pincer</label>
+				<cooldownTime>1.5</cooldownTime>
+				<power>8</power>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<linkedBodyPartsGroup>DA_PincerPinch</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<capacities>
+					<li>DA_Quillsting</li>
+				</capacities>
+				<cooldownTime>2</cooldownTime>
+				<power>13</power>
+				<linkedBodyPartsGroup>DA_Sting</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.1</chanceFactor>
+			</li>
+
+		</tools>
+	
+   
+   <race>
+      <body>DA_ScorpionLike</body>
+      <predator>true</predator>
+      <baseBodySize>0.3</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0.10</baseHungerRate>
+      <maxPreyBodySize>5</maxPreyBodySize>
+      <foodType>OmnivoreAnimal, AnimalProduct</foodType>
+	  <useMeatFrom>Megaspider</useMeatFrom>
+      <wildness>0.7</wildness>
+      <manhunterOnTameFailChance>0.7</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+      <trainability>Intermediate</trainability>
+	  
+	<wildBiomes>
+     <AridShrubland>0.25</AridShrubland>
+	 <ExtremeDesert>0.15</ExtremeDesert>
+	 <Desert>0.3</Desert>
+	 <ZBiome_DesertOasis MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_DesertOasis>
+	</wildBiomes>
+     
+	 <gestationPeriodDays>10</gestationPeriodDays>
+      
+	  <lifeExpectancy>5</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.30</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.6</minAge>
+          <soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+          <soundDeath>Pawn_Megascarab_Death</soundDeath>
+          <soundCall>Pawn_Megascarab_Call</soundCall>
+          <soundAngry>Pawn_Megascarab_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    
+    <tradeTags>
+      <li>AnimalExotic</li>
+    </tradeTags>
+  
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_BlackScribe</defName>
+    <label>black scribe</label>
+    <race>DA_BlackScribe</race>
+    <combatPower>300</combatPower>
+    <ecoSystemWeight>0.8</ecoSystemWeight>
+    <wildGroupSize>1~2</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/BlackScribe/BlackScribe</texPath>
+          <drawSize>0.7</drawSize>
+          <shadowData>
+            <volume>(0.30, 0.25, 0.20)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/BlackScribe/BlackScribe_dessicated</texPath>
+          <drawSize>0.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/BlackScribe/BlackScribe</texPath>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.375, 0.375, 0.375)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/BlackScribe/BlackScribe_dessicated</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/BlackScribe/BlackScribe</texPath>
+          <drawSize>2.0</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.5, 0.4)</volume>
+            <offset>(0,0,-0.05)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/BlackScribe/BlackScribe_dessicated</texPath>
+          <drawSize>2.0</drawSize>
+        </dessicatedBodyGraphicData>
+		 
+		
+      </li>
+	  
+    </lifeStages>
+  </PawnKindDef>
+  
+	<HediffDef ParentName="DiseaseBase">
+    <defName>DA_RedInk</defName>
+    <label>red ink</label>
+    <description>Red venom of a black scribe, quickly atrophies the muscles and slows down the target, making it an easy prey.</description>
+    <defaultLabelColor>(155,71,55)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <painFactor>1.2</painFactor>
+          <statFactors>
+            <MeleeDodgeChance>0.5</MeleeDodgeChance>
+			<IncomingDamageFactor>1.3</IncomingDamageFactor>
+          </statFactors>
+		  
+          <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-0.15</offset>
+            </li>
+          </capMods>
+		  
+        </li>
+      </stages>
+  </HediffDef>
+
+
+</Defs>

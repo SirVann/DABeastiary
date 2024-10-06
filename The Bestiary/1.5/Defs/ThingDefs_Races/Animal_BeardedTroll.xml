@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_BeardedTroll</defName>
+    <label>bearded troll</label>
+    <description>This large eyeless predator roams the snow-covered regions of the world, where its acute sense of smell makes him able to track preys for kilometers. Often hibernating in large underground burrows where they hord corpses for winter. Voracious, deadly and capable of quickly regenerating its wounds, the troll is however quite weak to fire.\n\nTrolls spread like wildfire and are vastly considered a dangerous pest as they frequently attack travelers and caravans. However their hide and delicious meat makes them a prime game for any good hunter.</description>
+	<statBases>
+      <MoveSpeed>5</MoveSpeed>
+      <MarketValue>550</MarketValue>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>10</ComfyTemperatureMax>
+	  <ArmorRating_Heat>-2</ArmorRating_Heat>
+	  <InjuryHealingFactor>4</InjuryHealingFactor>
+	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
+	  <Flammability>2</Flammability>
+	  <EatingSpeed>1.5</EatingSpeed>
+      <FilthRate>8</FilthRate>
+	  <MeatAmount>80</MeatAmount>
+    </statBases>
+	
+	
+   
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
+	<receivesSignals>true</receivesSignals>
+	
+    <comps>
+      <li Class="CompProperties_CanBeDormant" />
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <onlySendSignalOnce>false</onlySendSignalOnce>
+      </li>
+	  
+	  <li Class="AnimalBehaviours.CompProperties_Regeneration">
+		  <rateInTicks>5</rateInTicks>
+	  </li>
+	  
+    </comps>
+   
+   <race>
+      <body>DA_BipedalAnimalWithClaws</body>
+      <herdAnimal>true</herdAnimal>
+	  <predator>true</predator>
+	  <maxPreyBodySize>6.5</maxPreyBodySize>
+      <baseBodySize>4.6</baseBodySize>
+      <baseHealthScale>3.2</baseHealthScale>
+      <baseHungerRate>2</baseHungerRate>
+      <trainability>Intermediate</trainability>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <wildness>0.80</wildness>
+	  <manhunterOnTameFailChance>0.5</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+	  <packAnimal>false</packAnimal>
+      <specificMeatDef>DA_TrollMeat</specificMeatDef>
+      <leatherDef>DA_Leather_Troll</leatherDef>
+	  
+	<wildBiomes>
+     <Tundra>0.2</Tundra>
+	 <ColdBog>0.1</ColdBog>
+	 <BorealForest>0.2</BorealForest>
+	 <IceSheet>0.1</IceSheet>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.2</ZBiome_GlacialShield>
+	</wildBiomes>
+	  
+     
+	 <gestationPeriodDays>12</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      
+	  <lifeExpectancy>30</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.6</minAge>
+          <soundWounded>Pawn_Thrumbo_Pain</soundWounded>
+          <soundDeath>Pawn_Thrumbo_Death</soundDeath>
+          <soundCall>Pawn_Thrumbo_Call</soundCall>
+          <soundAngry>Pawn_Thrumbo_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+	  <soundEating>PredatorLarge_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+
+    <tradeTags>
+      <li>AnimalUncommon</li>
+      <li>AnimalFighter</li>
+    </tradeTags>
+  
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_BeardedTroll</defName>
+    <label>bearded troll</label>
+    <race>DA_BeardedTroll</race>
+	<canArriveManhunter>false</canArriveManhunter>
+    <combatPower>65</combatPower>
+    <wildGroupSize>1~2</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/BeardedTroll/BeardedTrollBaby</texPath>
+          <drawSize>0.9</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.25, 0.20)</volume>
+			<offset>(0,0,-0.03)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/BeardedTroll/BeardedTrollBaby_dessicated</texPath>
+          <drawSize>0.9</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/BeardedTroll/BeardedTroll</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.475, 0.375, 0.375)</volume>
+			<offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/BeardedTroll/BeardedTroll</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/BeardedTroll/BeardedTroll</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(1, 0.4, 0.4)</volume>
+            <offset>(0,0,-0.02)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/BeardedTroll/BeardedTroll</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+		
+		</li>
+		
+    </lifeStages>
+	
+    <modExtensions>
+      <li Class="IllogicalPredator.PredatorConditions" />
+    </modExtensions>
+	
+  </PawnKindDef>
+
+
+</Defs>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BaseFilth">
+    <defName>DA_Filth_GnawedBones</defName>
+    <label>gnawed bones</label>
+    <graphicData>
+      <texPath>Filth/GnawedBones</texPath>
+    </graphicData>
+    <filth>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+    </filth>
+  </ThingDef>
+
+
+</Defs>
