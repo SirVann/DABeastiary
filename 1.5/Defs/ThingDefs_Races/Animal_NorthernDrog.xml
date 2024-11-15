@@ -138,7 +138,6 @@
     <tradeTags>
       <li>AnimalExotic</li>
     </tradeTags>
-  
   </ThingDef>
   
   <PawnKindDef ParentName="AnimalKindBase">
@@ -229,6 +228,14 @@
       </li>
 	  
     </lifeStages>
+    <modExtensions>
+      <li Class="Bestiary.ProductByBodySize">
+        <products> <!--The products list in the race determines the base amounts, while this list determines which ones to multiply by body size-->
+          <li>DA_GiantBone</li>
+        </products>
+      </li>
+    </modExtensions>
+
   </PawnKindDef>
 
 
