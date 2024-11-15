@@ -9,9 +9,10 @@
 			<allowInWaterBiome>false</allowInWaterBiome>
 			<minSpacing>200</minSpacing>
 			<extraNoBuildEdgeDist>4</extraNoBuildEdgeDist>
-			<countPer10kCellsRange>1~2</countPer10kCellsRange>
+			<count>2</count>
 			<clearSpaceSize>30</clearSpaceSize>
 			<terrainValidationRadius>4</terrainValidationRadius>
+			<minDistToPlayerStart>50</minDistToPlayerStart>
 			<terrainValidationDisallowed>
 				<li>Road</li>
 			</terrainValidationDisallowed>

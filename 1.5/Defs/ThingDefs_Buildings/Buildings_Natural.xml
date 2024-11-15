@@ -45,7 +45,6 @@
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
 				<initialPawnsPoints>100</initialPawnsPoints>
 				<maxSpawnedPawnsPoints>140</maxSpawnedPawnsPoints>
-				<lordJob>LordJob_DefendPoint</lordJob>
 				<pawnSpawnIntervalDays>0~0.1</pawnSpawnIntervalDays>
 				<defendRadius>5</defendRadius>
 				<faction>DA_Troll</faction>

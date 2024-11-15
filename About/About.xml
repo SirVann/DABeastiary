@@ -5,14 +5,12 @@
 	<author>SirVan</author>
 	<url/>
 	<supportedVersions>
-
 		<li>1.5</li>
 	</supportedVersions>
 	<modDependencies>
 		<li>
 			<packageId>Ludeon.RimWorld.Ideology</packageId>
 			<displayName>Ideology</displayName>
-			
 		</li>
 	</modDependencies>
 	<loadAfter>
