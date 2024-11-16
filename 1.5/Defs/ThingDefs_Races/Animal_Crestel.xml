@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_Crestel</defName>
+    <label>crestel</label>
+    <description>One of the largest flightless birds and north's apex predator. The Crestel is a fearsome beast, his venomous beak is capable of completely paralyzing unfortunate victims for short duration, rendering them helpless against the its attacks. Despite their delicate look, Crestel's feathers are harder than stone, serving as natural armor.\n\nIts vicious nature and unusual appearance perpetuates numerous myths and legends, that of a beast capable of turning flesh to stone with its gaze. Some also believe the Crestel to be a bad omen, a sign of the coming end, and the start of a new age.</description>
+	<statBases>
+      <MoveSpeed>5.6</MoveSpeed>
+      <MarketValue>1300</MarketValue>
+      <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+      <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <FilthRate>10</FilthRate>
+	  <Flammability>0.5</Flammability>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>EggCrestelUnfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>EggCrestelFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>25</eggLayIntervalDays>
+        <eggCountRange>1</eggCountRange>
+      </li>
+    </comps>
+	
+    <uiIconScale>2.25</uiIconScale>
+   
+    <tools>
+      <li>
+        <label>claws</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>beak</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+	
+   
+   <race>
+      <body>Bird</body>
+      <predator>true</predator>
+      <maxPreyBodySize>3</maxPreyBodySize>
+      <baseBodySize>4.0</baseBodySize>
+      <baseHealthScale>6.0</baseHealthScale>
+      <baseHungerRate>1.1</baseHungerRate>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <wildness>0.90</wildness>
+      <manhunterOnTameFailChance>0.50</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+      <trainability>Advanced</trainability>
+      <leatherDef>DA_Leather_Drog</leatherDef>
+	  
+	<wildBiomes>
+     <Tundra>0.15</Tundra>
+	 <ColdBog>0.1</ColdBog>
+	 <BorealForest>0.3</BorealForest>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
+	</wildBiomes>
+	  
+     
+	 <gestationPeriodDays>12</gestationPeriodDays>
+
+      
+	  <lifeExpectancy>40</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Chick_Call</soundWounded>
+          <soundDeath>Pawn_Chick_Call</soundDeath>
+          <soundCall>Pawn_Chick_Call</soundCall>
+          <soundAngry>Pawn_Chick_Call</soundAngry>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.65</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>1.332</minAge>
+          <soundWounded>DA_Pawn_Crestel_Wounded</soundWounded>
+          <soundDeath>DA_Pawn_Crestel_Death</soundDeath>
+          <soundCall>DA_Pawn_Crestel_Call</soundCall>
+          <soundAngry>DA_Pawn_Crestel_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+	
+    <butcherProducts>
+	   <DA_GiantBone>50</DA_GiantBone>
+	</butcherProducts>
+
+    
+    <tradeTags>
+      <li>AnimalExotic</li>
+    </tradeTags>
+  
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_Crestel</defName>
+    <label>crestel</label>
+    <race>DA_Crestel</race>
+    <combatPower>300</combatPower>
+    <ecoSystemWeight>0.8</ecoSystemWeight>
+    <wildGroupSize>1~2</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+	    <label>crestel chick</label>
+        <labelPlural>crestel chicks</labelPlural>
+        <bodyGraphicData>
+          <texPath>Animal/Crestel/CrestelChick</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Crestel/CrestelChick_dessicated</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Crestel/Crestel</texPath>
+          <drawSize>2.5</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Crestel/Crestel_dessicated</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Crestel/Crestel</texPath>
+          <drawSize>3.5</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Crestel/Crestel_dessicated</texPath>
+          <drawSize>3.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+    </lifeStages>
+  </PawnKindDef>
+  
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggCrestelUnfertilized</defName>
+    <label>goose egg (unfert.)</label>
+    <description>A large crestel egg with a thick rocky shell that serves as a natural disguise. It can be eaten raw, but it's much, much better cooked.</description>
+	
+    <graphicData>
+	  <texPath>Item/CrestelEgg</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+      <MarketValue>170</MarketValue>
+	  <Flammability>0</Flammability>
+    </statBases>
+	
+	
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggCrestelFertilized</defName>
+    <label>goose egg (fert.)</label>
+    <description>A fertilized crestel egg. If all goes well, it should hatch into a crestel chick. It can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/CrestelEgg</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+      <MarketValue>200</MarketValue>
+	  <Flammability>0</Flammability>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>35</hatcherDaystoHatch>
+        <hatcherPawn>DA_Crestel</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+</Defs>
