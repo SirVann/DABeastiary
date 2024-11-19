@@ -66,4 +66,38 @@
     </thingSetMakerTags>
   </ThingDef>
 
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DA_PetrifyingGland</defName>
+    <label>petrifying gland</label>
+    <description>A large gland extracted from a Crestel. It oozes a thick and potent venom capable of completely paralysing the muscles and nerves.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/PetrifyingGland</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	
+    <statBases>
+      <MarketValue>650</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.9</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+	
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>5</stackLimit>
+	
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>AnimalPart</li>
+    </thingSetMakerTags>
+  </ThingDef>
+
 </Defs>

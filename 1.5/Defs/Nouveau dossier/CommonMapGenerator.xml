@@ -1,37 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<GenStepDef>
-		<defName>DA_TrollBurrow</defName>
-		<order>500</order>
-		<genStep Class="Bestiary.GenStep_Scatterer_Biome">
-			<thingDef>DA_TrollBurrow</thingDef>
-			<allowInWaterBiome>false</allowInWaterBiome>
-			<minSpacing>200</minSpacing>
-			<extraNoBuildEdgeDist>4</extraNoBuildEdgeDist>
-			<count>2</count>
-			<clearSpaceSize>30</clearSpaceSize>
-			<terrainValidationRadius>4</terrainValidationRadius>
-			<minDistToPlayerStart>50</minDistToPlayerStart>
-			<terrainValidationDisallowed>
-				<li>Road</li>
-			</terrainValidationDisallowed>
-			<validators>
-				<li Class="ScattererValidator_Buildable">
-					<radius>3</radius>
-					<affordance>Heavy</affordance>
-				</li>
-				<li Class="ScattererValidator_NoNonNaturalEdifices">
-					<radius>4</radius>
-				</li>
-			</validators>
-			<allowedBiomes>
-				<li>Tundra</li>
-				<li>BorealForest</li>
-				<li>ColdBog</li>
-				<li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
-			</allowedBiomes>
-		</genStep>
-	</GenStepDef>
+	<VFECore.ObjectSpawnsDef>
+		<defName>DA_ObjectSpawn_TrollBurrow</defName>
+		<thingDef>DA_TrollBurrow</thingDef>
+		<allowOnWater>false</allowOnWater>
+		<numberToSpawn>1~2</numberToSpawn>
+		<allowedTerrains>
+			<li>Soil</li>
+		</allowedTerrains>
+            <allowedBiomes>
+                <li>Tundra</li>
+                <li>BorealForest</li>
+                <li>ColdBog</li>
+                <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+            </allowedBiomes>
+	</VFECore.ObjectSpawnsDef>
 
 </Defs>

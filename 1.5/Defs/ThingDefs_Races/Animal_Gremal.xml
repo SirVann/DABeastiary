@@ -4,13 +4,22 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_Gremal</defName>
     <label>gremal</label>
-    <description>The gremal is a large often solitary herbivore, bred for its soft and warm fur. While naturally gentle, it also pocess quite the temperament and won't hesitate to defend itself if it had to find himself in danger. It can survives the harsh winters by digging through the snow to find grass with its two small claws.</description>
+    <description>The gremal is a large often solitary herbivore, bred for its soft and warm fur. While naturally gentle, it also possess quite the temperament and won't hesitate to defend itself if it had to find himself in danger. It can survives the harsh winters by digging through the snow to find grass with its two small claws.</description>
 	<statBases>
       <MoveSpeed>4.6</MoveSpeed>
-      <MarketValue>160</MarketValue>
+      <MarketValue>40</MarketValue>
       <ComfyTemperatureMin>-60</ComfyTemperatureMin>
       <FilthRate>3</FilthRate>
     </statBases>
+
+    <comps>
+	
+	<li Class="AnimalBehaviours.CompProperties_DigWhenHungry">
+		<customThingToDig>Hay</customThingToDig>
+		<customAmountToDig>10</customAmountToDig>
+	</li>
+
+    </comps>
    
    <tools>
       <li>
@@ -52,12 +61,12 @@
       <baseHungerRate>0.115</baseHungerRate>
       <baseHealthScale>0.8</baseHealthScale>
       <foodType>VegetarianRoughAnimal</foodType>
-      <wildness>0.50</wildness>
+      <wildness>0.70</wildness>
       <manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
       <manhunterOnDamageChance>0.30</manhunterOnDamageChance>
       <petness>0.08</petness>
-      <trainability>Advanced</trainability>
-      <leatherDef>DA_Leather_Gremal</leatherDef>
+      <trainability>None</trainability>
+      <leatherDef>Leather_Light</leatherDef>
 	  
 	<wildBiomes>
      <Tundra>0.7</Tundra>

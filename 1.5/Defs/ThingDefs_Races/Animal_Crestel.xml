@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_Crestel</defName>
     <label>crestel</label>
-    <description>One of the largest flightless birds and north's apex predator. The Crestel is a fearsome beast, his venomous beak is capable of completely paralyzing unfortunate victims for short duration, rendering them helpless against the its attacks. Despite their delicate look, Crestel's feathers are harder than stone, serving as natural armor.\n\nIts vicious nature and unusual appearance perpetuates numerous myths and legends, that of a beast capable of turning flesh to stone with its gaze. Some also believe the Crestel to be a bad omen, a sign of the coming end, and the start of a new age.</description>
+    <description>One of the largest flightless birds, and the north's apex predator. The crestel is a fearsome beast that can completely paralyze unfortunate victims for a short duration with its venomous beak, rendering them helpless against its attacks. Despite their delicate look, the crestel's feathers are harder than stone, serving as natural armor.\n\nIts vicious nature and unusual appearance perpetuates numerous myths- legends of a beast capable of turning flesh to stone with its gaze. Some also believe the crestel to be a bad omen, a sign of the coming end, and the start of a new age.</description>
 	<statBases>
       <MoveSpeed>5.6</MoveSpeed>
       <MarketValue>1300</MarketValue>
@@ -24,6 +24,13 @@
         <eggLayIntervalDays>25</eggLayIntervalDays>
         <eggCountRange>1</eggCountRange>
       </li>
+	  
+	<li Class="AnimalBehaviours.CompProperties_FilthProducer">
+		<filthType>DA_Filth_BlueFeathers</filthType> 
+		<rate>0.3</rate> 
+		<radius>1</radius> 
+		<ticksToCreateFilth>10000</ticksToCreateFilth>
+	</li>
     </comps>
 	
     <uiIconScale>2.25</uiIconScale>
@@ -34,16 +41,16 @@
         <capacities>
           <li>Scratch</li>
         </capacities>
-        <power>20</power>
+        <power>16</power>
         <cooldownTime>1.5</cooldownTime>
         <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
       </li>
       <li>
         <label>beak</label>
         <capacities>
-          <li>Bite</li>
+          <li>DA_CrestelBite</li>
         </capacities>
-        <power>18</power>
+        <power>20</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
       </li>
@@ -69,11 +76,11 @@
       <baseHealthScale>6.0</baseHealthScale>
       <baseHungerRate>1.1</baseHungerRate>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
-      <wildness>0.90</wildness>
+      <wildness>0.97</wildness>
       <manhunterOnTameFailChance>0.50</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
       <trainability>Advanced</trainability>
-      <leatherDef>DA_Leather_Drog</leatherDef>
+      <leatherDef>DA_Leather_Crestel</leatherDef>
 	  
 	<wildBiomes>
      <Tundra>0.15</Tundra>
@@ -86,7 +93,7 @@
 	 <gestationPeriodDays>12</gestationPeriodDays>
 
       
-	  <lifeExpectancy>40</lifeExpectancy>
+	  <lifeExpectancy>65</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -121,10 +128,6 @@
         <li>(-0.27, 0, 0.18)</li>
       </headPosPerRotation>
     </race>
-	
-    <butcherProducts>
-	   <DA_GiantBone>50</DA_GiantBone>
-	</butcherProducts>
 
     
     <tradeTags>
@@ -137,9 +140,9 @@
     <defName>DA_Crestel</defName>
     <label>crestel</label>
     <race>DA_Crestel</race>
-    <combatPower>300</combatPower>
-    <ecoSystemWeight>0.8</ecoSystemWeight>
-    <wildGroupSize>1~2</wildGroupSize>
+    <combatPower>400</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <ecoSystemWeight>1</ecoSystemWeight>
     <lifeStages>
 	
       <li>
@@ -187,11 +190,94 @@
           <drawSize>3.5</drawSize>
         </dessicatedBodyGraphicData>
 		
+		
+        <butcherBodyPart>
+          <bodyPartGroup>FullHead</bodyPartGroup>
+          <thing>DA_PetrifyingGland</thing>
+        </butcherBodyPart> 
       </li>
 	  
     </lifeStages>
   </PawnKindDef>
   
+	  <!--=============== Hediff ================-->
+  
+  	<HediffDef>
+    <defName>DA_Petrify</defName>
+    <label>Petrified</label>
+    <description>Paralyzed by a powerful venom.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(214,197,77)</defaultLabelColor>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-10.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+		  <label>slowed</label>
+          <statFactors>
+            <MeleeDodgeChance>0.8</MeleeDodgeChance>
+			<MeleeHitChance>0.8</MeleeHitChance>
+			<ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+          </statFactors>
+		  
+          <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-0.15</offset>
+            </li>
+          </capMods>
+		  
+        </li>
+		
+        <li>
+		  <minSeverity>0.5</minSeverity>
+		  <label>petrified</label>
+          <statFactors>
+          </statFactors>
+		  
+          <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-1</offset>
+            </li>
+          </capMods>
+		  
+        </li>
+      </stages>
+  </HediffDef>
+  
+  	  <!--=============== Effecters and filth ================-->
+	  
+    <ThingDef ParentName="BaseFilth">
+    <defName>DA_Filth_BlueFeathers</defName>
+    <label>blue feathers</label>
+    <statBases>
+      <Beauty>1</Beauty>
+      <Cleanliness>-5</Cleanliness>
+    </statBases>
+    <graphicData>
+      <texPath>Filth/BlueFeathers</texPath>
+	  <shaderType>Transparent</shaderType>
+	  <drawSize>0.8</drawSize>
+    </graphicData>
+    <filth>
+      <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+      <disappearsInDays>0.5</disappearsInDays>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+    </filth>
+  </ThingDef>
+  
+	  <!--=============== Eggs ================-->
+	  
   <ThingDef ParentName="EggUnfertBase">
     <defName>EggCrestelUnfertilized</defName>
     <label>goose egg (unfert.)</label>
@@ -207,7 +293,6 @@
       <MarketValue>170</MarketValue>
 	  <Flammability>0</Flammability>
     </statBases>
-	
 	
   </ThingDef>
 
@@ -235,6 +320,7 @@
       </li>
     </comps>
   </ThingDef>
+  
 
 
 </Defs>

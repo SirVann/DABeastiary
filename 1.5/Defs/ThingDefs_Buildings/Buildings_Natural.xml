@@ -46,7 +46,7 @@
 				<initialPawnsPoints>100</initialPawnsPoints>
 				<maxSpawnedPawnsPoints>140</maxSpawnedPawnsPoints>
 				<pawnSpawnIntervalDays>0~0.1</pawnSpawnIntervalDays>
-				<defendRadius>5</defendRadius>
+				<defendRadius>20</defendRadius>
 				<faction>DA_Troll</faction>
 			</li>
 			<li Class="CompProperties_Spawner">
@@ -118,5 +118,20 @@
 			<DankPyon_Bone MayRequire="DankPyon.Medieval.Overhaul">5</DankPyon_Bone>
 		</killedLeavings>
 	</ThingDef>
+	
+  <ThingDef ParentName="BaseFilth">
+    <defName>DA_Filth_GnawedBones</defName>
+    <label>gnawed bones</label>
+    <graphicData>
+      <texPath>Filth/GnawedBones</texPath>
+    </graphicData>
+    <filth>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+    </filth>
+  </ThingDef>
+
 
 </Defs>

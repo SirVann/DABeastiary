@@ -76,7 +76,7 @@
       <baseHealthScale>1</baseHealthScale>
       <baseHungerRate>0.3</baseHungerRate>
       <foodType>VegetarianRoughAnimal</foodType>
-      <wildness>0.30</wildness>
+      <wildness>0.45</wildness>
       <manhunterOnDamageChance>0.2</manhunterOnDamageChance>
 	  <packAnimal>false</packAnimal>
       <useMeatFrom>Sheep</useMeatFrom>
@@ -100,7 +100,7 @@
         </points>
       </litterSizeCurve>
       
-	  <lifeExpectancy>45</lifeExpectancy>
+	  <lifeExpectancy>38</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>

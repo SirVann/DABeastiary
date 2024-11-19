@@ -156,7 +156,6 @@
     <defName>DA_BeardedTroll</defName>
     <label>bearded troll</label>
     <race>DA_BeardedTroll</race>
-	<canArriveManhunter>false</canArriveManhunter>
     <combatPower>65</combatPower>
     <wildGroupSize>1~2</wildGroupSize>
     <lifeStages>

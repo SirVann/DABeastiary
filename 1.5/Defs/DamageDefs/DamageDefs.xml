@@ -43,4 +43,21 @@
 		</additionalHediffs>
 	</DamageDef>
 	
+		<DamageDef ParentName="Bite">
+		<defName>DA_CrestelBite</defName>
+		<label>crestel bite</label>
+		
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been bit to death.</deathMessage>
+		<additionalHediffs>
+			<li>
+				<hediff>DA_Petrify</hediff>
+				<severityPerDamageDealt>0.1</severityPerDamageDealt>
+				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
+			</li>
+		</additionalHediffs>
+    <impactSoundType>Toxic</impactSoundType>
+    <damageEffecter>Impact_Toxic</damageEffecter>
+	</DamageDef>
+	
 </Defs>

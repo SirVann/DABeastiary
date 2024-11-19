@@ -4,7 +4,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>DA_GiantBone</defName>
     <label>giant bone</label>
-    <description>A giant and robust bone that came from a large creature. Commonly used for armors, weapons or sculptures because of its durability.</description>
+    <description>A giant and robust bone that came from a large creature. Commonly used for armors and weapons because of its durability.</description>
 	
     <graphicData>
       <texPath>Item/Resource/GiantBone</texPath>
