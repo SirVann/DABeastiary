@@ -7,7 +7,7 @@ using System.Linq;
 namespace Bestiary
 {
     [StaticConstructorOnStartup]
-    public class HarmonyPatches
+    public static class HarmonyPatches
     {
         private static readonly Type patchType = typeof(HarmonyPatches);
 
@@ -21,9 +21,10 @@ namespace Bestiary
 
         public static IEnumerable<Thing> MakeRecipeProductsPostfix(IEnumerable<Thing> __result, RecipeDef recipeDef, List<Thing> ingredients)
         {
+            List<Thing> originalProducts = new List<Thing>(__result.ToList());
             List<ThingDef> productsToFactor = new List<ThingDef>();
-            float sizeFactor = -1;
 
+            float sizeFactor = -1;
             float corpseCount = 0;
             float totalBodySize = 0;
 
@@ -39,10 +40,9 @@ namespace Bestiary
             if (corpseCount > 0)
                 sizeFactor = totalBodySize / corpseCount; // Gets an average just in case multiple corpses are being used.
 
-            for (int i = 0; i < __result.EnumerableCount(); i++)
+            foreach (Thing thing in originalProducts)
             {
-                Thing thing = __result.ElementAt(i);
-                if (sizeFactor > -1 && productsToFactor.Contains(thing.def))
+                if (sizeFactor > 0 && productsToFactor.Contains(thing.def))
                     thing.stackCount = (int)Math.Ceiling((float)thing.stackCount * sizeFactor);
                 yield return thing;
             }
