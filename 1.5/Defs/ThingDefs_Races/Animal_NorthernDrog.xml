@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_NorthernDrog</defName>
     <label>northern drog</label>
-    <description>The colossal northern cousin of the wild boar. The drog is a gigantic and furry dandrovore that roams the colder regions of the world where it can be seen tearing down trees with it's massive tusks. Quite territorial by nature, it will not hesitate to gut anything that might try to pick a fight.\n\nEven with his impressive size and strength, the drog is often hunted for it's thick fur and valuable tusks.</description>
+    <description>The colossal northern cousin of the wild boar. The drog is a gigantic dandrovore that roams the colder regions of the world where it can be seen tearing down trees to feed on with it's massive tusks. Territorial by nature, it will not hesitate to crush anything that earns its ire.\n\nDespite its impressive size and strength, the drog is often hunted for it's thick fur and valuable tusks.</description>
 	<statBases>
       <MoveSpeed>5.6</MoveSpeed>
       <MarketValue>1750</MarketValue>

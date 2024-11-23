@@ -83,7 +83,7 @@
       <MaxHitPoints>100</MaxHitPoints>
       <Mass>0.9</Mass>
       <Flammability>1</Flammability>
-      <DeteriorationRate>0.5</DeteriorationRate>
+      <DeteriorationRate>2</DeteriorationRate>
     </statBases>
 	
     <resourceReadoutPriority>Middle</resourceReadoutPriority>

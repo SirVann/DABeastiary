@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_DwarvenMuffton</defName>
     <label>dwarven muffton</label>
-    <description>The dwarven muffton is sheep-like herbivore known for its warm brown wool and gigantic horns. Herds can be seen hopping around in the cold northern mountains where they live most of the year. Prideful and with a firey temperament, the males tends to fight by ramming their heads until one or the other is killed, the victor takes the place as leader of the herd.\n\nTales are told of a stoneborn king who fought countless battles on the back of a dwarven muffton. Thus a tradition rose within certain stoneborn clans, of which upon reaching puberty each stoneborn would be given a baby muffton.</description>
+    <description>The dwarven muffton is sheep-like herbivore known for its warm brown wool and gigantic horns. Herds can be often seen hopping around in the cold northern mountains where they live most of the year. Prideful and with a firey temperament, the males tends to fight by ramming their heads until one or the other is killed.\n\nThere are tales of a stoneborn king who fought countless battles on the back of a dwarven muffton. This legend gave rise to a tradition among certain clans, in which upon reaching puberty each stoneborn would be given a baby muffton.</description>
 	<statBases>
       <MoveSpeed>5</MoveSpeed>
       <MarketValue>350</MarketValue>

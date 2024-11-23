@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_Gremal</defName>
     <label>gremal</label>
-    <description>The gremal is a large often solitary herbivore, bred for its soft and warm fur. While naturally gentle, it also possess quite the temperament and won't hesitate to defend itself if it had to find himself in danger. It can survives the harsh winters by digging through the snow to find grass with its two small claws.</description>
+    <description>A solitary herbivorous rodent, often prey to the many dangers of the north. Despite being gentle by nature, the gremal are known to ferociously defend themselves when cornered, using their prodigious incisors.\n\nDuring winter, they use their small, shovel-like claws to dig through the snow in search of buried greenery.</description>
 	<statBases>
       <MoveSpeed>4.6</MoveSpeed>
       <MarketValue>40</MarketValue>
@@ -35,7 +35,7 @@
         <capacities>
           <li>Bite</li>
         </capacities>
-        <power>5.3</power>
+        <power>8.3</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
         <chanceFactor>0.6</chanceFactor>

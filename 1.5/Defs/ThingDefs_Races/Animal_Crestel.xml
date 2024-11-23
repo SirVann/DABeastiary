@@ -192,7 +192,7 @@
 		
 		
         <butcherBodyPart>
-          <bodyPartGroup>FullHead</bodyPartGroup>
+          <bodyPartGroup>Beak</bodyPartGroup>
           <thing>DA_PetrifyingGland</thing>
         </butcherBodyPart> 
       </li>
@@ -280,7 +280,7 @@
 	  
   <ThingDef ParentName="EggUnfertBase">
     <defName>EggCrestelUnfertilized</defName>
-    <label>goose egg (unfert.)</label>
+    <label>petrified egg (unfert.)</label>
     <description>A large crestel egg with a thick rocky shell that serves as a natural disguise. It can be eaten raw, but it's much, much better cooked.</description>
 	
     <graphicData>
@@ -292,13 +292,14 @@
       <Nutrition>0.5</Nutrition>
       <MarketValue>170</MarketValue>
 	  <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
     </statBases>
 	
   </ThingDef>
 
   <ThingDef ParentName="EggFertBase">
     <defName>EggCrestelFertilized</defName>
-    <label>goose egg (fert.)</label>
+    <label>petrified egg (fert.)</label>
     <description>A fertilized crestel egg. If all goes well, it should hatch into a crestel chick. It can be eaten raw, but it's much better cooked.</description>
     <possessionCount>1</possessionCount>
 	
@@ -311,6 +312,7 @@
       <Nutrition>0.5</Nutrition>
       <MarketValue>200</MarketValue>
 	  <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
     </statBases>
 	
     <comps>

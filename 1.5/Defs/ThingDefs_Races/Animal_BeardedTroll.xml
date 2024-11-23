@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_BeardedTroll</defName>
     <label>bearded troll</label>
-    <description>This large eyeless predator roams the snow-covered regions of the world, where its acute sense of smell makes him able to track preys for kilometers. Often hibernating in large underground burrows where they hord corpses for winter. Voracious, deadly and capable of quickly regenerating its wounds, the troll is however quite weak to fire.\n\nTrolls spread like wildfire and are vastly considered a dangerous pest as they frequently attack travelers and caravans. However their hide and delicious meat makes them a prime game for any good hunter.</description>
+    <description>This large, eyeless predator roams the frigid landscape, constantly in search of food. During winter, trolls often retreat deep into underground burrows, to feast on the many corpses they hoarded throughout the rest of the year. While their regeneration makes them a formidable, hard to dispatch threat, they have a particular weakness to fire.\n\nTrolls spread quickly and are considered a dangerous pest as they frequently attack caravans and travelers. However their hide and delicious meat makes them a target of many hunters.</description>
 	<statBases>
       <MoveSpeed>5</MoveSpeed>
       <MarketValue>550</MarketValue>
