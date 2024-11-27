@@ -49,7 +49,7 @@
     <modExtensions>
       <li Class="Bestiary.IncidentExtension">
         <weightedThingDefs>
-          <DA_TrollBurrow>1.0</DA_TrollBurrow>
+          <DA_FreshTrollBurrow>1.0</DA_FreshTrollBurrow>
         </weightedThingDefs>
       </li>
     </modExtensions>

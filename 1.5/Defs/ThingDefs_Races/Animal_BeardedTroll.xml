@@ -9,7 +9,7 @@
       <MoveSpeed>5</MoveSpeed>
       <MarketValue>550</MarketValue>
       <ComfyTemperatureMin>-40</ComfyTemperatureMin>
-	  <ComfyTemperatureMax>10</ComfyTemperatureMax>
+	  <ComfyTemperatureMax>20</ComfyTemperatureMax>
 	  <ArmorRating_Heat>-2</ArmorRating_Heat>
 	  <InjuryHealingFactor>4</InjuryHealingFactor>
 	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
@@ -82,7 +82,7 @@
       <herdAnimal>true</herdAnimal>
 	  <predator>true</predator>
 	  <maxPreyBodySize>6.5</maxPreyBodySize>
-      <baseBodySize>4.6</baseBodySize>
+      <baseBodySize>2</baseBodySize>
       <baseHealthScale>3.2</baseHealthScale>
       <baseHungerRate>2</baseHungerRate>
       <trainability>Intermediate</trainability>
@@ -156,7 +156,7 @@
     <defName>DA_BeardedTroll</defName>
     <label>bearded troll</label>
     <race>DA_BeardedTroll</race>
-    <combatPower>65</combatPower>
+    <combatPower>140</combatPower>
     <wildGroupSize>1~2</wildGroupSize>
     <lifeStages>
 	

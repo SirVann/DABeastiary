@@ -6,7 +6,7 @@
     <description>The area is suffering the effects of a troll outbreak.</description>
     <descriptionFuture>a troll outbreak has been detected in the region surrounding [map_definite], potentially causing dangerous trolls to build burrows or wander in.</descriptionFuture>
     <endMessage>The pale scourge has ended</endMessage>
-    <letterText>A pale scourge has begun. Try to stay indoors and beware of hungry trolls roaming the area, or if you're brave enough; take the chance to hunt them for valuable furs and meat.</letterText>
+    <letterText>Growls can be heard from within the dark tunnels serpenting beneath the cold earth. A second winter struck, as countless ravenous trolls tear through the land and emerge to the surface in search of food.\n\nThis can last between days to several weeks.</letterText>
     <letterDef>NegativeEvent</letterDef>
     <startMessage>A pale scourge has begun</startMessage>
     <letterHyperlinks>

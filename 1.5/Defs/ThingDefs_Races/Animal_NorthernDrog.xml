@@ -144,8 +144,8 @@
     <defName>DA_NorthernDrog</defName>
     <label>northern drog</label>
     <race>DA_NorthernDrog</race>
-    <combatPower>300</combatPower>
-    <ecoSystemWeight>0.8</ecoSystemWeight>
+    <combatPower>350</combatPower>
+    <ecoSystemWeight>1.4</ecoSystemWeight>
     <wildGroupSize>1~2</wildGroupSize>
     <lifeStages>
 	
