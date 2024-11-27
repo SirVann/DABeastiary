@@ -210,7 +210,9 @@
     </lifeStages>
 	
     <modExtensions>
-      <li Class="IllogicalPredator.PredatorConditions" />
+      <li Class="IllogicalPredator.PredatorConditions">
+        <ignoreBodySize>true</ignoreBodySize>
+      </li>
     </modExtensions>
 	
   </PawnKindDef>
