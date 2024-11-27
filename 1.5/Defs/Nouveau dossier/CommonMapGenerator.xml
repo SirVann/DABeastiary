@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<VFECore.ObjectSpawnsDef>
@@ -8,13 +8,16 @@
 		<numberToSpawn>1~2</numberToSpawn>
 		<allowedTerrains>
 			<li>Soil</li>
+			<li>SoilRich</li>
+			<li>MossyTerrain</li>
+			<li>Gravel</li>
 		</allowedTerrains>
-            <allowedBiomes>
-                <li>Tundra</li>
-                <li>BorealForest</li>
-                <li>ColdBog</li>
-                <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
-            </allowedBiomes>
+		<allowedBiomes>
+			<li>Tundra</li>
+			<li>BorealForest</li>
+			<li>ColdBog</li>
+			<li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+		</allowedBiomes>
 	</VFECore.ObjectSpawnsDef>
 
 </Defs>

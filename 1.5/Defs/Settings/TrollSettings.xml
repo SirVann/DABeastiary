@@ -1,0 +1,20 @@
+<Defs>
+  <Bestiary.TrollSettings>
+    <defName>DA_TrollSettings</defName>
+    <label>troll settings</label>
+
+    <burrowsPerTrigger>1~2</burrowsPerTrigger>
+    <burrowTerrains>
+      <li>Soil</li>
+      <li>SoilRich</li>
+      <li>MossyTerrain</li>
+      <li>Gravel</li>
+    </burrowTerrains>
+    <wanderThreatScale>0.25~1.0</wanderThreatScale>
+
+    <!-- If stick around rolls true they will behave like regular animals. otherwise they'll leave at trollWanderStayTime or earlier. -->
+    <trollStickAroundChance>0.4</trollStickAroundChance>
+    <trollWanderStayTime>60000~180000</trollWanderStayTime>
+    
+  </Bestiary.TrollSettings>
+</Defs>

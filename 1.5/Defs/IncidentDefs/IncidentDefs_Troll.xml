@@ -1,0 +1,82 @@
+<Defs>
+  <IncidentDef>
+    <defName>DA_TrollOutbreak_Incident</defName>
+    <label>pale scourge</label>
+    <category>ThreatBig</category>
+    <workerClass>Bestiary.TrollOutbreak_IncidentWorker</workerClass>
+    <gameCondition>DA_TrollOutbreak</gameCondition>
+    <letterLabel>pale scourge</letterLabel>
+    <letterDef>ThreatSmall</letterDef>
+    <minPopulation>3</minPopulation>
+    <minThreatPoints>300</minThreatPoints>
+    <allowedBiomes>
+      <li>Tundra</li>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+    </allowedBiomes>
+    <durationDays>1~8</durationDays>
+    <baseChance>0.5</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>DA_TrollBurrow_Incident</defName>
+    <label>troll burrow</label>
+    <letterLabel>troll burrow formed</letterLabel>
+    <letterText>Trolls have dug their way out from underground and created troll burrows.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+    <category>ThreatSmall</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <allowedBiomes>
+      <li>Tundra</li>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+    </allowedBiomes>
+    <workerClass>Bestiary.TrollBurrowsErupts_IncidentWorker</workerClass>
+    <!--Section only relevant for when occuring outside of the outbreak gamecondition.-->
+    <baseChance>0.75</baseChance> 
+    <minRefireDays>10</minRefireDays>
+    <minThreatPoints>300</minThreatPoints>
+    <modExtensions>
+      <li Class="Bestiary.IncidentExtension">
+        <weightedThingDefs>
+          <DA_TrollBurrow>1.0</DA_TrollBurrow>
+        </weightedThingDefs>
+      </li>
+    </modExtensions>
+  </IncidentDef>
+
+  <IncidentDef>
+    <defName>DA_TrollWander_Incident</defName>
+    <label>hungry trolls</label>
+    <category>ThreatSmall</category>
+    <letterLabel>wandering pale trolls</letterLabel>
+    <letterText>A group of hungry trolls have wandered into the area.</letterText>
+    <letterDef>ThreatSmall</letterDef>
+    <allowedBiomes>
+      <li>Tundra</li>
+      <li>AridShrubland</li>
+      <li>BorealForest</li>
+      <li>ColdBog</li>
+      <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+    </allowedBiomes>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>Bestiary.TrollsWander_IncidentWorker</workerClass>
+    <pointsScaleable>true</pointsScaleable>
+    <baseChance>0.35</baseChance>
+    <minRefireDays>10</minRefireDays>
+    <minThreatPoints>150</minThreatPoints>
+  </IncidentDef>
+
+</Defs>
