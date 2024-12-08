@@ -1,0 +1,12 @@
+<Defs>
+  <JobDef>
+    <defName>DA_HuntAndReturn</defName>
+    <driverClass>Bestiary.JobDriver_HuntAndReturn</driverClass>
+    <reportString>hunting TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <checkOverrideOnDamage>OnlyIfInstigatorNotJobTarget</checkOverrideOnDamage>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <neverFleeFromEnemies>true</neverFleeFromEnemies>
+  </JobDef>
+
+</Defs>

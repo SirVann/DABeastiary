@@ -8,12 +8,12 @@ using Verse.Noise;
 namespace Bestiary
 {
 
-    public class TrollsWander_IncidentWorker : IncidentWorker
+    public class IncidentWorker_TrollsWander : IncidentWorker
     {
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            return map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(BDefOfs.DA_BeardedTroll.race) &&
+            return map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(DADefOfs.DA_BeardedTroll.race) &&
                 base.CanFireNowSub(parms);
         }
 
@@ -26,7 +26,7 @@ namespace Bestiary
             int stayTime = trollSettings.trollWanderStayTime.RandomInRange;
 
             Map map = (Map)parms.target;
-            PawnKindDef trollKind = BDefOfs.DA_BeardedTroll;
+            PawnKindDef trollKind = DADefOfs.DA_BeardedTroll;
             IntVec3 result = parms.spawnCenter;
             if (!result.IsValid && !RCellFinder.TryFindRandomPawnEntryCell(out result, map, CellFinder.EdgeRoadChance_Animal))
             {

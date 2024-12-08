@@ -9,12 +9,12 @@ using Verse.Noise;
 
 namespace Bestiary
 {
-    internal class TrollOutbreak_IncidentWorker : IncidentWorker_MakeGameCondition
+    internal class IncidentWorker_TrollOutbreak : IncidentWorker_MakeGameCondition
     {
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            return map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(BDefOfs.DA_BeardedTroll.race) &&
+            return map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(DADefOfs.DA_BeardedTroll.race) &&
                 base.CanFireNowSub(parms);
         }
     }

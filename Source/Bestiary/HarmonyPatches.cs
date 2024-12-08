@@ -22,7 +22,7 @@ namespace Bestiary
         public static IEnumerable<Thing> MakeRecipeProductsPostfix(IEnumerable<Thing> __result, RecipeDef recipeDef, List<Thing> ingredients)
         {
             List<Thing> originalProducts = new List<Thing>(__result.ToList());
-            List<ThingDef> productsToFactor = new List<ThingDef>();
+            List<ThingDef> productsToFactor = [];
 
             float sizeFactor = -1;
             float corpseCount = 0;

@@ -9,12 +9,12 @@ using Verse;
 
 namespace Bestiary
 {
-    internal class TrollBurrowsErupts_IncidentWorker : IncidentWorker
+    internal class IncidentWorker_TrollBurrowsErupts : IncidentWorker
     {
         protected override bool CanFireNowSub(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            var acceptableForTrolls = map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(BDefOfs.DA_BeardedTroll.race) && base.CanFireNowSub(parms);
+            var acceptableForTrolls = map.mapTemperature.SeasonAndOutdoorTemperatureAcceptableFor(DADefOfs.DA_BeardedTroll.race) && base.CanFireNowSub(parms);
             if (acceptableForTrolls && base.CanFireNowSub(parms))
             {
                 return TrollOutbreakUtilities.TryGetBurrowCell(out _, map);

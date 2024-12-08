@@ -14,6 +14,8 @@ namespace Bestiary
     public class TrollSettings : Def
     {
         public static TrollSettings _cachedSettings = null;
+        
+
         [Unsaved]
         private HashSet<TerrainDef> burrownTerrainCache = null;
 
@@ -28,10 +30,11 @@ namespace Bestiary
         public int burrowMinimumDistanceToColony = 20;
         public IntRange burrowsPerTrigger = new(1, 2);
         private List<TerrainDef> burrowTerrains = [];
+    }
 
-       
-        
-
+    public static class Dev
+    {
+        public readonly static bool debugMode = true;
     }
 
 }

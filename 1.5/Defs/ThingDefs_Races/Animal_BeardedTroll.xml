@@ -156,7 +156,7 @@
     <defName>DA_BeardedTroll</defName>
     <label>bearded troll</label>
     <race>DA_BeardedTroll</race>
-    <combatPower>65</combatPower>
+    <combatPower>175</combatPower>
     <wildGroupSize>1~2</wildGroupSize>
     <lifeStages>
 	

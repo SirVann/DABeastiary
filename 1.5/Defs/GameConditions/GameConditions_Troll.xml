@@ -2,7 +2,7 @@
   <GameConditionDef>
     <defName>DA_TrollOutbreak</defName>
     <label>pale scourge</label>
-    <conditionClass>Bestiary.TrollOutbreak_GameCondition</conditionClass>
+    <conditionClass>Bestiary.GameCondition_TrollOutbreak</conditionClass>
     <description>The area is suffering the effects of a troll outbreak.</description>
     <descriptionFuture>a troll outbreak has been detected in the region surrounding [map_definite], potentially causing dangerous trolls to build burrows or wander in.</descriptionFuture>
     <endMessage>The pale scourge has ended</endMessage>

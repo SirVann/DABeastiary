@@ -42,11 +42,13 @@
 				<spawnablePawnKinds>
 					<li>DA_BeardedTroll</li>
 				</spawnablePawnKinds>
+				<lordJob>Bestiary.LordJob_TrollBurrow</lordJob>
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
-				<initialPawnsPoints>100</initialPawnsPoints>
-				<maxSpawnedPawnsPoints>140</maxSpawnedPawnsPoints>
-				<pawnSpawnIntervalDays>0~0.1</pawnSpawnIntervalDays>
-				<defendRadius>20</defendRadius>
+				<initialThreatScale>0.25</initialThreatScale>
+				<maxThreatScale>0.6</maxThreatScale>
+				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
+				<defendRadius>28</defendRadius>
+				<maxTimeSpentHunting>10000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>
 			</li>
 			<li Class="CompProperties_Spawner">

@@ -58,13 +58,11 @@ namespace Bestiary
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
-            chosenKind ??= RandomPawnKindDef();
-            if (Props.maxPawnsToSpawn != IntRange.zero)
-            {
-                pawnsLeftToSpawn = Props.maxPawnsToSpawn.RandomInRange;
-            }
+            
         }
 
+        private float ThreatPointsHere() => StorytellerUtility.DefaultThreatPointsNow(parent.Map);
+        private float ThreatPointMaxNow(float maxThreadScale) => StorytellerUtility.DefaultThreatPointsNow(parent.Map) * maxThreadScale;
 
         private void SpawnInitialPawns()
         {
@@ -73,7 +71,7 @@ namespace Bestiary
             {
                 num++;
             }
-            SpawnPawnsUntilPoints(Props.initialPawnsPoints);
+            SpawnPawnsUntilPoints(Props.initialThreatScale * ThreatPointsHere());
             CalculateNextPawnSpawnTick();
         }
 
@@ -125,14 +123,23 @@ namespace Bestiary
 
         private PawnKindDef RandomPawnKindDef()
         {
+            float threatP = ThreatPointsHere();
             float curPoints = SpawnedPawnsPoints;
             IEnumerable<PawnKindDef> source = Props.spawnablePawnKinds;
-            if (Props.maxSpawnedPawnsPoints > -1f)
+            if (Props.maxThreatScale > -1f)
             {
                 source = from x in source
-                         where curPoints + x.combatPower <= Props.maxSpawnedPawnsPoints
+                         where curPoints + x.combatPower <= Props.maxThreatScale * threatP
                          select x;
             }
+            if (source.EnumerableNullOrEmpty() && curPoints == 0)
+            {
+                // Add the cheapest pawn kind possible if no valid option was found and there are no pawns active.
+                source = from x in Props.spawnablePawnKinds
+                         where x.combatPower == Props.spawnablePawnKinds.Min(y => y.combatPower)
+                         select x;
+            }
+
             if (source.TryRandomElement(out PawnKindDef result))
             {
                 return result;
@@ -181,8 +188,19 @@ namespace Bestiary
                     }
                 }
 
-                lord ??= LordMaker.MakeNewLord(faction, (LordJob)new LordJob_DefendPoint(parent.Position, Props.defendRadius, Props.defendRadius), parent.Map);
+                // Invoke constructor LordJob
+                lord ??= LordMaker.MakeNewLord(
+                    faction,
+                    (LordJob)Activator.CreateInstance(Props.lordJob,
+                    [parent, Props.wanderRadius, Props.defendRadius, false, false, Props.maxTimeSpentHunting]),
+                    parent.Map);
+
                 lord.AddPawn(pawnToCreate);
+
+
+                pawnToCreate.needs.food.CurLevelPercentage = Rand.Value;
+
+                // if (Dev.debugMode) pawnToCreate.needs.food.CurLevelPercentage = 0.0f;
             }
             Props.spawnSound?.PlayOneShot(parent);
             if (pawnsLeftToSpawn > 0)
@@ -199,6 +217,10 @@ namespace Bestiary
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad && Active && nextPawnSpawnTick == -1)
             {
+                if (Props.maxPawnsToSpawn != IntRange.zero)
+                {
+                    pawnsLeftToSpawn = Props.maxPawnsToSpawn.RandomInRange;
+                }
                 SpawnInitialPawns();
             }
         }
@@ -214,7 +236,8 @@ namespace Bestiary
                 FilterOutUnspawnedPawns();
                 if (Active && Find.TickManager.TicksGame >= nextPawnSpawnTick)
                 {
-                    if ((Props.maxSpawnedPawnsPoints < 0f || SpawnedPawnsPoints < Props.maxSpawnedPawnsPoints) && Find.Storyteller.difficulty.enemyReproductionRateFactor > 0f && TrySpawnPawn(out Pawn pawn) && pawn.caller != null)
+                    float threatMax = ThreatPointMaxNow(Props.maxThreatScale);
+                    if ((threatMax < 0f || SpawnedPawnsPoints < threatMax) && Find.Storyteller.difficulty.enemyReproductionRateFactor > 0f && TrySpawnPawn(out Pawn pawn) && pawn.caller != null)
                     {
                         pawn.caller.DoCall();
                     }
@@ -301,7 +324,7 @@ namespace Bestiary
 
         public int pawnsLeftToSpawn = -1;
 
-        public List<Pawn> spawnedPawns = new List<Pawn>();
+        public List<Pawn> spawnedPawns = [];
 
         public bool aggressive = true;
 

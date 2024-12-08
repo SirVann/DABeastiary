@@ -8,7 +8,7 @@ using Verse;
 
 namespace Bestiary
 {
-    public class TrollOutbreak_GameCondition : GameCondition
+    public class GameCondition_TrollOutbreak : GameCondition
     {
         private GameConditionExtension extensionOnThis = null;
         protected GameConditionExtension ExtensionOnThis => extensionOnThis ??= def.modExtensions.OfType<GameConditionExtension>().FirstOrDefault();
@@ -60,7 +60,6 @@ namespace Bestiary
             }
 
             nextBurrowTick = Find.TickManager.TicksGame + ticksToNextEvent;
-            //Log.Message($"Next outbreak event in {ticksToNextEvent} ticks");
         }
     }
 }

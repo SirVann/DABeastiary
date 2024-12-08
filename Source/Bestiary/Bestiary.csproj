@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props" Condition="Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>latest</LangVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,15 +37,21 @@
   <ItemGroup>
     <Compile Include="Comp_BurrowSpawner.cs" />
     <Compile Include="CompProperties_BurrowSpawner.cs" />
-    <Compile Include="BDefOfs.cs" />
+    <Compile Include="DADefOfs.cs" />
+    <Compile Include="Utilities\FoodUtilities.cs" />
     <Compile Include="GameConditions\GameConditionExtension.cs" />
     <Compile Include="IncidentWorkers\IncidentDefExtension.cs" />
-    <Compile Include="IncidentWorkers\TrollsWander_IncidentWorker.cs" />
+    <Compile Include="IncidentWorkers\IncidentWorker_TrollsWander.cs" />
+    <Compile Include="JobDrivers\JobDriver_HuntAndReturn.cs" />
+    <Compile Include="JobGivers\JobGiver_Hunter.cs" />
+    <Compile Include="Lords\LordJob_TrollBurrow.cs" />
+    <Compile Include="Lords\LordToil_DenAnimal.cs" />
+    <Compile Include="Lords\LordToil_DenAnimalHunt.cs" />
     <Compile Include="Settings\TrollSettings.cs" />
-    <Compile Include="GameConditions\TrollOutbreak_GameCondition.cs" />
+    <Compile Include="GameConditions\GameCondition_TrollOutbreak.cs" />
     <Compile Include="GenStep_Scatterer_Biome.cs" />
-    <Compile Include="IncidentWorkers\TrollBurrow_IncidentWorker.cs" />
-    <Compile Include="IncidentWorkers\TrollOutbreak_IncidentWorker.cs" />
+    <Compile Include="IncidentWorkers\IncidentWorker_TrollBurrow.cs" />
+    <Compile Include="IncidentWorkers\IncidentWorker_TrollOutbreak.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="ProductByBodySize.cs" />
@@ -64,5 +73,22 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.BestPawnToHuntForPredator" />
+    <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.GetPreyScoreFor" />
+    <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.IsAcceptablePreyFor" />
+    <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.IsPreyProtectedFromPredatorByFence" />
+  </ItemGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.props'))" />
+    <Error Condition="!Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets'))" />
+  </Target>
+  <Import Project="packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets" Condition="Exists('packages\Krafs.Publicizer.2.2.1\build\Krafs.Publicizer.targets')" />
 </Project>

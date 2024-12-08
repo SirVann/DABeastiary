@@ -3,7 +3,7 @@
     <defName>DA_TrollOutbreak_Incident</defName>
     <label>pale scourge</label>
     <category>ThreatBig</category>
-    <workerClass>Bestiary.TrollOutbreak_IncidentWorker</workerClass>
+    <workerClass>Bestiary.IncidentWorker_TrollOutbreak</workerClass>
     <gameCondition>DA_TrollOutbreak</gameCondition>
     <letterLabel>pale scourge</letterLabel>
     <letterDef>ThreatSmall</letterDef>
@@ -41,7 +41,7 @@
       <li>ColdBog</li>
       <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
     </allowedBiomes>
-    <workerClass>Bestiary.TrollBurrowsErupts_IncidentWorker</workerClass>
+    <workerClass>Bestiary.IncidentWorker_TrollBurrowsErupts</workerClass>
     <!--Section only relevant for when occuring outside of the outbreak gamecondition.-->
     <baseChance>0.75</baseChance> 
     <minRefireDays>10</minRefireDays>
@@ -72,7 +72,7 @@
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>Bestiary.TrollsWander_IncidentWorker</workerClass>
+    <workerClass>Bestiary.IncidentWorker_TrollsWander</workerClass>
     <pointsScaleable>true</pointsScaleable>
     <baseChance>0.35</baseChance>
     <minRefireDays>10</minRefireDays>

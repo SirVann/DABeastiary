@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using Verse;
 using RimWorld;
+using System;
 
 namespace Bestiary
 {
     public class CompProperties_BurrowSpawner : CompProperties
     {
+        public Type lordJob;
+        
         public List<PawnKindDef> spawnablePawnKinds;
 
         public SoundDef spawnSound;
@@ -20,17 +23,21 @@ namespace Bestiary
 
         public float defendRadius = 21f;
 
+        public float wanderRadius = 7f;
+
         public int initialPawnsCount;
 
-        public float initialPawnsPoints;
+        public float initialThreatScale = 0.2f;
 
-        public float maxSpawnedPawnsPoints = -1f;
+        public float maxThreatScale = 0.5f;
 
         public FloatRange pawnSpawnIntervalDays = new FloatRange(0.85f, 1.15f);
 
         public int pawnSpawnRadius = 2;
 
         public IntRange maxPawnsToSpawn = IntRange.zero;
+
+        public int maxTimeSpentHunting = 10000;
 
         public bool chooseSingleTypeToSpawn;
 
