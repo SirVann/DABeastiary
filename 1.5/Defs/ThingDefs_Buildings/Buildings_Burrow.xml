@@ -128,8 +128,8 @@
 					<li>DA_BeardedTroll</li>
 				</spawnablePawnKinds>
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
-				<initialPawnsPoints>200</initialPawnsPoints>
-				<maxSpawnedPawnsPoints>140</maxSpawnedPawnsPoints>
+				<initialThreatScale>0.25</initialThreatScale>
+				<maxThreatScale>0.6</maxThreatScale>
 				<pawnSpawnIntervalDays>0~0.1</pawnSpawnIntervalDays>
 				<defendRadius>100</defendRadius>
 				<faction>DA_Troll</faction>
