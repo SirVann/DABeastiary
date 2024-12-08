@@ -142,7 +142,7 @@
     <race>DA_Crestel</race>
     <combatPower>400</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
-    <ecoSystemWeight>1</ecoSystemWeight>
+    <ecoSystemWeight>2</ecoSystemWeight>
     <lifeStages>
 	
       <li>
