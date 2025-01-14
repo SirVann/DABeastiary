@@ -164,6 +164,11 @@ namespace Bestiary
                 return false;
             }
             Faction faction = Props.faction != null && FactionUtility.DefaultFactionFrom(Props.faction) != null ? FactionUtility.DefaultFactionFrom(Props.faction) : null;
+            if (faction == null)
+            {
+                Log.Warning($"{this} tried to spawn a pawn but the faction was null. Defaulting to Insects faction as a fallback.");
+                faction = Faction.OfInsects;
+            }
             PawnGenerationRequest request = new PawnGenerationRequest(chosenKind, faction);
             int index = chosenKind.lifeStages.Count - 1;
             request.FixedBiologicalAge = chosenKind.race.race.lifeStageAges[index].minAge;
@@ -172,7 +177,7 @@ namespace Bestiary
             GenSpawn.Spawn(pawnToCreate, CellFinder.RandomClosewalkCellNear(parent.Position, parent.Map, Props.pawnSpawnRadius, null), parent.Map, WipeMode.Vanish);
             if (parent.Map != null)
             {
-                Lord lord = (Lord)null;
+                Lord lord = null;
                 if (spawnedPawns.Count > 0)
                 {
                     foreach (Pawn lordPawn in spawnedPawns)
@@ -199,8 +204,6 @@ namespace Bestiary
 
 
                 pawnToCreate.needs.food.CurLevelPercentage = Rand.Value;
-
-                // if (Dev.debugMode) pawnToCreate.needs.food.CurLevelPercentage = 0.0f;
             }
             Props.spawnSound?.PlayOneShot(parent);
             if (pawnsLeftToSpawn > 0)
