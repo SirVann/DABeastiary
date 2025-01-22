@@ -8,10 +8,9 @@
 	<statBases>
       <MoveSpeed>5</MoveSpeed>
       <MarketValue>550</MarketValue>
-      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
-	  <ComfyTemperatureMax>20</ComfyTemperatureMax>
+      <ComfyTemperatureMin>-55</ComfyTemperatureMin>
 	  <ArmorRating_Heat>-2</ArmorRating_Heat>
-	  <InjuryHealingFactor>4</InjuryHealingFactor>
+	  <InjuryHealingFactor>3</InjuryHealingFactor>
 	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
 	  <Flammability>2</Flammability>
 	  <EatingSpeed>1.5</EatingSpeed>
@@ -38,7 +37,7 @@
           <li>Scratch</li>
           <li>Stab</li>
         </capacities>
-        <power>15</power>
+        <power>16</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
       </li>
@@ -48,7 +47,7 @@
           <li>Scratch</li>
           <li>Stab</li>
         </capacities>
-        <power>15</power>
+        <power>16</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
       </li>
@@ -56,8 +55,8 @@
         <capacities>
           <li>Bite</li>
         </capacities>
-        <power>20</power>
-        <cooldownTime>2</cooldownTime>
+        <power>23</power>
+        <cooldownTime>2.4</cooldownTime>
         <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
         <chanceFactor>0.5</chanceFactor>
       </li>
@@ -81,10 +80,10 @@
       <body>DA_BipedalAnimalWithClaws</body>
       <herdAnimal>true</herdAnimal>
 	  <predator>true</predator>
-	  <maxPreyBodySize>6.5</maxPreyBodySize>
+	  <maxPreyBodySize>8.5</maxPreyBodySize>
       <baseBodySize>2</baseBodySize>
-      <baseHealthScale>3.2</baseHealthScale>
-      <baseHungerRate>2</baseHungerRate>
+      <baseHealthScale>2</baseHealthScale>
+      <baseHungerRate>1.5</baseHungerRate>
       <trainability>Intermediate</trainability>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
       <wildness>0.80</wildness>
@@ -113,7 +112,7 @@
         </points>
       </litterSizeCurve>
       
-	  <lifeExpectancy>30</lifeExpectancy>
+	  <lifeExpectancy>10</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -156,7 +155,7 @@
     <defName>DA_BeardedTroll</defName>
     <label>bearded troll</label>
     <race>DA_BeardedTroll</race>
-    <combatPower>140</combatPower>
+    <combatPower>130</combatPower>
     <wildGroupSize>1~2</wildGroupSize>
     <lifeStages>
 	
@@ -185,7 +184,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Animal/BeardedTroll/BeardedTroll</texPath>
+          <texPath>Animal/BeardedTroll/BeardedTroll_dessicated</texPath>
           <drawSize>1.5</drawSize>
         </dessicatedBodyGraphicData>
 		
@@ -201,7 +200,7 @@
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Animal/BeardedTroll/BeardedTroll</texPath>
+          <texPath>Animal/BeardedTroll/BeardedTroll_dessicated</texPath>
           <drawSize>2</drawSize>
         </dessicatedBodyGraphicData>
 		

@@ -12,7 +12,7 @@
       <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
       <ArmorRating_Heat>0.10</ArmorRating_Heat>
-      <FilthRate>10</FilthRate>
+      <FilthRate>6</FilthRate>
 	  <Flammability>0.5</Flammability>
     </statBases>
 	
@@ -51,7 +51,7 @@
           <li>DA_CrestelBite</li>
         </capacities>
         <power>20</power>
-        <cooldownTime>2</cooldownTime>
+        <cooldownTime>2.5</cooldownTime>
         <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
       </li>
       <li>
@@ -85,8 +85,8 @@
 	<wildBiomes>
      <Tundra>0.15</Tundra>
 	 <ColdBog>0.1</ColdBog>
-	 <BorealForest>0.3</BorealForest>
-	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
+	 <BorealForest>0.1</BorealForest>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.15</ZBiome_GlacialShield>
 	</wildBiomes>
 	  
      
@@ -208,12 +208,12 @@
     <description>Paralyzed by a powerful venom.</description>
 	<hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(214,197,77)</defaultLabelColor>
-    <maxSeverity>1</maxSeverity>
+    <maxSeverity>2</maxSeverity>
     <isBad>true</isBad>
 	
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-10.0</severityPerDay>
+        <severityPerDay>-9.0</severityPerDay>
         <showHoursToRecover>true</showHoursToRecover>
       </li>
     </comps>
@@ -236,7 +236,7 @@
         </li>
 		
         <li>
-		  <minSeverity>0.5</minSeverity>
+		  <minSeverity>1.5</minSeverity>
 		  <label>petrified</label>
           <statFactors>
           </statFactors>

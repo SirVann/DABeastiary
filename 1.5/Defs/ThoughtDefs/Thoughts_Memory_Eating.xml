@@ -26,7 +26,7 @@
       <li>
         <label>ate cooked troll meat</label>
         <description>I ate a delicious meal prepared with troll meat. It felt amazing.</description>
-        <baseMoodEffect>5</baseMoodEffect>
+        <baseMoodEffect>4</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

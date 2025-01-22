@@ -52,12 +52,28 @@
 		<additionalHediffs>
 			<li>
 				<hediff>DA_Petrify</hediff>
-				<severityPerDamageDealt>0.1</severityPerDamageDealt>
+				<severityPerDamageDealt>0.08</severityPerDamageDealt>
 				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
+				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 			</li>
 		</additionalHediffs>
     <impactSoundType>Toxic</impactSoundType>
-    <damageEffecter>Impact_Toxic</damageEffecter>
+    <damageEffecter>DA_Impact_Paralysis</damageEffecter>
 	</DamageDef>
+	
+	  <EffecterDef>
+    <defName>DA_Impact_Paralysis</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_ToxicDamage</moteDef>
+        <positionRadius>0.1</positionRadius>
+        <burstCount>3</burstCount>
+        <scale>1~1.4</scale>
+        <color>(170, 170, 109)</color>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
 	
 </Defs>
