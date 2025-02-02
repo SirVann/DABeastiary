@@ -17,6 +17,8 @@ namespace Bestiary
 
             harmony.Patch(AccessTools.Method(typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts)),
                 postfix: new HarmonyMethod(patchType, nameof(MakeRecipeProductsPostfix)));
+
+            harmony.PatchAll();
         }
 
         public static IEnumerable<Thing> MakeRecipeProductsPostfix(IEnumerable<Thing> __result, RecipeDef recipeDef, List<Thing> ingredients)

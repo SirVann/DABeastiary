@@ -38,6 +38,7 @@
     <Compile Include="Comp_BurrowSpawner.cs" />
     <Compile Include="CompProperties_BurrowSpawner.cs" />
     <Compile Include="DADefOfs.cs" />
+    <Compile Include="HarmonyPatches\NotifyDamageTakenPatch.cs" />
     <Compile Include="Utilities\FoodUtilities.cs" />
     <Compile Include="GameConditions\GameConditionExtension.cs" />
     <Compile Include="IncidentWorkers\IncidentDefExtension.cs" />
@@ -82,6 +83,12 @@
     <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.GetPreyScoreFor" />
     <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.IsAcceptablePreyFor" />
     <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.IsPreyProtectedFromPredatorByFence" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.StartManhunterBecauseOfPawnAction" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.StartFleeingBecauseOfPawnAction" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.CanStartFleeingBecauseOfPawnAction" />
+    <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.GetPackmates" />
+    
+    
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
