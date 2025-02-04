@@ -216,8 +216,10 @@ namespace Bestiary
                             IntVec3 targetPos = basePos + randomOffset;
 
                             if (!targetPos.InBounds(pawn.Map)) { targetPos = basePos; }
-                            IntVec3 intVec = CellFinder.RandomClosewalkCellNear(targetPos, Map, 5);
-
+                            if (!CellFinder.TryRandomClosewalkCellNear(targetPos, Map, 5, out IntVec3 intVec))
+                            {
+                                intVec = CellFinder.RandomClosewalkCellNear(targetPos, Map, 5);
+                            }
                             pawn.Reserve(haulTarget, job);
                             pawn.Reserve(intVec, job);
                             job.SetTarget(StoreCellInd, targetPos);
