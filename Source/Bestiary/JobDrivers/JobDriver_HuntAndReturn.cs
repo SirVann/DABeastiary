@@ -12,6 +12,8 @@ using RimWorld.Planet;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.Scripting.GarbageCollector;
 using UnityEngine;
+using Unity.Jobs;
+using System.Net.NetworkInformation;
 
 namespace Bestiary
 {
@@ -27,6 +29,7 @@ namespace Bestiary
 
         private int jobStartTick = -1;
         private int attempts = 10;
+        const int maxRadius = 6;
 
         // How long to hunt before giving up/restarting.
         private const int MaxHuntTicks = 5000;
@@ -157,6 +160,7 @@ namespace Bestiary
             yield return CustomToils.JumpIfTargetDespawnedOrNullOrDowned(VictimInd, startCollectCorpseLabel);
 
             yield return Toils_Jump.Jump(gotoCastPos);  // Go back into  combat is target is still up.
+            yield return TargetNewDownedOrDeadVictimForKidnapping(VictimInd, startCollectCorpseLabel, 5);
 
             ////////////////////////////////////////////
             /// Collect Corpse
@@ -206,23 +210,35 @@ namespace Bestiary
                         else
                         {
                             if (isCorpse) haulTarget.SetForbidden(value: true);
-                            int radius = 7;
-                            int minRadius = radius / 2;
+                            int radius = maxRadius;
+                            int minRadius = 3;
 
-                            IntVec3 randomOffset = GetValidPointInDoughnut(radius, minRadius).RandomElement();
-
-                            // Add the randomOffset to the flagLoc and find a nearby walkable cell
                             IntVec3 basePos = job.GetTarget(StoreCellInd).Cell;
-                            IntVec3 targetPos = basePos + randomOffset;
-
-                            if (!targetPos.InBounds(pawn.Map)) { targetPos = basePos; }
-                            if (!CellFinder.TryRandomClosewalkCellNear(targetPos, Map, 5, out IntVec3 intVec))
+                            var randomOffsets = GetValidPointsInDoughnut(radius, minRadius);
+                            if(randomOffsets.Empty()) Log.Warning($"[Bestiary] Could not find a valid cell in a radius. This is a bug.");
+                            IntVec3 storePos = basePos;
+                            foreach (var randomOffset in randomOffsets.InRandomOrder())
                             {
-                                intVec = CellFinder.RandomClosewalkCellNear(targetPos, Map, 5);
+                                storePos = basePos + randomOffset;
+
+                                if (storePos.InBounds(pawn.Map))
+                                {
+                                    storePos = basePos;
+                                    break;
+                                }
+                            }
+                            if (CellFinder.TryRandomClosewalkCellNear(storePos, Map, 5, out IntVec3 intVec))
+                            {
+                                storePos = intVec;
+                            }
+                            else
+                            {
+                                Log.Warning($"[Bestiary] Could not find a valid cell to store the corpse. Trying larger radius.");
+                                storePos = CellFinder.RandomClosewalkCellNear(storePos, Map, 12);
                             }
                             pawn.Reserve(haulTarget, job);
                             pawn.Reserve(intVec, job);
-                            job.SetTarget(StoreCellInd, targetPos);
+                            job.SetTarget(StoreCellInd, storePos);
                             job.SetTarget(VictimInd, haulTarget);
                             job.count = 1;
                         }
@@ -231,16 +247,16 @@ namespace Bestiary
             };
             return toil;
         }
-        List<IntVec3> GetValidPointInDoughnut(int radius, int minRadius)
+        List<IntVec3> GetValidPointsInDoughnut(int radius, int minRadius)
         {
             int diameter = radius * 2 + 1;
             return Enumerable.Range(-radius, diameter)
                 .SelectMany(dx => Enumerable.Range(-radius, diameter), (dx, dz) => new IntVec3(dx, 0, dz))
                 .Where(position =>
                 {
-                    int lengthSquared = position.LengthHorizontalSquared;
-                    bool isWithinMinRadius = lengthSquared >= minRadius * minRadius;
-                    bool isWithinMaxRadius = lengthSquared <= radius * radius;
+                    float length = position.LengthHorizontalSquared;
+                    bool isWithinMinRadius = length >= minRadius * minRadius;
+                    bool isWithinMaxRadius = length <= radius * radius;
                     return isWithinMinRadius && isWithinMaxRadius;
                 }).ToList();
         }
@@ -266,6 +282,36 @@ namespace Bestiary
                 notifiedPlayerAttacking = true;
             }
         }
+
+        public Toil TargetNewDownedOrDeadVictimForKidnapping(TargetIndex ind, Toil jumpToil, int searchDistance)
+        {
+            Toil toil = ToilMaker.MakeToil("TargetDownedOrDeadVictim");
+            toil.initAction = delegate
+            {
+                try
+                {
+                    // Get all things in a 4 tile radius.
+                    var nearbyThings = pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.Pawn).Where(t => t.Position.InHorDistOf(pawn.Position, searchDistance));
+                    nearbyThings = nearbyThings.Where(x =>
+                    x?.Spawned == true &&
+                    !x.Position.InHorDistOf(job.GetTarget(StoreCellInd).Cell,maxRadius*1.5f + 1) && // Don't steal from your own home.
+                    !x.IsForbidden(pawn) &&
+                    (x is Pawn p && p.health?.State != PawnHealthState.Mobile && p.RaceProps?.IsFlesh == true) ||
+                    (x is Corpse c && c.InnerPawn?.RaceProps?.IsFlesh == true && c.GetRotStage() == RotStage.Fresh));
+                    if (!nearbyThings.EnumerableNullOrEmpty())
+                    {
+                        job.SetTarget(VictimInd, nearbyThings.RandomElement());
+                        toil.actor.jobs.curDriver.JumpToToil(jumpToil);
+                    }
+                    
+                }
+                catch (Exception e)
+                {
+                    Log.Error($"[Bestiary] Error in LookForDownedVictim: {e}");
+                }
+            };
+            return toil;
+        }
     }
     public static class CustomToils
     {
@@ -275,6 +321,8 @@ namespace Bestiary
             Log.Message($"Added Debug Toil: {message}");
             return Toils_General.Do(delegate { Log.Message(message); });
         }
+
+        
 
         public static Toil JumpIfTargetDespawnedOrNullOrDowned(this Toil toil, TargetIndex ind, Toil jumpToil)
         {
