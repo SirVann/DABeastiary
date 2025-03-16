@@ -30,6 +30,11 @@ namespace Bestiary
                 if (!__instance.mentalStateHandler.InMentalState && dinfo.Instigator != null &&
                     (aggressor != null || dinfo.Instigator is Building_Turret))
                 {
+                    if (pawn.CurJob is Job curJob && curJob.def == DADefOfs.DA_HuntAndReturn && curJob.AnyTargetIs(aggressor))
+                    {
+                        return;
+                    }
+
                     bool validManhunterTrigger = (
                             dinfo.Instigator.Faction != null &&
                             (dinfo.Instigator.Faction.def.humanlikeFaction || (aggressor != null && (int)aggressor.def.race.intelligence >= 1)) &&
