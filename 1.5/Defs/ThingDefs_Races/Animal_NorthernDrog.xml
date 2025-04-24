@@ -77,7 +77,7 @@
 	<wildBiomes>
      <Tundra>0.15</Tundra>
 	 <ColdBog>0.1</ColdBog>
-	 <BorealForest>0.3</BorealForest>
+	 <BorealForest>0.25</BorealForest>
 	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
 	</wildBiomes>
 	  

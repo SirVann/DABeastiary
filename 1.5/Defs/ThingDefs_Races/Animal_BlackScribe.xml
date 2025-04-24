@@ -1,25 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="BaseInsect">
+  <ThingDef ParentName="AnimalThingBase">
     <defName>DA_BlackScribe</defName>
     <label>black scribe</label>
-    <description>The deadliest assassin of the desert. The black scribe is a large scorpion-like insectoid, capable of taking down creatures much larger than itself with its dreadful sting. Its venom quickly shuts down the muscles, slowing down the target and rendering it more susceptible to damages.\n\nThe name of scribe comes from his feather-like stinger, composed of countless small quills that he uses to quickly inject his toxic venom.</description>
+    <description>A shade amongst the scorching sands. The black scribe is a deadly insectoid capable of taking down creatures much larger than itself with its dreadful sting. The name of scribe comes from its feather-like stinger, composed of countless small quills that it uses to quickly inject a toxic venom, which greatly weakens its prey.\n\nIt’s venom can be safely extracted every few days, and while the toxin is incredibly dangerous, it procures a sensastion of bliss when consumed in small doses. Making it a highly sought-after drug.</description>
 	<statBases>
       <MoveSpeed>4.3</MoveSpeed>
-      <MarketValue>400</MarketValue>
+      <MarketValue>650</MarketValue>
       <ComfyTemperatureMax>45</ComfyTemperatureMax>
       <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
       <ArmorRating_Heat>0.15</ArmorRating_Heat>
     </statBases>
     <uiIconScale>2.25</uiIconScale>
+	
+	<comps>
+		<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
+		 <resourceDef>DA_RedTear</resourceDef>
+		 <gatheringIntervalDays>15</gatheringIntervalDays>
+		 <resourceAmount>5</resourceAmount>
+		 <customResourceString>DA_RedInk</customResourceString>
+		</li>
+	</comps>
    
 	<tools>
 			<li>
 				<label>left pincer</label>
 				<cooldownTime>1.5</cooldownTime>
-				<power>8</power>
+				<power>9</power>
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
@@ -28,7 +37,7 @@
 			<li>
 				<label>right pincer</label>
 				<cooldownTime>1.5</cooldownTime>
-				<power>8</power>
+				<power>9</power>
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
@@ -60,16 +69,19 @@
    <race>
       <body>DA_ScorpionLike</body>
       <predator>true</predator>
-      <baseBodySize>0.3</baseBodySize>
-      <baseHealthScale>1.0</baseHealthScale>
+      <baseBodySize>0.5</baseBodySize>
+      <baseHealthScale>1.5</baseHealthScale>
       <baseHungerRate>0.10</baseHungerRate>
       <maxPreyBodySize>5</maxPreyBodySize>
       <foodType>OmnivoreAnimal, AnimalProduct</foodType>
+	  <fleshType>Insectoid</fleshType>
+	  <bloodDef>Filth_BloodInsect</bloodDef>
 	  <useMeatFrom>Megaspider</useMeatFrom>
-      <wildness>0.7</wildness>
+      <wildness>0.87</wildness>
       <manhunterOnTameFailChance>0.7</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
       <trainability>Intermediate</trainability>
+	  <leatherDef>DA_BlackChitin</leatherDef>
 	  
 	<wildBiomes>
      <AridShrubland>0.25</AridShrubland>
@@ -117,7 +129,6 @@
     <race>DA_BlackScribe</race>
     <combatPower>300</combatPower>
     <ecoSystemWeight>0.8</ecoSystemWeight>
-    <wildGroupSize>1~2</wildGroupSize>
     <lifeStages>
 	
       <li>
@@ -164,16 +175,23 @@
 		 
 		
       </li>
-	  
     </lifeStages>
+	
+    <modExtensions>
+      <li Class="IllogicalPredator.PredatorConditions">
+        <ignoreBodySize>true</ignoreBodySize>
+      </li>
+    </modExtensions>
   </PawnKindDef>
+  
+	  <!--=============== Venom Hediff ================-->
   
 	<HediffDef ParentName="DiseaseBase">
     <defName>DA_RedInk</defName>
     <label>red ink</label>
-    <description>Red venom of a black scribe, quickly atrophies the muscles and slows down the target, making it an easy prey.</description>
+    <description>The venom of the black scribe. The pain it inflicts renders its victims unable to fend for themselves and quickly fall to the ground where they will meet their untimely death.</description>
     <defaultLabelColor>(155,71,55)</defaultLabelColor>
-    <maxSeverity>1.0</maxSeverity>
+    <maxSeverity>3</maxSeverity>
     <isBad>true</isBad>
 	
     <comps>
@@ -184,22 +202,259 @@
     </comps>
       <stages>
         <li>
-          <painFactor>1.2</painFactor>
+		  <label>burning</label>
+          <painFactor>1.1</painFactor>
           <statFactors>
-            <MeleeDodgeChance>0.5</MeleeDodgeChance>
-			<IncomingDamageFactor>1.3</IncomingDamageFactor>
+          <MeleeDodgeChance>0.8</MeleeDodgeChance>
+	      <IncomingDamageFactor>1.2</IncomingDamageFactor>
           </statFactors>
-		  
-          <capMods>
-            <li>
-              <capacity>Moving</capacity>
-              <offset>-0.15</offset>
-            </li>
-          </capMods>
-		  
+        </li>
+		
+        <li>
+		  <minSeverity>1.5</minSeverity>
+		  <label>scorching</label>
+		  <painFactor>1.4</painFactor>
+          <statFactors>
+          <MeleeDodgeChance>0.5</MeleeDodgeChance>
+	      <IncomingDamageFactor>1.5</IncomingDamageFactor>
+          </statFactors>
+        </li>
+		
+        <li>
+		  <minSeverity>2.5</minSeverity>
+		  <label>blistering</label>
+		  <painFactor>1.7</painFactor>
+          <statFactors>
+          <MeleeDodgeChance>0.2</MeleeDodgeChance>
+	      <IncomingDamageFactor>2</IncomingDamageFactor>
+          </statFactors>
         </li>
       </stages>
   </HediffDef>
 
+    <!--=============== Red Tear ================-->
+	
+  <ThingDef ParentName="DrugBase">
+    <defName>DA_RedTear</defName>
+    <label>red tear</label>
+    <description>A droplet of red ink extracted from the venom gland of a black scribe, often consumed by pouring it on an eye. While dangerous, it procures a feeling of euphoria in small doses.</description>
+    <tradeability>Sellable</tradeability>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <tickerType>Rare</tickerType>
+	
+    <graphicData>
+      <texPath>Item/RedTear</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+	
+    <statBases>
+      <MarketValue>25</MarketValue>
+      <Mass>0.1</Mass>
+      <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+	
+    <ingestible>
+      <joyKind>Chemical</joyKind>
+      <joy>0.5</joy>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <foodType>Processed, Fluid</foodType>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestCommandString>Pour {0}</ingestCommandString>
+      <ingestReportString>Pouring {0}.</ingestReportString>
+      <useEatingSpeedStat>false</useEatingSpeedStat>
+
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DA_RedTearHigh</hediffDef>
+          <severity>0.90</severity>
+          <toleranceChemical>Ambrosia</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DA_RedTearTolerance</hediffDef>
+          <toleranceChemical>DA_RedTear</toleranceChemical>
+          <severity>0.032</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+	  
+    </ingestible>
+	
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>DA_RedTear</chemical>
+        <addictiveness>0.010</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>30</listOrder>
+      </li>
+    </comps>
+	
+    <allowedArchonexusCount>20</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DA_RedTearHigh</defName>
+    <label>red warmth</label>
+    <description>A small dose of red ink in the bloodstream. It increases the sensitivity to pain but heighten the mood.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>2</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+		  <label>warm</label>
+          <painFactor>1.1</painFactor>
+        </li>
+		
+        <li>
+		  <minSeverity>1</minSeverity>
+		  <label>burning</label>
+          <painFactor>1.2</painFactor>
+        </li>
+		
+        <li>
+		  <minSeverity>1.3</minSeverity>
+		  <label>scorching</label>
+		  <painFactor>1.4</painFactor>
+          <statFactors>
+          <MeleeDodgeChance>0.5</MeleeDodgeChance>
+	      <IncomingDamageFactor>1.5</IncomingDamageFactor>
+          </statFactors>
+        </li>
+		
+        <li>
+		  <minSeverity>1.7</minSeverity>
+		  <label>blistering</label>
+		  <painFactor>1.7</painFactor>
+          <statFactors>
+          <MeleeDodgeChance>0.2</MeleeDodgeChance>
+	      <IncomingDamageFactor>2</IncomingDamageFactor>
+          </statFactors>
+        </li>
+      </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>DA_RedTearHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>DA_RedTearHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>red warmth</label>
+        <description>That droplet makes me feel warm, the sensation is strange but relaxing.</description>
+        <baseMoodEffect>14</baseMoodEffect>
+      </li>
+	  
+      <li>
+        <label>red burn</label>
+        <description>My eyes start to redden and the burning sensation feels more present, but it's not that unpleasant.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+	  
+      <li>
+        <label>red scorch</label>
+        <description>My eyes are crying and i feel as if a simple cut would feel as painful as a torn limb.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+	  
+      <li>
+        <label>red blister</label>
+        <description>Everythig hurts, from moving to breathing, make it stop !</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ChemicalDef>
+    <defName>DA_RedTear</defName>
+    <label>red ink</label>
+    <addictionHediff>DA_RedTearAddiction</addictionHediff>
+    <toleranceHediff>DA_RedTearTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>DA_Chemical_RedInk</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>red ink</label>
+    <description>Because of an red tear addiction, this person needs to regularly consume the venom to avoid withdrawal symptoms.</description>
+    <listPriority>20</listPriority>
+  </NeedDef>
+
+  <HediffDef ParentName="DrugToleranceBase">
+    <defName>DA_RedTearTolerance</defName>
+    <label>red ink tolerance</label>
+    <description>A built-up tolerance to the red ink. The more severe this tolerance is, the more it will take to get the same effect.</description>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.020</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>DA_RedTear</chemical>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>DA_RedTearAddiction</defName>
+    <label>red ink addiction</label>
+    <description>A chemical addiction to the red ink. Long exposure to its euphoric effects has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of red ink, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>Chemical_Ambrosia</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>DA_RedTearWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>DA_RedTearAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>red ink withdrawal</label>
+        <description>I feel cold, as if all warmth from my body was stripped away.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 
 </Defs>

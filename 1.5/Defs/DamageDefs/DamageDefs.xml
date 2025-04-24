@@ -13,7 +13,7 @@
 		<additionalHediffs>
 			<li>
 				<hediff>DA_RedInk</hediff>
-				<severityPerDamageDealt>0.5</severityPerDamageDealt>
+				<severityPerDamageDealt>0.08</severityPerDamageDealt>
 				<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
 				<inverseStatScaling>true</inverseStatScaling>
 			</li>
@@ -52,7 +52,7 @@
 		<additionalHediffs>
 			<li>
 				<hediff>DA_Petrify</hediff>
-				<severityPerDamageDealt>0.08</severityPerDamageDealt>
+				<severityPerDamageDealt>0.1</severityPerDamageDealt>
 				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
 				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
 			</li>

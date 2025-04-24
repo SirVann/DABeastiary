@@ -65,6 +65,71 @@
       <li>AnimalPart</li>
     </thingSetMakerTags>
   </ThingDef>
+  
+  <ThingDef ParentName="ResourceVerbBase">
+    <defName>DA_GoldiloxHorn</defName>
+    <label>goldilox horn</label>
+    <description>The twisted horn of a goldilox. A valuable and durable trophy which can be wielded as a deadly weapon.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/GoldiloxHorn</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <equippedAngleOffset>-35</equippedAngleOffset>
+	
+    <statBases>
+      <MarketValue>550</MarketValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <Flammability>0.4</Flammability>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+	
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>10</stackLimit>
+    <relicChance>2</relicChance>
+	
+    <comps>
+      <li Class="CompProperties_Styleable"></li>
+    </comps>
+	
+    <weaponClasses>
+      <li>Melee</li>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+	
+    <tools>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>base</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
+	
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>AnimalPart</li>
+    </thingSetMakerTags>
+  </ThingDef>
 
 
   <ThingDef ParentName="ResourceBase">

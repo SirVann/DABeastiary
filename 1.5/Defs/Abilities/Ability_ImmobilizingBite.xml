@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!-- Ability -->
+  <AbilityDef>
+    <defName>DA_ImmobilizingBite</defName>
+    <label>immobilizing bite</label>
+    <description>Immobilize a humanoid in place for a few seconds.</description>
+    <iconPath>UI/ImmobilizingBite</iconPath>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <hostile>false</hostile>
+	<jobDef>CastAbilityOnThingMelee</jobDef>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <ai_IsOffensive>true</ai_IsOffensive>
+    <aiCanUse>true</aiCanUse>
+    <statBases>
+      <Ability_Duration>5</Ability_Duration>
+    </statBases>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+	  <targetRequired>true</targetRequired>
+	  
+    <verbProperties>
+      <verbClass>Verb_CastAbilityTouch</verbClass>
+      <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+	  <defaultCooldownTime>5</defaultCooldownTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <soundCast>Pawn_Warg_Angry</soundCast>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetCorpses>false</canTargetCorpses>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetMutants>true</canTargetMutants>
+        <neverTargetIncapacitated>false</neverTargetIncapacitated>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityEffectWithDuration">
+        <compClass>CompAbilityEffect_Stun</compClass>
+      </li>
+    </comps>
+  </AbilityDef>
+
+
+</Defs>

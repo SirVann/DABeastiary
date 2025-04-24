@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Medieval Overhaul</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+		       <li Class="PatchOperationAdd">
+			      <xpath>Defs/MedievalOverhaul.SeperateHideList[defName="WhiteList"]/blackListLeathers</xpath>
+                  <value>		
+                     <li>DA_BlackChitin</li>
+                  </value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>

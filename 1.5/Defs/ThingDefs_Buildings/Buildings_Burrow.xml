@@ -48,7 +48,7 @@
 				<maxThreatScale>0.6</maxThreatScale>
 				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
 				<defendRadius>20</defendRadius>
-				<maxTimeSpentHunting>10000</maxTimeSpentHunting>
+				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>
 			</li>
 			<li Class="CompProperties_SpawnerFilth">
@@ -126,7 +126,7 @@
 				<maxThreatScale>0.6</maxThreatScale>
 				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
 				<defendRadius>20</defendRadius>
-				<maxTimeSpentHunting>10000</maxTimeSpentHunting>
+				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>
 			</li>
 			<li Class="CompProperties_WakeUpDormant"/>

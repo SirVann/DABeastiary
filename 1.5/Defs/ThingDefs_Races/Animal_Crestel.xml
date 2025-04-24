@@ -7,13 +7,13 @@
     <description>One of the largest flightless birds, and the north's apex predator. The crestel is a fearsome beast that can completely paralyze unfortunate victims for a short duration with its venomous beak, rendering them helpless against its attacks. Despite their delicate look, the crestel's feathers are harder than stone, serving as natural armor.\n\nIts vicious nature and unusual appearance perpetuates numerous myths- legends of a beast capable of turning flesh to stone with its gaze. Some also believe the crestel to be a bad omen, a sign of the coming end, and the start of a new age.</description>
 	<statBases>
       <MoveSpeed>5.6</MoveSpeed>
-      <MarketValue>1300</MarketValue>
+      <MarketValue>1600</MarketValue>
       <ComfyTemperatureMin>-50</ComfyTemperatureMin>
-      <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
       <ArmorRating_Heat>0.10</ArmorRating_Heat>
-      <FilthRate>6</FilthRate>
-	  <Flammability>0.5</Flammability>
+      <FilthRate>5</FilthRate>
+	  <Flammability>0.3</Flammability>
     </statBases>
 	
     <comps>
@@ -41,7 +41,7 @@
         <capacities>
           <li>Scratch</li>
         </capacities>
-        <power>16</power>
+        <power>17</power>
         <cooldownTime>1.5</cooldownTime>
         <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
       </li>
@@ -50,8 +50,8 @@
         <capacities>
           <li>DA_CrestelBite</li>
         </capacities>
-        <power>20</power>
-        <cooldownTime>2.5</cooldownTime>
+        <power>23</power>
+        <cooldownTime>2.4</cooldownTime>
         <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
       </li>
       <li>

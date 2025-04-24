@@ -120,5 +120,66 @@
     </stuffProps>
 
   </ThingDef>
+  
+    <ThingDef ParentName="WoolBase">
+    <defName>DA_WoolGoldilox</defName>
+    <label>goldwool</label>
+    <description>The gilded wool of a goldilox. While not particularly good for insulation or durable, it is exceptionally beautiful.\n\nWith sufficient heat, it can be melted and forged into pure gold.</description>
+    <possessionCount>30</possessionCount>
+	
+    <graphicData>
+      <color>(204,158,68)</color>
+	  <texPath>Item/Resource/Wool/Wool</texPath>
+    </graphicData>
+	
+    <statBases>
+	  <RoyalFavorValue>0.008</RoyalFavorValue>
+	  <MarketValue>8.0</MarketValue>
+      <StuffPower_Armor_Sharp>0.15</StuffPower_Armor_Sharp>
+      <StuffPower_Insulation_Cold>15</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
+    </statBases>
+	
+    <stuffProps>
+      <color>(117,110,101)</color>
+	  <commonality>0.5</commonality>
+      <statFactors>
+        <MaxHitPoints>0.7</MaxHitPoints>
+		<Beauty>4</Beauty>
+        <WorkToMake>0.9</WorkToMake>
+        <WorkToBuild>0.9</WorkToBuild>
+      </statFactors>
+    </stuffProps>
+
+  </ThingDef>
+  
+    <ThingDef ParentName="LeatherBase">
+    <defName>DA_BlackChitin</defName>
+    <label>black chitin</label>
+    <description>The inky dark chitin of a black scribe. While hard and difficult to work with, it provides remarkable protection and insulation.</description>
+    <possessionCount>30</possessionCount>
+	
+    <graphicData>
+      <color>(89,89,89)</color>
+	  <texPath>Item/Resource/Chitin</texPath>
+    </graphicData>
+	
+    <statBases>
+	  <MarketValue>3.6</MarketValue>
+      <StuffPower_Armor_Sharp>1.1</StuffPower_Armor_Sharp>
+      <StuffPower_Insulation_Cold>5</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>30</StuffPower_Insulation_Heat>
+    </statBases>
+	
+    <stuffProps>
+      <color>(89,89,89)</color>
+	  <commonality>0.5</commonality>
+      <statFactors>
+        <MaxHitPoints>1.1</MaxHitPoints>
+		<WorkToMake>1.2</WorkToMake>
+      </statFactors>
+    </stuffProps>
+
+  </ThingDef>
 
 </Defs>

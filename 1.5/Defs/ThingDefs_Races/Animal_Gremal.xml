@@ -11,15 +11,6 @@
       <ComfyTemperatureMin>-60</ComfyTemperatureMin>
       <FilthRate>3</FilthRate>
     </statBases>
-
-    <comps>
-	
-	<li Class="AnimalBehaviours.CompProperties_DigWhenHungry">
-		<customThingToDig>Hay</customThingToDig>
-		<customAmountToDig>10</customAmountToDig>
-	</li>
-
-    </comps>
    
    <tools>
       <li>

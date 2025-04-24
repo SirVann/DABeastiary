@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_BeardedTroll</defName>
     <label>bearded troll</label>
-    <description>This large, eyeless predator roams the frigid landscape, constantly in search of food. During winter, trolls often retreat deep into underground burrows, to feast on the many corpses they hoarded throughout the rest of the year. While their regeneration makes them a formidable, hard to dispatch threat, they have a particular weakness to fire.\n\nTrolls spread quickly and are considered a dangerous pest as they frequently attack caravans and travelers. However their hide and delicious meat makes them a target of many hunters.</description>
+    <description>This large, eyeless predator roams the frigid landscape, constantly in search of food. During winter, they often retreat deep into underground burrows, to feast on the many corpses they hoarded throughout the rest of the year. Relentless and capable of quickly regenerating its wounds, it allows the trolls to take down creatures much stronger than itself.\n\nTrolls spread quickly and are considered a dangerous pest as they frequently attack caravans and travelers. However their hide and delicious meat makes them a target of many hunters.</description>
 	<statBases>
       <MoveSpeed>5</MoveSpeed>
       <MarketValue>550</MarketValue>
@@ -17,7 +17,6 @@
       <FilthRate>8</FilthRate>
 	  <MeatAmount>80</MeatAmount>
     </statBases>
-	
 	
    
     <tools>
@@ -74,6 +73,12 @@
 		  <rateInTicks>5</rateInTicks>
 	  </li>
 	  
+	<li Class="AnimalBehaviours.CompProperties_EnrageOtherPawns">
+		<pawnkinddefsToAffect>
+			<li>DA_BeardedTroll</li>
+		</pawnkinddefsToAffect>
+	</li>
+	  
     </comps>
    
    <race>
@@ -94,11 +99,11 @@
       <leatherDef>DA_Leather_Troll</leatherDef>
 	  
 	<wildBiomes>
-     <Tundra>0.2</Tundra>
-	 <ColdBog>0.1</ColdBog>
-	 <BorealForest>0.2</BorealForest>
+     <Tundra>0.3</Tundra>
+	 <ColdBog>0.2</ColdBog>
+	 <BorealForest>0.3</BorealForest>
 	 <IceSheet>0.1</IceSheet>
-	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.2</ZBiome_GlacialShield>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
 	</wildBiomes>
 	  
      

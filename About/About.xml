@@ -9,10 +9,6 @@
 	</supportedVersions>
 	<modDependencies>
 		<li>
-			<packageId>Ludeon.RimWorld.Ideology</packageId>
-			<displayName>Ideology</displayName>
-		</li>
-		<li>
 			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
 			<displayName>Vanilla Expanded Framework</displayName>
 			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
