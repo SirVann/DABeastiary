@@ -30,7 +30,7 @@ namespace Bestiary
                 if (!__instance.mentalStateHandler.InMentalState && dinfo.Instigator != null &&
                     (aggressor != null || dinfo.Instigator is Building_Turret))
                 {
-                    if (pawn.CurJob is Job curJob && curJob.def == DADefOfs.DA_HuntAndReturn && curJob.AnyTargetIs(aggressor))
+                    if (pawn.CurJob is Job curJob && curJob.def == DADefOfs.DA_HuntAndReturn && curJob.AnyTargetIs(aggressor) && Rand.Chance(0.9f))
                     {
                         return;
                     }
@@ -38,19 +38,17 @@ namespace Bestiary
                     bool validManhunterTrigger = (
                             dinfo.Instigator.Faction != null &&
                             (dinfo.Instigator.Faction.def.humanlikeFaction || (aggressor != null && (int)aggressor.def.race.intelligence >= 1)) &&
-                            (pawn.Faction == null || !pawn.Faction.def.humanlikeFaction) &&
-                            (pawn.IsNonMutantAnimal || pawn.IsWildMan()) &&
                             Rand.Chance(PawnUtility.GetManhunterOnDamageChance(pawn, dinfo.Instigator))
                         );
 
                     bool isEngagedInMelee = pawn.CurJob?.def == JobDefOf.AttackMelee;
                     float distanceToAggressor = pawn.Position.DistanceTo(dinfo.Instigator.Position);
 
-                    if (!isEngagedInMelee && validManhunterTrigger && Rand.Chance(0.50f))
+                    if (!isEngagedInMelee && validManhunterTrigger && Rand.Chance(0.1f))
                     {
                         __instance.StartPackManhunterBecauseOfPawnAction(aggressor, "AnimalManhunterFromDamage", causedByDamage: true);
                     }
-                    else if (aggressor != null && !isEngagedInMelee && distanceToAggressor < 20 && pawn.CanReach(dinfo.Instigator, PathEndMode.Touch, Danger.Deadly))
+                    else if (aggressor != null && !isEngagedInMelee && distanceToAggressor < 14 && pawn.CanReach(dinfo.Instigator, PathEndMode.Touch, Danger.Deadly))
                     {
                         var jobDef = JobDefOf.AttackMelee;
                         var job = new Job(jobDef, dinfo.Instigator)
