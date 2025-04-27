@@ -46,7 +46,7 @@ namespace Bestiary
                     bool isEngagedInMelee = pawn.CurJob?.def == JobDefOf.AttackMelee;
                     float distanceToAggressor = pawn.Position.DistanceTo(dinfo.Instigator.Position);
 
-                    if (!isEngagedInMelee && validManhunterTrigger && Rand.Chance(0.05f))
+                    if (!isEngagedInMelee && validManhunterTrigger && Rand.Chance(0.50f))
                     {
                         __instance.StartPackManhunterBecauseOfPawnAction(aggressor, "AnimalManhunterFromDamage", causedByDamage: true);
                     }

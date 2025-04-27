@@ -34,10 +34,10 @@
         <canTargetSelf>false</canTargetSelf>
         <canTargetBuildings>false</canTargetBuildings>
         <canTargetCorpses>false</canTargetCorpses>
-        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetAnimals>false</canTargetAnimals>
         <canTargetHumans>true</canTargetHumans>
-        <canTargetMechs>true</canTargetMechs>
-        <canTargetMutants>true</canTargetMutants>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetMutants>false</canTargetMutants>
         <neverTargetIncapacitated>false</neverTargetIncapacitated>
       </targetParams>
     </verbProperties>

@@ -73,12 +73,6 @@
 		  <rateInTicks>5</rateInTicks>
 	  </li>
 	  
-	<li Class="AnimalBehaviours.CompProperties_EnrageOtherPawns">
-		<pawnkinddefsToAffect>
-			<li>DA_BeardedTroll</li>
-		</pawnkinddefsToAffect>
-	</li>
-	  
     </comps>
    
    <race>
