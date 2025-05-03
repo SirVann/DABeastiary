@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>DA_PhrakEscape</defName>
+    <insertTag>Animal_PreMain</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+    <subNodes>
+
+        <li Class="ThinkNode_ConditionalHasAbility">
+          <ability>DA_PhrakFlight</ability>
+          <subNodes>
+
+            <li Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow">
+              <subNodes>
+                <li Class="EBSGFramework.ThinkNode_RecordPassage">
+                  <reportJob>true</reportJob>
+                </li>
+                <li Class="ThinkNode_ConditionalHashIntervalTick">
+                  <interval>45</interval>
+                  <subNodes>
+                    <li Class="ThinkNode_ConditionalUnderCombatPressure">
+                      <maxThreatDistance>3</maxThreatDistance>
+                      <minCloseTargets>2</minCloseTargets>
+                      <subNodes>
+                        <li Class="JobGiver_AIJumpEscapeEnemies">
+                          <ability>DA_PhrakFlight</ability>
+                        </li>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

@@ -158,6 +158,9 @@
 		
       </li>
     </lifeStages>
+	<abilities>
+		<li>DA_PhrakFlight</li>
+	</abilities>
 	
   </PawnKindDef>
   
@@ -177,7 +180,7 @@
     <verbProperties>
 	
       <verbClass>Verb_CastAbilityJump</verbClass>
-      <label>quickjet jump</label>
+      <label>phrak flight</label>
       <violent>false</violent>
       <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
       <warmupTime>0</warmupTime>
