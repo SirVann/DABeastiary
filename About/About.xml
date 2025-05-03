@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ModMetaData>
-	<name>Dark Ages : Beasts</name>
-	<author>SirVan</author>
+	<name>Dark Ages : Beasts and Monsters</name>
+	<author>SirVan, RedMattis, Alite ect</author>
 	<url/>
 	<supportedVersions>
 		<li>1.5</li>
@@ -17,8 +17,11 @@
 	</modDependencies>
 	<loadAfter>
 		<li>Ludeon.RimWorld.Ideology</li>
+		<li>syrchalis.processor.framework</li>
+		<li>dankpyon.medieval.overhaul</li>
+		<li>owlchemist.giddyup</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 	<packageId>Van.Beasts</packageId>
-	<description>Slaverystuff</description>
+	<description>Adds a variety of animals, beasts and monsters to your biomes.</description>
 </ModMetaData>

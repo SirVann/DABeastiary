@@ -4,11 +4,11 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_Pilgrim</defName>
     <label>pilgrim</label>
-    <description>A large avian with a feathery mane and powerful legs. The pilgrims were given their name after their long migration periods which can last months as they travel from one desert to the next.\n\nPilgrims are often domesticated by the southern tribes to serve as mounts and for their eggs which provides nutrition in the harsh desert conditions.</description>
+    <description>A large avian often seen striding amidst the dunes. The pilgrims were given their name after their long migration periods which can last months as they travel from one desert to the next.\n\nPilgrims are often domesticated by the southern tribes to serve as mounts and for their eggs which provides nutrition in the harsh desert conditions.</description>
 	<statBases>
       <MoveSpeed>6</MoveSpeed>
       <MarketValue>550</MarketValue>
-      <ComfyTemperatureMax>40</ComfyTemperatureMax>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
 	  <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor>
       <FilthRate>14</FilthRate>
     </statBases>
@@ -66,7 +66,7 @@
       <baseBodySize>2.4</baseBodySize>
       <baseHealthScale>1.8</baseHealthScale>
       <baseHungerRate>0.325</baseHungerRate>
-      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <foodType>OvivoreAnimal, VegetarianRoughAnimal</foodType>
       <wildness>0.35</wildness>
       <manhunterOnDamageChance>0.1</manhunterOnDamageChance>
       <trainability>None</trainability>

@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_Phrak</defName>
+    <label>phrak</label>
+    <description>A shade amongst the scorching sands. The black scribe is a deadly insectoid capable of taking down creatures much larger than itself with its dreadful sting. The name of scribe comes from its feather-like stinger, composed of countless small quills that it uses to quickly inject a toxic venom, which greatly weakens its prey.\n\nIt’s venom can be safely extracted every few days, and while the toxin is incredibly dangerous, it procures a sensastion of bliss when consumed in small doses. Making it a highly sought-after drug.</description>
+	<statBases>
+      <MoveSpeed>4.3</MoveSpeed>
+      <MarketValue>650</MarketValue>
+    </statBases>
+    <uiIconScale>2.25</uiIconScale>
+   
+		<tools>
+		
+			<li>
+				<label>mandibles</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+			</li>
+			
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.1</chanceFactor>
+			</li>
+		</tools>
+	
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<accuracyTouch>1</accuracyTouch>
+				<accuracyShort>1</accuracyShort>
+				<accuracyMedium>1</accuracyMedium>
+				<accuracyLong>1</accuracyLong>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>DA_Shot_Phrak</defaultProjectile>
+				<warmupTime>3</warmupTime>
+				<burstShotCount>3</burstShotCount>
+				<minRange>2</minRange>
+				<range>20</range>
+				<soundCast>DA_PhrakShot</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+				<label>barbed quills</label>
+				<commonality>.8</commonality>
+			</li>
+
+
+		</verbs>
+   
+   <race>
+      <body>BeetleLike</body>
+	  <overrideShouldHaveAbilityTracker>true</overrideShouldHaveAbilityTracker>
+      <predator>true</predator>
+      <baseBodySize>0.3</baseBodySize>
+      <baseHealthScale>1.1</baseHealthScale>
+      <baseHungerRate>0.10</baseHungerRate>
+      <maxPreyBodySize>5</maxPreyBodySize>
+      <foodType>OmnivoreAnimal, AnimalProduct</foodType>
+	  <fleshType>Insectoid</fleshType>
+	  <bloodDef>Filth_BloodInsect</bloodDef>
+	  <useMeatFrom>Megaspider</useMeatFrom>
+      <wildness>0.7</wildness>
+      <manhunterOnTameFailChance>0.4</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+      <trainability>Intermediate</trainability>
+	  
+     
+	 <gestationPeriodDays>10</gestationPeriodDays>
+      
+	  <lifeExpectancy>10</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.30</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.6</minAge>
+          <soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+          <soundDeath>Pawn_Megascarab_Death</soundDeath>
+          <soundCall>DA_Pawn_Phrak_Call</soundCall>
+          <soundAngry>Pawn_Megascarab_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    
+  
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_Phrak</defName>
+    <label>phrak</label>
+    <race>DA_Phrak</race>
+    <combatPower>220</combatPower>
+    <ecoSystemWeight>0.8</ecoSystemWeight>
+    <lifeStages>
+	
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Phrak/Phrak</texPath>
+		  <shaderType>Transparent</shaderType>
+          <drawSize>0.7</drawSize>
+          <shadowData>
+            <volume>(0.30, 0.25, 0.20)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Phrak/Phrak_dessicated</texPath>
+          <drawSize>0.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Phrak/Phrak</texPath>
+		  <shaderType>Transparent</shaderType>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.375, 0.375, 0.375)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Phrak/Phrake_dessicated</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Phrak/Phrak</texPath>
+		  <shaderType>Transparent</shaderType>
+          <drawSize>2.0</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Phrak/Phrak_dessicated</texPath>
+          <drawSize>2.0</drawSize>
+        </dessicatedBodyGraphicData>
+		 
+		
+      </li>
+    </lifeStages>
+	
+  </PawnKindDef>
+  
+  	  <!--=============== Ability ================-->
+	  
+	    <AbilityDef>
+    <defName>DA_PhrakFlight</defName>
+    <label>phrak flight</label>
+    <description>Instantly fly to the location when in danger.</description>
+    <iconPath>Animal/Phrak/Phrak_dessicated</iconPath>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <cooldownTicksRange>360</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+	
+    <verbProperties>
+	
+      <verbClass>Verb_CastAbilityJump</verbClass>
+      <label>quickjet jump</label>
+      <violent>false</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0</warmupTime>
+      <minRange>5.9</minRange>
+      <range>11.9</range>
+      <requireLineOfSight>true</requireLineOfSight>
+	  <soundCast>DA_PhrakFlight</soundCast>
+      <soundLanding>Pawn_Megascarab_Wounded</soundLanding>
+      <flyWithCarriedThing>false</flyWithCarriedThing>
+      <drawAimPie>false</drawAimPie> 
+	  
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+	  
+    </verbProperties>
+	
+    <jobDef>CastJump</jobDef>
+  </AbilityDef>
+  
+	  <!--=============== Shot and Related hediff ================-->
+ 
+ 	<ThingDef ParentName="BaseBullet">
+		<defName>DA_Shot_Phrak</defName>
+		<label>toxic barbpike</label>
+		<graphicData>
+			<texPath>Projectile/ToxicBarbpike</texPath>
+			<drawSize>1.2</drawSize>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<flyOverhead>false</flyOverhead>
+			<damageDef>DA_ToxicBarbpike</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<speed>64</speed>
+		</projectile>
+	</ThingDef>
+	
+	<DamageDef>
+		<defName>DA_ToxicBarbpike</defName>
+		<label>toxic sting</label>
+		<workerClass>DamageWorker_Stab</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stung to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		
+		<additionalHediffs>
+			<li>
+				<hediff>DA_VirulentToxin</hediff>
+				<severityPerDamageDealt>0.01</severityPerDamageDealt>
+				<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+				<inverseStatScaling>true</inverseStatScaling>
+			</li>
+		</additionalHediffs>
+		
+		<isRanged>true</isRanged>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+	</DamageDef>
+	
+	<HediffDef>
+		<defName>DA_VirulentToxin</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.7, 1.0, 0.7)</defaultLabelColor>
+		<description>A dangerous toxin inflicted by a phrak. Quite dangerous as it can quickly lead to death at high doses. Even at low doses, it can generate cancers.</description>
+		<label>toxin buildup</label>
+		<lethalSeverity>1</lethalSeverity>
+		<makesSickThought>true</makesSickThought>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<taleOnVisible>ToxicityRevealed</taleOnVisible>
+		<comps>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>-0.08</severityPerDayNotImmune>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>initial</label>
+			</li>
+			<li>
+				<label>initial</label>
+				<minSeverity>0.04</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>minor</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>moderate</label>
+				<minSeverity>0.40</minSeverity>
+				<vomitMtbDays>5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Dementia</hediff>
+						<mtbDays>146</mtbDays>
+						<partsToAffect>
+							<li>Brain</li>
+						</partsToAffect>
+					</li>
+					<li Class="HediffGiver_Random">
+						<hediff>Carcinoma</hediff>
+						<mtbDays>438</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<label>serious</label>
+				<minSeverity>0.60</minSeverity>
+				<vomitMtbDays>1</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.25</offset>
+					</li>
+				</capMods>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Dementia</hediff>
+						<mtbDays>100</mtbDays>
+						<partsToAffect>
+							<li>Brain</li>
+						</partsToAffect>
+					</li>
+					<li Class="HediffGiver_Random">
+						<hediff>Carcinoma</hediff>
+						<mtbDays>220</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+			<li>
+				<label>extreme</label>
+				<minSeverity>0.80</minSeverity>
+				<vomitMtbDays>0.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.10</setMax>
+					</li>
+				</capMods>
+				<hediffGivers>
+					<li Class="HediffGiver_Random">
+						<hediff>Dementia</hediff>
+						<mtbDays>65</mtbDays>
+						<partsToAffect>
+							<li>Brain</li>
+						</partsToAffect>
+					</li>
+					<li Class="HediffGiver_Random">
+						<hediff>Carcinoma</hediff>
+						<mtbDays>54</mtbDays>
+						<canAffectAnyLivePart>true</canAffectAnyLivePart>
+					</li>
+				</hediffGivers>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

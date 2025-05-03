@@ -1,0 +1,7 @@
+<loadFolders>
+    <v1.5>
+		<li>/</li>
+		<li>1.5</li>
+        <li IfModActive="dankpyon.medieval.overhaul">1.5/Mods/MedievalOverhaulFeatures</li>			
+	</v1.5>
+</loadFolders>

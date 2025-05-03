@@ -9,7 +9,7 @@
       <MoveSpeed>5.5</MoveSpeed>
 	  <RoyalFavorValue>1</RoyalFavorValue>
       <MarketValue>1250</MarketValue>
-      <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+      <ComfyTemperatureMin>-45</ComfyTemperatureMin>
       <FilthRate>2</FilthRate>
       <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.8</ToxicEnvironmentResistance>
     </statBases>
@@ -30,7 +30,7 @@
       <baseHungerRate>0.9</baseHungerRate>
       <baseHealthScale>1.6</baseHealthScale>
       <maxPreyBodySize>2.3</maxPreyBodySize>
-      <foodType>CarnivoreAnimalStrict</foodType>
+      <foodType>CarnivoreAnimalStrict, OmnivoreAnimal, OvivoreAnimal</foodType>
       <leatherDef>Leather_Wolf</leatherDef>
       <gestationPeriodDays>10</gestationPeriodDays>
       <nameOnTameChance>1</nameOnTameChance>
@@ -50,7 +50,7 @@
         </points>
       </litterSizeCurve>
 	  
-      <lifeExpectancy>25</lifeExpectancy>
+      <lifeExpectancy>30</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -191,7 +191,7 @@
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Animal/ImperialRedhound/ImperialRedhound_dessicated</texPath>
-          <drawSize>1.7</drawSize>
+          <drawSize>2.3</drawSize>
         </dessicatedBodyGraphicData>
       </li>
       <li>
@@ -205,7 +205,7 @@
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Animal/ImperialRedhound/ImperialRedhound_dessicated</texPath>
-          <drawSize>2.15</drawSize>
+          <drawSize>3</drawSize>
         </dessicatedBodyGraphicData>
 		
       </li>

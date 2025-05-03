@@ -8,7 +8,7 @@
 	<statBases>
       <MoveSpeed>4.3</MoveSpeed>
       <MarketValue>650</MarketValue>
-      <ComfyTemperatureMax>45</ComfyTemperatureMax>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
       <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
       <ArmorRating_Heat>0.15</ArmorRating_Heat>
@@ -92,7 +92,7 @@
      
 	 <gestationPeriodDays>10</gestationPeriodDays>
       
-	  <lifeExpectancy>5</lifeExpectancy>
+	  <lifeExpectancy>12</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -132,16 +132,18 @@
     <lifeStages>
 	
       <li>
+        <label>black scribe scorpling</label>
+        <labelPlural>black scribe scorplings</labelPlural>
         <bodyGraphicData>
-          <texPath>Animal/BlackScribe/BlackScribe</texPath>
-          <drawSize>0.7</drawSize>
+          <texPath>Animal/BlackScribe/BlackScribeScorpling</texPath>
+          <drawSize>1</drawSize>
           <shadowData>
             <volume>(0.30, 0.25, 0.20)</volume>
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Animal/BlackScribe/BlackScribe_dessicated</texPath>
-          <drawSize>0.7</drawSize>
+          <texPath>Animal/BlackScribe/BlackScribeScorpling_dessicated</texPath>
+          <drawSize>1</drawSize>
         </dessicatedBodyGraphicData>
       </li>
 	  
@@ -243,7 +245,7 @@
     <tickerType>Rare</tickerType>
 	
     <graphicData>
-      <texPath>Item/RedTear</texPath>
+      <texPath>Item/Drug/RedTear</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
 	

@@ -9,7 +9,8 @@
       <MoveSpeed>5.5</MoveSpeed>
 	  <RoyalFavorValue>6</RoyalFavorValue>
       <MarketValue>6450</MarketValue>
-      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <ComfyTemperatureMin>-65</ComfyTemperatureMin>
+      <ComfyTemperatureMax>50</ComfyTemperatureMax>
       <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
       <ArmorRating_Heat>0.10</ArmorRating_Heat>
@@ -22,13 +23,13 @@
       <li Class="CompProperties_Shearable">
         <woolDef>DA_WoolGoldilox</woolDef>
         <shearIntervalDays>45</shearIntervalDays>
-        <woolAmount>120</woolAmount>
+        <woolAmount>80</woolAmount>
       </li>
 	  
       <li Class="CompProperties_Milkable">
         <milkDef>DA_RegalMilk</milkDef>
-        <milkIntervalDays>10</milkIntervalDays>
-        <milkAmount>15</milkAmount>
+        <milkIntervalDays>12</milkIntervalDays>
+        <milkAmount>6</milkAmount>
       </li>
     </comps>
    
@@ -259,6 +260,7 @@
 	
     <thingCategories>
       <li>AnimalProductRaw</li>
+	  <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Milk</li>
     </thingCategories>
     <allowedArchonexusCount>80</allowedArchonexusCount>
   </ThingDef>
@@ -272,7 +274,7 @@
       <li>
         <label>drank regal milk</label>
         <description>I drank exquisite milk. The slight buttery notes and creamy texture were amazing.</description>
-        <baseMoodEffect>10</baseMoodEffect>
+        <baseMoodEffect>8</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

@@ -5,7 +5,7 @@
 	<statBases>
       <MoveSpeed>5.6</MoveSpeed>
       <MarketValue>800</MarketValue>
-      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
     </statBases>
 	
     <uiIconScale>2.25</uiIconScale>
@@ -233,7 +233,7 @@
     <label>snow taraal</label>
     <description>A cousin of the common taraal adapted to frozen climates. They wander in the frigid wastelands in search of carcasses from animals taken by the frost and snow hares for the majority of the year.\n\nWhen the wind grows colder and the snow thickens, the snow taraals leave the northern ices to seek shelter in the mountains where they will hibernate.</description>
     <statBases>
-      <ComfyTemperatureMin>-55</ComfyTemperatureMin>
+      <ComfyTemperatureMin>-60</ComfyTemperatureMin>
     </statBases>
     <comps>
       <li Class="CompProperties_EggLayer">

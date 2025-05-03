@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<ThingDef ParentName="DankPyon_CheeseBase">
+		<defName>DA_MealMufftonCheese</defName>
+		<label>muffton cheese</label>
+		<description>A sharp-tasting wheel of cheese, created by a special process of purposely curdling animal milk. It makes for both a tasty treat on its own, as well as a versatile ingredient in meals.</description>
+		<graphicData>
+			<texPath>Item/Meal/MufftonCheese</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ProcessorFramework.ProcessDef ParentName="DankPyon_CheesePressBase">
+		<defName>DA_PressMufftonCheeseProcess</defName>
+		<thingDef>DA_MealMufftonCheese</thingDef>
+		<ingredientFilter>
+			<thingDefs>
+				<li>DA_MufftonMilk</li>
+			</thingDefs>
+		</ingredientFilter>
+	</ProcessorFramework.ProcessDef>
+
+  <!-- Regal Milk -->
+
+	<ThingDef ParentName="MealBase">
+	<defName>DA_MealGoldfortCheese</defName>
+	<label>goldfort cheese</label>
+	<description>A sharp-tasting wheel of soft cheese, created by a special process of purposely curdling goldilox milk. Its golden rind and soft core which melts in the mouth it is a cheese fit for kings, as well as a versatile ingredient in meals.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<tickerType>Rare</tickerType>
+		
+		<graphicData>
+			<texPath>Item/Meal/GoldfortCheese</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MarketValue>16</MarketValue>
+			<Nutrition>0.85</Nutrition>
+		</statBases>
+		
+		<ingestible>
+		
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DA_MilkTolerance</hediffDef>
+          <toleranceChemical>DA_RegalMilk</toleranceChemical>
+          <severity>0.052</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+	  
+			<joy>0.20</joy>
+			<joyKind>Gluttonous</joyKind>
+			<foodType>Processed</foodType>
+			<preferability>MealLavish</preferability>
+			<optimalityOffsetHumanlikes>15</optimalityOffsetHumanlikes>
+			<optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals>
+		</ingestible>
+		
+		<comps>
+		    <li Class="CompProperties_Drug">
+                 <chemical>DA_RegalMilk</chemical>
+                  <addictiveness>0.010</addictiveness>
+                  <minToleranceToAddict>0.15</minToleranceToAddict>
+                  <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+                  <needLevelOffset>0.9</needLevelOffset>
+                  <listOrder>30</listOrder>
+            </li>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>45</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="VFECore.CompProperties_IngestedThoughtFromQuality">
+				<ingestedThought>DA_AteGoldfortCheese</ingestedThought>
+			</li>
+			<li MayRequire="vanillaexpanded.vcooke" Class="VanillaCookingExpanded.CompProperties_StackByQuality"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<researchPrerequisites>
+			<li>DankPyon_Presser</li>
+		</researchPrerequisites>
+		<thingCategories>
+			<li>DankPyon_Cheese</li>
+		</thingCategories>
+	</ThingDef>
+	
+	
+	
+	<ProcessorFramework.ProcessDef ParentName="DankPyon_CheesePressBase">
+		<defName>DA_PressGoldfortProcess</defName>
+		<thingDef>DA_MealGoldfortCheese</thingDef>
+		<ingredientFilter>
+			<thingDefs>
+				<li>DA_RegalMilk</li>
+			</thingDefs>
+		</ingredientFilter>
+	</ProcessorFramework.ProcessDef>
+	
+  	<!-- ======= Cheese quality based thoughts ========= -->
+	<ThoughtDef>
+		<defName>DA_AteGoldfortCheese</defName>
+		<durationDays>1</durationDays>
+		<stages>
+		
+			<!-- Awful cheese -->
+			<li>
+				<label>ate awful goldfort cheese</label>
+				<description>I had the unfortunate experience of eating awful-quality goldfort cheese. The core was dry and the taste was less than satisfying.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+
+
+			<!-- Poor cheese -->
+			<li>
+				<label>ate poor goldfort cheese</label>
+				<description>I ate some poor-quality goldfort cheese. The crust hadn't properly formed yet and the core was barely melting.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+
+			<!-- Normal cheese -->
+			<li>
+				<label>ate normal cheese</label>
+				<description>I ate some average goldfort cheese.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+			<!-- Good cheese -->
+			<li>
+				<label>ate good goldfort cheese</label>
+				<description>I ate good-quality goldfort cheese. The texture is perfect as it melts in your mouth, leaving but an exquisite taste behind.</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+			<!-- Excellent cheese -->
+			<li>
+				<label>ate excellent goldfort cheese</label>
+				<description>I savoured excellent-quality goldfort cheese. A heavenly taste overtook me and i cannot wait to eat more of it.</description>
+				<baseMoodEffect>12</baseMoodEffect>
+			</li>
+			<!-- Masterwork cheese -->
+			<li>
+				<label>ate masterwork goldfort cheese</label>
+				<description>I savoured a divinely melty goldfort cheese. It's delightfully elegant taste transports me to the skies and beyond.</description>
+				<baseMoodEffect>15</baseMoodEffect>
+			</li>
+			<!-- Legendary cheese -->
+			<li>
+				<label>ate legendary goldfort cheese</label>
+				<description>The divine taste overwhelms my very being as its soft core melts in my mouth. My perception of taste is forever changed.</description>
+				<baseMoodEffect>20</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

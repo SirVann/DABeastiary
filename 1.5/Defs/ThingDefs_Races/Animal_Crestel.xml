@@ -84,6 +84,7 @@
 	  
 	<wildBiomes>
      <Tundra>0.15</Tundra>
+	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.1</DankPyon_DarkForest>
 	 <ColdBog>0.1</ColdBog>
 	 <BorealForest>0.1</BorealForest>
 	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.15</ZBiome_GlacialShield>

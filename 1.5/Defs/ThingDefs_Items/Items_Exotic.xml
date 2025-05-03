@@ -75,6 +75,7 @@
     <graphicData>
       <texPath>Item/GoldiloxHorn</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
+	  <drawSize>0.9</drawSize>
     </graphicData>
     <equippedAngleOffset>-35</equippedAngleOffset>
 	

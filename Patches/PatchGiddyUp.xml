@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Giddy-Up 2 Forked</li>
+		</mods>
+
+		<match Class="PatchOperationSequence">
+			<operations>
+			
+	  <!--=============== Dwarven Muffton ================-->
+			
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "DA_DwarvenMuffton"]/comps</xpath>
+			<value>
+				<li Class="GiddyUp.CompProperties_Overlay">
+					<overlayFront> 
+					
+						<graphicDataMale>
+						  <texPath>Animal/DwarvenMuffton/DwarvenMuffton_Overlay_south</texPath>
+						  <graphicClass>Graphic_Single</graphicClass>
+						  <drawSize>1.6</drawSize>
+						  <drawRotated>false</drawRotated>
+						</graphicDataMale>	
+						
+						<graphicDataFemale>
+						  <texPath>Animal/DwarvenMuffton/DwarvenMufftonFemale_Overlay_south</texPath>
+						  <graphicClass>Graphic_Single</graphicClass>
+						  <drawSize>1.6</drawSize>
+						  <drawRotated>false</drawRotated>
+						</graphicDataFemale>							
+					    <offsetDefault>(0,0,0,0)</offsetDefault>
+					</overlayFront>
+					<overlaySide>
+					
+						<graphicDataMale>
+						  <texPath>Animal/DwarvenMuffton/DwarvenMuffton_Overlay_east</texPath>
+						  <graphicClass>Graphic_Single</graphicClass>
+						  <drawSize>1.6</drawSize>
+						  <drawRotated>false</drawRotated>
+						</graphicDataMale>
+						
+						<graphicDataFemale>
+						  <texPath>Animal/DwarvenMuffton/DwarvenMufftonFemale_Overlay_east</texPath>
+						  <graphicClass>Graphic_Single</graphicClass>
+						  <drawSize>1.6</drawSize>
+						  <drawRotated>false</drawRotated>
+						</graphicDataFemale>							
+					    <offsetDefault>(0,0,0,0)</offsetDefault>
+					</overlaySide>
+				</li>
+			</value>
+		</li>
+			
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName = "DA_DwarvenMuffton"]</xpath> 
+					<value>
+						<li Class="GiddyUp.CustomStats">
+							<!--Speed factor. -->
+							<speedModifier>1.1</speedModifier>
+							<!--Armor factor. -->
+							<armorModifier>1.1</armorModifier>
+							<!--Setting useMetalArmor to true, makes the animal's skin have the metal bounce of effect when hit when used as mount --> 
+							<useMetalArmor>false</useMetalArmor>
+						</li>
+						
+						<li Class="GiddyUp.DrawingOffset">
+							<eastOffset>(0,0,-0.23)</eastOffset>
+							<westOffset>(0,0,-0.23)</westOffset>
+							<northOffset>(0,0,-0.25)</northOffset>
+							<southOffset>(0,0,-0.25)</southOffset>
+						</li>					
+					</value>
+				</li>
+				
+	  <!--=============== Imperial Redhound ================-->
+	  
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName = "DA_ImperialRedhound"]/comps</xpath>
+			<value>
+				<li Class="GiddyUp.CompProperties_Overlay">
+					<overlayFront> 
+						
+						<graphicDataDefault>
+						  <texPath>Animal/ImperialRedhound/ImperialRedhound_south</texPath>
+						  <graphicClass>Graphic_Single</graphicClass>
+						  <drawSize>3</drawSize>
+						  <drawRotated>false</drawRotated>
+						</graphicDataDefault>							
+					    <offsetDefault>(0,0,0,0)</offsetDefault>
+					</overlayFront>
+		
+				</li>
+			</value>
+		</li>
+			
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/ThingDef[defName = "DA_ImperialRedhound"]</xpath> 
+					<value>
+						<li Class="GiddyUp.CustomStats">
+							<!--Speed factor. -->
+							<speedModifier>1.2</speedModifier>
+							<!--Armor factor. -->
+							<armorModifier>1</armorModifier>
+							<!--Setting useMetalArmor to true, makes the animal's skin have the metal bounce of effect when hit when used as mount --> 
+							<useMetalArmor>false</useMetalArmor>
+						</li>
+						
+						<li Class="GiddyUp.DrawingOffset">
+							<eastOffset>(0,0,-0.23)</eastOffset>
+							<westOffset>(0,0,-0.23)</westOffset>
+							<northOffset>(0,0,-0.25)</northOffset>
+							<southOffset>(0,0,-0.25)</southOffset>
+						</li>					
+					</value>
+				</li>
+				
+			</operations>
+		</match>
+	</Operation>
+	
+</Patch>
