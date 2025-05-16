@@ -128,6 +128,11 @@
             </li>
           </li>
         </alternateGraphics>
+
+      <!-- To add female specific graphics, use this
+        <alternateFemaleGraphics>
+        </alternateFemaleGraphics>
+      -->
       </li>
     </comps>
 
