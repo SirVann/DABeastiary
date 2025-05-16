@@ -30,7 +30,7 @@ namespace Bestiary
             }
             
             i = index;
-            return index >= 0;
+            return alternateGraphic != null;
         }
 
         public override void PostExposeData()

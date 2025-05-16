@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AlternateGraphicExtension.cs" />
+    <Compile Include="CompProperties_AlternateGraphics.cs" />
+    <Compile Include="Comp_AlternateGraphics.cs" />
     <Compile Include="Comp_BurrowSpawner.cs" />
     <Compile Include="CompProperties_BurrowSpawner.cs" />
     <Compile Include="DADefOfs.cs" />
