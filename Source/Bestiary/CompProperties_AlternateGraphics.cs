@@ -7,6 +7,8 @@ namespace Bestiary
     {
         public List<List<AlternateGraphic>> alternateGraphics;
 
+        public List<List<AlternateGraphic>> alternateFemaleGraphics;
+
         public CompProperties_AlternateGraphics()
         {
             compClass = typeof(Comp_AlternateGraphics);

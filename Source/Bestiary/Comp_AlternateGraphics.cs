@@ -1,4 +1,5 @@
 ﻿using Verse;
+using System.Collections.Generic;
 
 namespace Bestiary
 {
@@ -11,11 +12,12 @@ namespace Bestiary
         public bool TryGetAlternate(Pawn pawn, out AlternateGraphic alternateGraphic, out int i)
         {
             alternateGraphic = null;
-
-            if (Props.alternateGraphics.Count > pawn.ageTracker.CurLifeStageIndex)
+            List<List<AlternateGraphic>> alternateGraphicList = pawn.gender == Gender.Female && !Props.alternateFemaleGraphics.NullOrEmpty() ?
+                Props.alternateFemaleGraphics : Props.alternateGraphics;
+            if (alternateGraphicList.Count > pawn.ageTracker.CurLifeStageIndex)
             {
-                var alternateGraphics = Props.alternateGraphics[pawn.ageTracker.CurLifeStageIndex];
-                if (index != -1 && index < Props.alternateGraphics.Count)
+                var alternateGraphics = alternateGraphicList[pawn.ageTracker.CurLifeStageIndex];
+                if (index != -1 && index < alternateGraphicList.Count)
                     alternateGraphic = alternateGraphics[index];
                 else if (!alternateGraphics.NullOrEmpty() && alternateGraphics.TryRandomElementByWeight(arg => arg.Weight, out alternateGraphic))
                     index = alternateGraphics.IndexOf(alternateGraphic);
