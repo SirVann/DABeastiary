@@ -56,16 +56,7 @@ namespace Bestiary
         {
             if (!__result)
             {
-                var extension = pawn.kindDef.GetModExtension<AlternateGraphicExtension>();
-                if (extension != null && extension.alternateGraphics.Count > pawn.ageTracker.CurLifeStageIndex)
-                {
-                    var alternateGraphics = extension.alternateGraphics[pawn.ageTracker.CurLifeStageIndex];
-                    if (!alternateGraphics.NullOrEmpty() && alternateGraphics.TryRandomElementByWeight(arg => arg.Weight, out ag))
-                    {
-                        index = alternateGraphics.IndexOf(ag);
-                        __result = true;
-                    }
-                }
+                __result = pawn.GetComp<Comp_AlternateGraphics>()?.TryGetAlternate(pawn, out ag, out index) == true;
             }
         }
     }
