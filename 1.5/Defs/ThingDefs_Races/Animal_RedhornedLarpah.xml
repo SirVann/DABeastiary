@@ -153,9 +153,33 @@
           <texPath>Animal/RedhornedLarpah/RedhornedLarpah_dessicated</texPath>
           <drawSize>1.6</drawSize>
         </dessicatedBodyGraphicData>
-		</li>
+		  </li>
 		
     </lifeStages>
+    <modExtensions>
+      <li Class="Bestiary.AlternateGraphicExtension">
+        <alternateGraphics>
+          <li /> <!--The child version doesn't need this, so it gets skipped-->
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
+            </li>
+          </li>
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
+            </li>
+          </li>
+        </alternateGraphics>
+      </li>
+    </modExtensions>
+
   </PawnKindDef>
 
 </Defs>
