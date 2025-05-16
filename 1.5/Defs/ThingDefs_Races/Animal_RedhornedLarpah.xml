@@ -87,36 +87,6 @@
           <soundAngry>Pawn_Hare_Angry</soundAngry>
         </li>
       </lifeStageAges>
-      <comps>
-        <li Class="Bestiary.CompProperties_AlternateGraphic">
-          <alternateGraphics>
-            <li>
-              <li>
-                <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenA</texPath>
-              </li>
-              <li>
-                <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenB</texPath>
-              </li>
-            </li>
-            <li>
-              <li>
-                <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
-              </li>
-              <li>
-                <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
-              </li>
-            </li>
-            <li>
-              <li>
-                <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
-              </li>
-              <li>
-                <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
-              </li>
-            </li>
-          </alternateGraphics>
-        </li>
-      </comps>
 
      
       <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
@@ -130,6 +100,37 @@
         <li>(-0.27, 0, 0.18)</li>
       </headPosPerRotation>
     </race>
+    <comps>
+      <li Class="Bestiary.CompProperties_AlternateGraphic">
+        <alternateGraphics>
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenB</texPath>
+            </li>
+          </li>
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
+            </li>
+          </li>
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
+            </li>
+          </li>
+        </alternateGraphics>
+      </li>
+    </comps>
+
   
   </ThingDef>
   
