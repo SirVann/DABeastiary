@@ -85,10 +85,37 @@
 	
     <stuffProps>
       <color>(145,140,135)</color>
-      <commonality>0.0045</commonality>
+      <commonality>0.045</commonality>
       <statFactors>
         <MaxHitPoints>2.5</MaxHitPoints>
         <Beauty>1.5</Beauty>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+  <ThingDef ParentName="LeatherBase">
+    <defName>DA_Leather_Barog</defName>
+    <label>spongy hide</label>
+    <description>The spongy green hide of a barogoth. While good at regulating temperature in hot and humid climates, it does not protect much.</description>
+	<possessionCount>20</possessionCount>
+	
+    <graphicData>
+      <color>(142,153,115)</color>
+	  <texPath>Item/Resource/AmphibianPelt</texPath>
+    </graphicData>
+	
+    <statBases>
+      <MarketValue>2.3</MarketValue>
+	   <StuffPower_Armor_Sharp>0.7</StuffPower_Armor_Sharp>
+      <StuffPower_Insulation_Heat>25</StuffPower_Insulation_Heat>
+    </statBases>
+	
+    <stuffProps>
+      <color>(145,140,135)</color>
+      <commonality>0.025</commonality>
+      <statFactors>
+        <MaxHitPoints>1.1</MaxHitPoints>
+        <Beauty>1.2</Beauty>
       </statFactors>
     </stuffProps>
   </ThingDef>
@@ -113,7 +140,7 @@
 	
     <stuffProps>
       <color>(117,110,101)</color>
-	  <commonality>0.5</commonality>
+	  <commonality>0.08</commonality>
       <statFactors>
         <MaxHitPoints>1.1</MaxHitPoints>
       </statFactors>
@@ -142,7 +169,7 @@
 	
     <stuffProps>
       <color>(117,110,101)</color>
-	  <commonality>0.5</commonality>
+	  <commonality>0.0045</commonality>
       <statFactors>
         <MaxHitPoints>0.7</MaxHitPoints>
 		<Beauty>4</Beauty>
@@ -173,7 +200,7 @@
 	
     <stuffProps>
       <color>(89,89,89)</color>
-	  <commonality>0.5</commonality>
+	  <commonality>0.05</commonality>
       <statFactors>
         <MaxHitPoints>1.1</MaxHitPoints>
 		<WorkToMake>1.2</WorkToMake>

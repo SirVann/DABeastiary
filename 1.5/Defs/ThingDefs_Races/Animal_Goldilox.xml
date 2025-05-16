@@ -44,6 +44,7 @@
         <cooldownTime>2.2</cooldownTime>
         <linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
       </li>
+	  
       <li>
         <capacities>
           <li>Bite</li>
@@ -53,6 +54,7 @@
         <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
         <chanceFactor>0.6</chanceFactor>
       </li>
+	  
       <li>
         <label>head</label>
         <capacities>
@@ -102,11 +104,11 @@
         </li>
         <li>
           <def>AnimalJuvenile</def>
-          <minAge>0.25</minAge>
+          <minAge>0.75</minAge>
         </li>
         <li>
           <def>AnimalAdult</def>
-          <minAge>0.40</minAge>
+          <minAge>1.332</minAge>
           <soundWounded>Pawn_Muffalo_Wounded</soundWounded>
           <soundDeath>Pawn_Muffalo_Death</soundDeath>
           <soundCall>Pawn_Muffalo_Call</soundCall>

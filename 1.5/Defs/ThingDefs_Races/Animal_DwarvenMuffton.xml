@@ -127,11 +127,11 @@
         </li>
         <li>
           <def>AnimalJuvenile</def>
-          <minAge>0.35</minAge>
+          <minAge>0.15</minAge>
         </li>
         <li>
           <def>AnimalAdult</def>
-          <minAge>1</minAge>
+          <minAge>0.30</minAge>
           <soundWounded>Pawn_Sheep_Wounded</soundWounded>
           <soundDeath>Pawn_Sheep_Death</soundDeath>
           <soundCall>Pawn_Sheep_Call</soundCall>

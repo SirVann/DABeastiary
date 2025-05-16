@@ -4,12 +4,33 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_Phrak</defName>
     <label>phrak</label>
-    <description>A shade amongst the scorching sands. The black scribe is a deadly insectoid capable of taking down creatures much larger than itself with its dreadful sting. The name of scribe comes from its feather-like stinger, composed of countless small quills that it uses to quickly inject a toxic venom, which greatly weakens its prey.\n\nIt’s venom can be safely extracted every few days, and while the toxin is incredibly dangerous, it procures a sensastion of bliss when consumed in small doses. Making it a highly sought-after drug.</description>
+    <description>The buzzing pest of the marshy groves. The phrak is a mosquito-like insectoid that hunts using it's large rostrum. While not particularly armored, it makes up for with its agility and quick reflexes, outmaneuvering even the most trained of fighters. They spread by laying numerous eggs in bodies of water, making swamps a perfect habitat for them.\n\nPhraks can use a special organ near their abdomen to shoot a volley of toxic barbpikes in order to quickly take out hostile threats from afar.</description>
 	<statBases>
       <MoveSpeed>4.3</MoveSpeed>
-      <MarketValue>650</MarketValue>
+	  <MeleeDodgeChance>35</MeleeDodgeChance>
+      <ToxicResistance>1</ToxicResistance>
+      <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
+      <MarketValue>250</MarketValue>
     </statBases>
     <uiIconScale>2.25</uiIconScale>
+	
+		<comps>
+	  <li Class="AnimalBehaviours.CompProperties_Floating">
+
+	  </li>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>EggPhrakUnfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>EggPhrakFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>5</eggFertilizationCountMax>
+        <eggLayIntervalDays>2</eggLayIntervalDays>
+        <eggCountRange>1~5</eggCountRange>
+      </li>
+	  
+	  <li Class="MVCF.Comps.CompProperties_RandomVerbs">
+        <meleeChance>0.1</meleeChance>
+	  </li>
+		</comps>
    
 		<tools>
 		
@@ -19,6 +40,16 @@
 					<li>Bite</li>
 				</capacities>
 				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+			</li>
+			
+			<li>
+				<label>rostrum</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>10</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
 			</li>
@@ -39,20 +70,20 @@
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
-				<accuracyTouch>1</accuracyTouch>
+				<accuracyTouch>0.1</accuracyTouch>
 				<accuracyShort>1</accuracyShort>
 				<accuracyMedium>1</accuracyMedium>
-				<accuracyLong>1</accuracyLong>
+				<accuracyLong>0.5</accuracyLong>
 				<hasStandardCommand>true</hasStandardCommand>
 				<defaultProjectile>DA_Shot_Phrak</defaultProjectile>
 				<warmupTime>3</warmupTime>
 				<burstShotCount>3</burstShotCount>
-				<minRange>2</minRange>
+				<minRange>5</minRange>
 				<range>20</range>
 				<soundCast>DA_PhrakShot</soundCast>
 				<muzzleFlashScale>0</muzzleFlashScale>
-				<label>barbed quills</label>
-				<commonality>.8</commonality>
+				<label>toxic barbpike</label>
+				<commonality>.5</commonality>
 			</li>
 
 
@@ -75,8 +106,13 @@
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
       <trainability>Intermediate</trainability>
 	  
-     
-	 <gestationPeriodDays>10</gestationPeriodDays>
+	<wildBiomes>
+     <TropicalSwamp>0.3</TropicalSwamp>
+	 <ColdBog>0.1</ColdBog>
+	 <TemperateSwamp>0.3</TemperateSwamp>
+	 <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.5</ZBiome_Marsh>
+	</wildBiomes>
+	  
       
 	  <lifeExpectancy>10</lifeExpectancy>
       <lifeStageAges>
@@ -86,11 +122,11 @@
         </li>
         <li>
           <def>AnimalJuvenile</def>
-          <minAge>0.30</minAge>
+          <minAge>0.05</minAge>
         </li>
         <li>
           <def>AnimalAdult</def>
-          <minAge>0.6</minAge>
+          <minAge>0.3</minAge>
           <soundWounded>Pawn_Megascarab_Wounded</soundWounded>
           <soundDeath>Pawn_Megascarab_Death</soundDeath>
           <soundCall>DA_Pawn_Phrak_Call</soundCall>
@@ -115,17 +151,16 @@
     <lifeStages>
 	
       <li>
+	    <label>phrak nymphling</label>
+        <labelPlural>phrak nymphlings</labelPlural>
         <bodyGraphicData>
-          <texPath>Animal/Phrak/Phrak</texPath>
+          <texPath>Animal/Phrak/PhrakNymphling</texPath>
 		  <shaderType>Transparent</shaderType>
-          <drawSize>0.7</drawSize>
-          <shadowData>
-            <volume>(0.30, 0.25, 0.20)</volume>
-          </shadowData>
+          <drawSize>1.1</drawSize>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Animal/Phrak/Phrak_dessicated</texPath>
-          <drawSize>0.7</drawSize>
+          <texPath>Animal/Phrak/PhrakNymphling_dessicated</texPath>
+          <drawSize>1.1</drawSize>
         </dessicatedBodyGraphicData>
       </li>
 	  
@@ -134,12 +169,9 @@
           <texPath>Animal/Phrak/Phrak</texPath>
 		  <shaderType>Transparent</shaderType>
           <drawSize>1.2</drawSize>
-          <shadowData>
-            <volume>(0.375, 0.375, 0.375)</volume>
-          </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
-          <texPath>Animal/Phrak/Phrake_dessicated</texPath>
+          <texPath>Animal/Phrak/Phrak_dessicated</texPath>
           <drawSize>1.2</drawSize>
         </dessicatedBodyGraphicData>
       </li>
@@ -158,50 +190,52 @@
 		
       </li>
     </lifeStages>
-	<abilities>
-		<li>DA_PhrakFlight</li>
-	</abilities>
 	
   </PawnKindDef>
   
-  	  <!--=============== Ability ================-->
+  	  <!--=============== Eggs ================-->
 	  
-	    <AbilityDef>
-    <defName>DA_PhrakFlight</defName>
-    <label>phrak flight</label>
-    <description>Instantly fly to the location when in danger.</description>
-    <iconPath>Animal/Phrak/Phrak_dessicated</iconPath>
-    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
-    <cooldownTicksRange>360</cooldownTicksRange>
-    <hostile>false</hostile>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggPhrakUnfertilized</defName>
+    <label>phrak egg (unfert.)</label>
+    <description>The sticky egg of a pilgrim. It can be eaten raw, but it's much, much better cooked.</description>
 	
-    <verbProperties>
+    <graphicData>
+	  <texPath>Item/PhrakEgg</texPath>
+      <drawSize>0.8</drawSize>
+    </graphicData>
 	
-      <verbClass>Verb_CastAbilityJump</verbClass>
-      <label>phrak flight</label>
-      <violent>false</violent>
-      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
-      <warmupTime>0</warmupTime>
-      <minRange>5.9</minRange>
-      <range>11.9</range>
-      <requireLineOfSight>true</requireLineOfSight>
-	  <soundCast>DA_PhrakFlight</soundCast>
-      <soundLanding>Pawn_Megascarab_Wounded</soundLanding>
-      <flyWithCarriedThing>false</flyWithCarriedThing>
-      <drawAimPie>false</drawAimPie> 
+    <statBases>
+      <Nutrition>0.4</Nutrition>
+      <MarketValue>8</MarketValue>
+    </statBases>
+	
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggPhrakFertilized</defName>
+    <label>phrak egg (fert.)</label>
+    <description>A fertilized phrak egg. If all goes well, it should hatch into a phrak larvling. It can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/PhrakEgg</texPath>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>0.4</Nutrition>
+      <MarketValue>8</MarketValue>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>1</hatcherDaystoHatch>
+        <hatcherPawn>DA_Phrak</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
 	  
-      <targetParams>
-        <canTargetLocations>true</canTargetLocations>
-        <canTargetPawns>false</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-      </targetParams>
-	  
-    </verbProperties>
-	
-    <jobDef>CastJump</jobDef>
-  </AbilityDef>
   
 	  <!--=============== Shot and Related hediff ================-->
  
@@ -210,13 +244,13 @@
 		<label>toxic barbpike</label>
 		<graphicData>
 			<texPath>Projectile/ToxicBarbpike</texPath>
-			<drawSize>1.2</drawSize>
+			<drawSize>1.5</drawSize>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>
 			<flyOverhead>false</flyOverhead>
 			<damageDef>DA_ToxicBarbpike</damageDef>
-			<damageAmountBase>6</damageAmountBase>
+			<damageAmountBase>7</damageAmountBase>
 			<speed>64</speed>
 		</projectile>
 	</ThingDef>
@@ -233,7 +267,7 @@
 		<additionalHediffs>
 			<li>
 				<hediff>DA_VirulentToxin</hediff>
-				<severityPerDamageDealt>0.01</severityPerDamageDealt>
+				<severityPerDamageDealt>0.006</severityPerDamageDealt>
 				<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
 				<inverseStatScaling>true</inverseStatScaling>
 			</li>
