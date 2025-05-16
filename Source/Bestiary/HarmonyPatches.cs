@@ -1,8 +1,8 @@
 ﻿using System;
-using HarmonyLib;
-using Verse;
 using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
+using Verse;
 
 namespace Bestiary
 {
@@ -17,6 +17,8 @@ namespace Bestiary
 
             harmony.Patch(AccessTools.Method(typeof(GenRecipe), nameof(GenRecipe.MakeRecipeProducts)),
                 postfix: new HarmonyMethod(patchType, nameof(MakeRecipeProductsPostfix)));
+            harmony.Patch(AccessTools.Method(typeof(PawnGraphicUtils), "TryGetAlternate"),
+                postfix: new HarmonyMethod(patchType, nameof(TryGetAlternatePostfix)));
 
             harmony.PatchAll();
         }
@@ -47,6 +49,23 @@ namespace Bestiary
                 if (sizeFactor > 0 && productsToFactor.Contains(thing.def))
                     thing.stackCount = (int)Math.Ceiling((float)thing.stackCount * sizeFactor);
                 yield return thing;
+            }
+        }
+
+        public static void TryGetAlternatePostfix(ref bool __result, Pawn pawn, ref AlternateGraphic ag, ref int index)
+        {
+            if (!__result)
+            {
+                var extension = pawn.kindDef.GetModExtension<AlternateGraphicExtension>();
+                if (extension != null && extension.alternateGraphics.Count > pawn.ageTracker.CurLifeStageIndex)
+                {
+                    var alternateGraphics = extension.alternateGraphics[pawn.ageTracker.CurLifeStageIndex];
+                    if (!alternateGraphics.NullOrEmpty() && alternateGraphics.TryRandomElementByWeight(arg => arg.Weight, out ag))
+                    {
+                        index = alternateGraphics.IndexOf(ag);
+                        __result = true;
+                    }
+                }
             }
         }
     }

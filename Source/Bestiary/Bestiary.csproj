@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AlternateGraphicExtension.cs" />
     <Compile Include="Comp_BurrowSpawner.cs" />
     <Compile Include="CompProperties_BurrowSpawner.cs" />
     <Compile Include="DADefOfs.cs" />
@@ -87,8 +88,6 @@
     <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.StartFleeingBecauseOfPawnAction" />
     <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.CanStartFleeingBecauseOfPawnAction" />
     <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.GetPackmates" />
-    
-    
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
