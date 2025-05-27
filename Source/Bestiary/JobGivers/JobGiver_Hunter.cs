@@ -23,10 +23,42 @@ namespace Bestiary
                 IntVec3 returnLocation = pawn.Position;
                 return JobMaker.MakeJob(DADefOfs.DA_HuntAndReturn, prey, returnLocation);
             }
+            
             return null;
         }
     }
-    
+
+    public class JobGiver_BreakOut : ThinkNode_JobGiver
+    {
+        protected override Job TryGiveJob(Pawn pawn)
+        {
+            if (pawn.CanReachMapEdge())
+            {
+                return null;
+            }
+            var canExit = RCellFinder.TryFindRandomExitSpot(pawn, out IntVec3 exitPos, TraverseMode.PassAllDestroyableThings);
+            using PawnPath path = pawn.Map.pathFinder.FindPath(pawn.Position, exitPos, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.PassAllDestroyableThings));
+            if (!canExit || path == null || !path.Found || path.NodesLeftCount < 2)
+            {
+                Log.WarningOnce($"[Bestiary] {pawn} cannot find a way out of the map. Path found: {path?.ToStringSafe()}", 123234892);
+                return null;
+            }
+            else
+            {
+                Thing thing = path.FirstBlockingBuilding(out IntVec3 cellBefore, pawn);
+                if (thing != null)
+                {
+                    Job job = DigUtility.PassBlockerJob(pawn, thing, cellBefore, canMineMineables: true, canMineNonMineables: true);
+                    if (job != null)
+                    {
+                        return job;
+                    }
+                }
+            }
+            return null;
+        }
+    }
+
     public class JobGiver_HunterLordGroup : ThinkNode_JobGiver
     {
         public override float GetPriority(Pawn pawn)

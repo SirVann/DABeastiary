@@ -71,6 +71,9 @@ namespace Bestiary
             var hunterToil = new LordToil_DenAnimalHunt(burrow.Position, wanderRadius: wanderRadius);
             stateGraph.AddToil(hunterToil);
 
+            //var hunterToil = new LordToil_DenAnimalHunt(burrow.Position, wanderRadius: wanderRadius);
+            //stateGraph.AddToil(hunterToil);
+
             var startHunting = new Transition(burrowToil, hunterToil);
 
             startHunting.AddPreAction(
@@ -164,15 +167,6 @@ namespace Bestiary
             var downedPawns = map.mapPawns.AllPawns.Where(p => p.Downed && p.RaceProps?.IsFlesh == true);
             // Check if they are within 12 tiles of the burrow.
             int countNearBurrows = corpses.Where(c => c.Position.InHorDistOf(burrow.Position, 24))?.Count() ?? 0 + downedPawns.Where(p => p.Position.InHorDistOf(burrow.Position, 24))?.Count() ?? 0;
-
-            //if (lord.ticksInToil % 20000 == 0)
-            //{
-            //    Log.Message($"Burrow Position: {burrow.Position}");
-            //    Log.Message(string.Join(",", corpses.Select(c => c.Position.DistanceTo(burrow.Position))));
-            //    Log.Message(string.Join(",", downedPawns.Select(p => p.Position.DistanceTo(burrow.Position))));
-
-            //    Log.Message($"Corpses: {corpses.Count()} Downed: {downedPawns.Count()} Near Burrows: {countNearBurrows}");
-            //}
             bodiesNearDen = countNearBurrows;
             return countNearBurrows;
         }
