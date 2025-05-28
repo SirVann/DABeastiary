@@ -4,14 +4,14 @@
     <alwaysShowWeapon>false</alwaysShowWeapon>
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
-        <li Class="JobGiver_AIDefendPoint">
-          <targetAcquireRadius>65</targetAcquireRadius>
-          <targetKeepRadius>72</targetKeepRadius>
-        </li>
         <li Class="ThinkNode_ConditionalStarving">
           <subNodes>
             <li Class="Bestiary.JobGiver_BreakOut" />
           </subNodes>
+        </li>
+        <li Class="JobGiver_AIDefendPoint">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
         </li>
         <li Class="ThinkNode_ForbidOutsideFlagRadius">
           <maxDistToSquadFlag>16</maxDistToSquadFlag>
