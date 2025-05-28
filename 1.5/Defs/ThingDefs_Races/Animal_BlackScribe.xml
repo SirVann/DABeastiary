@@ -13,7 +13,7 @@
       <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
       <ArmorRating_Heat>0.15</ArmorRating_Heat>
     </statBases>
-    <uiIconScale>2.25</uiIconScale>
+    <uiIconScale>1.3</uiIconScale>
 	
 	<comps>
 		<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
@@ -70,7 +70,7 @@
       <body>DA_ScorpionLike</body>
       <predator>true</predator>
       <baseBodySize>0.5</baseBodySize>
-      <baseHealthScale>1.5</baseHealthScale>
+      <baseHealthScale>2.2</baseHealthScale>
       <baseHungerRate>0.10</baseHungerRate>
       <maxPreyBodySize>5</maxPreyBodySize>
       <foodType>OmnivoreAnimal, AnimalProduct</foodType>

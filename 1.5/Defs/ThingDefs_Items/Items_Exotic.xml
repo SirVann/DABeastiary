@@ -166,4 +166,37 @@
     </thingSetMakerTags>
   </ThingDef>
 
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>DA_LarpahAntlers</defName>
+    <label>larpah antlers</label>
+    <description>A set of valuable antlers belonging to a larpah. Some tribes use the marrow found inside the bone to concoct a precious mixture.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/LarpahAntlers</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	
+    <statBases>
+      <MarketValue>850</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>0.9</Mass>
+      <Flammability>1</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+	
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <stackLimit>5</stackLimit>
+	
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags>
+      <li>AnimalPart</li>
+    </thingSetMakerTags>
+  </ThingDef>
 </Defs>

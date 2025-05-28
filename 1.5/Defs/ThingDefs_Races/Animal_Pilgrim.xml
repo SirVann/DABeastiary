@@ -9,7 +9,7 @@
       <MoveSpeed>6</MoveSpeed>
       <MarketValue>550</MarketValue>
       <ComfyTemperatureMax>60</ComfyTemperatureMax>
-	  <CaravanRidingSpeedFactor>1.6</CaravanRidingSpeedFactor>
+	  <CaravanRidingSpeedFactor>1.7</CaravanRidingSpeedFactor>
       <FilthRate>14</FilthRate>
     </statBases>
 	
@@ -23,8 +23,6 @@
       </li>
 	  
     </comps>
-	
-    <uiIconScale>1.4</uiIconScale>
    
     <tools>
       <li>
@@ -83,7 +81,7 @@
 	 <gestationPeriodDays>5</gestationPeriodDays>
 
       
-	  <lifeExpectancy>12</lifeExpectancy>
+	  <lifeExpectancy>40</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -95,11 +93,11 @@
         </li>
         <li>
           <def>AnimalJuvenile</def>
-          <minAge>0.65</minAge>
+          <minAge>0.1</minAge>
         </li>
         <li>
           <def>AnimalAdult</def>
-          <minAge>1.332</minAge>
+          <minAge>0.3</minAge>
         </li>
       </lifeStageAges>
      

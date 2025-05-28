@@ -12,7 +12,7 @@
       <ComfyTemperatureMax>45</ComfyTemperatureMax>
       <FilthRate>16</FilthRate>
     </statBases>
-    <uiIconScale>2.25</uiIconScale>
+    <uiIconScale>1.5</uiIconScale>
 	
     <comps>
       <li Class="CompProperties_EggLayer">
@@ -186,7 +186,7 @@
       <li>
         <bodyGraphicData>
           <texPath>Animal/Barog/Barog</texPath>
-          <drawSize>3</drawSize>
+          <drawSize>2.7</drawSize>
           <shadowData>
             <volume>(1, 0.6, 1)</volume>
             <offset>(0,0,-0.3)</offset>
@@ -194,7 +194,7 @@
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Animal/Barog/Barog_dessicated</texPath>
-          <drawSize>3</drawSize>
+          <drawSize>2.7</drawSize>
         </dessicatedBodyGraphicData>
       </li>
 	  
@@ -216,6 +216,7 @@
     <rotatable>false</rotatable>
 	
     <statBases>
+	  <MarketValue>10</MarketValue>
       <Mass>0.05</Mass>
       <DeteriorationRate>6</DeteriorationRate>
     </statBases>

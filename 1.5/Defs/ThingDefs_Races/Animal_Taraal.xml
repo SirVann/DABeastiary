@@ -8,7 +8,7 @@
       <ComfyTemperatureMin>-30</ComfyTemperatureMin>
     </statBases>
 	
-    <uiIconScale>2.25</uiIconScale>
+    <uiIconScale>1.5</uiIconScale>
    
     <tools>
       <li>

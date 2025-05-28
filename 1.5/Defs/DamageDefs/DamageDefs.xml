@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	
+   <DamageDef ParentName="Bite">
+		<defName>DA_KarabalBite</defName>
+		<label>karabal bite</label>
+		
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been bit to death.</deathMessage>
+		<additionalHediffs>
+			<li>
+				<hediff>DA_AntiCoagulantVenom</hediff>
+				<severityPerDamageDealt>0.1</severityPerDamageDealt>
+				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
+				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+			</li>
+		</additionalHediffs>
+    <impactSoundType>Slice</impactSoundType>
+	</DamageDef>
+	
 	<DamageDef>
 		<defName>DA_Quillsting</defName>
 		<label>quill-sting</label>

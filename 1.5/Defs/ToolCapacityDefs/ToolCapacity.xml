@@ -10,6 +10,11 @@
 		<label>ram-bash</label>
 	</ToolCapacityDef>
 	
+	<ToolCapacityDef>
+		<defName>DA_KarabalBite</defName>
+		<label>karabal bite</label>
+	</ToolCapacityDef>
+	
 		<ToolCapacityDef>
 		<defName>DA_CrestelBite</defName>
 		<label>petrifying bite</label>
