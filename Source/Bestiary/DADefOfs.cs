@@ -10,11 +10,12 @@ using Verse.AI;
 namespace Bestiary
 {
     [DefOf]
-    internal class DADefOfs
+    public static class DADefOfs
     {
         public static PawnKindDef DA_BeardedTroll;
 
         public static DutyDef DA_DenDwellerDuty;
+
         public static DutyDef DA_HunterDuty;
 
         public static JobDef DA_HuntAndReturn;

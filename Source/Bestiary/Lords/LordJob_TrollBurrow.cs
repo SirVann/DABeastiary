@@ -160,7 +160,7 @@ namespace Bestiary
         private int GetSetBodiesNearBurrow()
         {
             // Get the size of a grid tile
-            float tileWidth = Find.WorldGrid.averageTileSize;
+            float tileWidth = Find.WorldGrid.AverageTileSize;
 
             var map = lord.Map;
             var corpses = map.listerThings.ThingsInGroup(ThingRequestGroup.Corpse).Where(c => c is Corpse corpse && corpse.InnerPawn?.RaceProps?.IsFlesh == true && !corpse.IsDessicated() && corpse.GetRotStage() == RotStage.Fresh);

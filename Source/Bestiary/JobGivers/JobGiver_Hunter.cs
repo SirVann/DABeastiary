@@ -37,7 +37,7 @@ namespace Bestiary
                 return null;
             }
             var canExit = RCellFinder.TryFindRandomExitSpot(pawn, out IntVec3 exitPos, TraverseMode.PassAllDestroyableThings);
-            using PawnPath path = pawn.Map.pathFinder.FindPath(pawn.Position, exitPos, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.PassAllDestroyableThings));
+            using PawnPath path = pawn.Map.pathFinder.FindPathNow(pawn.Position, exitPos, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.PassAllDestroyableThings));
             if (!canExit || path == null || !path.Found || path.NodesLeftCount < 2)
             {
                 Log.WarningOnce($"[Bestiary] {pawn} cannot find a way out of the map. Path found: {path?.ToStringSafe()}", 123234892);

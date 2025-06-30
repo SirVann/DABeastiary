@@ -220,7 +220,7 @@ namespace Bestiary
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad && Active && nextPawnSpawnTick == -1)
             {
-                if (Props.maxPawnsToSpawn != IntRange.zero)
+                if (Props.maxPawnsToSpawn != IntRange.Zero)
                 {
                     pawnsLeftToSpawn = Props.maxPawnsToSpawn.RandomInRange;
                 }
@@ -316,7 +316,7 @@ namespace Bestiary
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 spawnedPawns.RemoveAll((Pawn x) => x == null);
-                if (pawnsLeftToSpawn == -1 && Props.maxPawnsToSpawn != IntRange.zero)
+                if (pawnsLeftToSpawn == -1 && Props.maxPawnsToSpawn != IntRange.Zero)
                 {
                     pawnsLeftToSpawn = Props.maxPawnsToSpawn.RandomInRange;
                 }

@@ -35,7 +35,7 @@ namespace Bestiary
 
         public int pawnSpawnRadius = 2;
 
-        public IntRange maxPawnsToSpawn = IntRange.zero;
+        public IntRange maxPawnsToSpawn = IntRange.Zero;
 
         public int maxTimeSpentHunting = 10000;
 

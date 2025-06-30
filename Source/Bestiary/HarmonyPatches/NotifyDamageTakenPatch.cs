@@ -63,11 +63,19 @@ namespace Bestiary
                         __instance.StartManhunterBecauseOfPawnAction(aggressor, "AnimalManhunterFromDamage", causedByDamage: true);
                     }
                 }
-                else if (dinfo.Instigator != null && dinfo.Def.makesAnimalsFlee && Pawn_MindState.CanStartFleeingBecauseOfPawnAction(pawn))
-                {
+                else if (dinfo.Instigator != null && dinfo.Def.makesAnimalsFlee && FleeUtility.ShouldAnimalFleeDanger(pawn))
                     __instance.StartFleeingBecauseOfPawnAction(dinfo.Instigator);
-                }
             }
+        }
+
+        private static bool StartManhunterBecauseOfPawnAction(Pawn pawn, Pawn instigator, string letterTextKey, bool causedByDamage = false)
+        {
+            return false;
+        }
+
+        private static void SendLetter()
+        {
+
         }
 
         public static void StartPackManhunterBecauseOfPawnAction(this Pawn_MindState mState, Pawn instigator, string letterTextKey, bool causedByDamage = false)
@@ -92,7 +100,7 @@ namespace Bestiary
             globalTargetInfo = new TargetInfo(pawn.Position, pawn.Map);
             text += "\n\n";
             text += "AnimalManhunterOthers".Translate(pawn.kindDef.GetLabelPlural(), pawn);
-            string text2 = (pawn.IsNonMutantAnimal ? pawn.Label : pawn.def.label);
+            string text2 = (pawn.IsAnimal ? pawn.Label : pawn.def.label);
             string text3 = "LetterLabelAnimalManhunterRevenge".Translate(text2).CapitalizeFirst();
             Find.LetterStack.ReceiveLetter(text3, text, (num2 == 1) ? LetterDefOf.ThreatSmall : LetterDefOf.ThreatBig, globalTargetInfo);
         }
