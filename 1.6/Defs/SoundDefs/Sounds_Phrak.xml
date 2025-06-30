@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SoundDef>
+    <defName>DA_Pawn_Phrak_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Phrak/Phrak_call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>9~9</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>DA_PhrakFlight</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Phrak/PhrakFlight_1a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>9~9</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+    <SoundDef>
+    <defName>DA_PhrakShot</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Phrak/PhrakShot_1a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>9~9</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~40</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

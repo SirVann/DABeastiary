@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef>
+    <defName>DA_SmeltGoldwool</defName>
+    <label>forge gold from goldwool</label>
+    <description>Forge gold by smelting goldwool.</description>
+    <jobString>Forging gold from goldwool.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>2000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+	
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DA_WoolGoldilox</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+	
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DA_WoolGoldilox</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+	
+    <products>
+      <Gold>5</Gold>
+    </products>
+	
+    <recipeUsers>
+		<li>FueledSmithy</li>
+		<li>ElectricSmithy</li>
+		<li MayRequire="dankpyon.medieval.overhaul">DankPyon_Furnace</li>
+	</recipeUsers>
+	
+	<workSkill>Crafting</workSkill>
+  </RecipeDef>
+  
+  <RecipeDef>
+    <defName>DA_SmeltGoldwoolBulk</defName>
+    <label>forge gold from goldwool x50</label>
+    <description>Forge gold by smelting goldwool.</description>
+    <jobString>Forging gold from goldwool.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>20000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+	
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DA_WoolGoldilox</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+    </ingredients>
+	
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DA_WoolGoldilox</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+	
+    <products>
+      <Gold>50</Gold>
+    </products>
+	
+    <recipeUsers>
+		<li>FueledSmithy</li>
+		<li>ElectricSmithy</li>
+		<li MayRequire="dankpyon.medieval.overhaul">DankPyon_Furnace</li>
+	</recipeUsers>
+	
+	<workSkill>Crafting</workSkill>
+  </RecipeDef>
+
+</Defs>

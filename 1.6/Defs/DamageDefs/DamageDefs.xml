@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+   <DamageDef ParentName="Bite">
+		<defName>DA_KarabalBite</defName>
+		<label>karabal bite</label>
+		
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been bit to death.</deathMessage>
+		<additionalHediffs>
+			<li>
+				<hediff>DA_AntiCoagulantVenom</hediff>
+				<severityPerDamageDealt>0.1</severityPerDamageDealt>
+				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
+				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+			</li>
+		</additionalHediffs>
+    <impactSoundType>Slice</impactSoundType>
+	</DamageDef>
+	
+	<DamageDef>
+		<defName>DA_Quillsting</defName>
+		<label>quill-sting</label>
+		
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been stung to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<workerClass>DamageWorker_Stab</workerClass>
+		<hediffSolid>Crack</hediffSolid>
+		<additionalHediffs>
+			<li>
+				<hediff>DA_RedInk</hediff>
+				<severityPerDamageDealt>0.08</severityPerDamageDealt>
+				<victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+				<inverseStatScaling>true</inverseStatScaling>
+			</li>
+			
+		</additionalHediffs>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+	</DamageDef>
+	
+	<DamageDef ParentName="BluntBase">
+		<defName>DA_Rambash</defName>
+		<label>rammed</label>
+		
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been rammed to death.</deathMessage>
+		<hediff>Crush</hediff>
+		<workerClass>DamageWorker_Blunt</workerClass>
+		<hediffSolid>Crack</hediffSolid>
+		<additionalHediffs>
+			<li>
+				<hediff>DA_Disoriented</hediff>
+				<severityPerDamageDealt>0.5</severityPerDamageDealt>
+				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
+			</li>
+			
+		</additionalHediffs>
+	</DamageDef>
+	
+		<DamageDef ParentName="Bite">
+		<defName>DA_CrestelBite</defName>
+		<label>crestel bite</label>
+		
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been bit to death.</deathMessage>
+		<additionalHediffs>
+			<li>
+				<hediff>DA_Petrify</hediff>
+				<severityPerDamageDealt>0.1</severityPerDamageDealt>
+				<victimSeverityScaling>IncomingDamageFactor</victimSeverityScaling>
+				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+			</li>
+		</additionalHediffs>
+    <impactSoundType>Toxic</impactSoundType>
+    <damageEffecter>DA_Impact_Paralysis</damageEffecter>
+	</DamageDef>
+	
+	  <EffecterDef>
+    <defName>DA_Impact_Paralysis</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_ToxicDamage</moteDef>
+        <positionRadius>0.1</positionRadius>
+        <burstCount>3</burstCount>
+        <scale>1~1.4</scale>
+        <color>(170, 170, 109)</color>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+	
+</Defs>

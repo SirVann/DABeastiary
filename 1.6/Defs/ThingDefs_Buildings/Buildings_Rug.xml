@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <DesignatorDropdownGroupDef>
+      <defName>LarpahRugs</defName>
+    </DesignatorDropdownGroupDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>DA_TrollRug</defName>
+		<label>bearded troll rug (2x2)</label>
+		<description>A trophy marking the victory over a bearded troll. The warm and durable leather of the troll makes for the perfect rug, but beware of the teeth.</description>
+		<thingClass>Building</thingClass>
+		<wipesPlants>true</wipesPlants>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+		<designationCategory>Floors</designationCategory>
+		
+		<graphicData>
+			<texPath>Building/Rug/TrollRug</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2.5,2.5)</drawSize>
+		</graphicData>
+		
+		
+		<blocksAltitudes>
+			<li>FloorCoverings</li>
+		</blocksAltitudes>
+		
+		<selectable>true</selectable>
+		<useHitPoints>true</useHitPoints>
+    	<defaultPlacingRot>North</defaultPlacingRot>
+		<statBases>
+		    <Flammability>1.2</Flammability>
+			<WorkToMake>7000</WorkToMake>
+			<Beauty>7</Beauty>
+			<Mass>5</Mass>
+		</statBases>
+		
+		<researchPrerequisites>
+			<li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_LeatherTanning</li>
+		</researchPrerequisites>
+		
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		
+		<costList>
+			<DA_Leather_Troll>40</DA_Leather_Troll>
+		</costList>
+		
+		<size>(2,2)</size>
+	</ThingDef>
+	
+	<ThingDef  Name="DA_LarpahRugBase" ParentName="BuildingBase">
+		<defName>DA_LarpahRug</defName>
+		<label>red-horned larpah rug (1x1)</label>
+		<description>A trophy marking the victory over a red-horned larpah. The warm and durable leather of the larpah makes for the perfect rug, but beware of its antlers.</description>
+		<thingClass>Building</thingClass>
+		<wipesPlants>true</wipesPlants>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+		<designatorDropdown>LarpahRugs</designatorDropdown>
+		<designationCategory>Floors</designationCategory>
+		
+		<graphicData>
+			<texPath>Building/Rug/LarpahRug</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<uiIconScale>0.7</uiIconScale>
+		
+		
+		<blocksAltitudes>
+			<li>FloorCoverings</li>
+		</blocksAltitudes>
+		
+		<selectable>true</selectable>
+		<useHitPoints>true</useHitPoints>
+    	<defaultPlacingRot>North</defaultPlacingRot>
+		<statBases>
+		    <Flammability>1.2</Flammability>
+			<WorkToMake>7000</WorkToMake>
+			<Beauty>7</Beauty>
+			<Mass>5</Mass>
+		</statBases>
+		
+		<researchPrerequisites>
+			<li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_LeatherTanning</li>
+		</researchPrerequisites>
+		
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		
+		<costList>
+			<DA_Leather_Larpah>50</DA_Leather_Larpah>
+			<DA_LarpahAntlers>1</DA_LarpahAntlers>
+		</costList>
+		
+		<size>(1,1)</size>
+	</ThingDef>
+	
+	<ThingDef ParentName="DA_LarpahRugBase">
+		<defName>DA_LarpahRugB</defName>
+		<label>white red-horned larpah rug (1x1)</label>
+		<graphicData>
+			<texPath>Building/Rug/LarpahRugB</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>DA_DrogRug</defName>
+		<label>northern drog rug (3x3)</label>
+		<description>A trophy marking the victory over a northern drog. This impressive rug is luxurious and exceptionally warm, but watch out for the tusks.</description>
+		<thingClass>Building</thingClass>
+		<wipesPlants>true</wipesPlants>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+		<designationCategory>Floors</designationCategory>
+		
+		<graphicData>
+			<texPath>Building/Rug/DrogRug</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5.2,5.2)</drawSize>
+			<drawOffset>(0,-5,0)</drawOffset>
+		</graphicData>
+		
+		
+		<blocksAltitudes>
+			<li>FloorCoverings</li>
+		</blocksAltitudes>
+		
+		<selectable>true</selectable>
+		<useHitPoints>true</useHitPoints>
+    	<defaultPlacingRot>North</defaultPlacingRot>
+		<pathCost>10</pathCost>
+		<statBases>
+			<WorkToMake>12000</WorkToMake>
+			<Beauty>20</Beauty>
+			<Mass>12</Mass>
+		</statBases>
+		
+		<researchPrerequisites>
+			<li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_LeatherTanning</li>
+		</researchPrerequisites>
+		
+		<building>
+			<isEdifice>false</isEdifice>
+		</building>
+		
+		<costList>
+			<DA_Leather_Drog>70</DA_Leather_Drog>
+			<DA_DrogTusk>2</DA_DrogTusk>
+		</costList>
+		
+		<size>(3,3)</size>
+	</ThingDef>
+
+</Defs>

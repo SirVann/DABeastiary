@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BuildingNaturalBase">
+		<defName>DA_TrollBurrow</defName>
+		<label>troll burrow</label>
+		<description>A large troll burrow that runs deep underground. Growling and scratching can be heard from within.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Building/Natural/TrollBurrow</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<drawSize>3.6</drawSize>
+		</graphicData>
+		<size>(2,2)</size>
+		<uiIconScale>0.65</uiIconScale>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<pathCost>42</pathCost>
+		<receivesSignals>true</receivesSignals>
+		<blockWind>true</blockWind>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<building>
+			<deconstructible>false</deconstructible>
+			<isEdifice>false</isEdifice>
+			<claimable>false</claimable>
+		</building>
+		<killedLeavings>
+			<DA_TrollMeat>120</DA_TrollMeat>
+		</killedLeavings>
+		<comps>
+			<li Class="CompProperties_CanBeDormant">
+				<startsDormant>true</startsDormant>
+				<canWakeUpFogged>false</canWakeUpFogged>
+			</li>
+			<li Class="Bestiary.CompProperties_BurrowSpawner">
+				<spawnablePawnKinds>
+					<li>DA_BeardedTroll</li>
+				</spawnablePawnKinds>
+				<lordJob>Bestiary.LordJob_TrollBurrow</lordJob>
+				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
+				<initialThreatScale>0.35</initialThreatScale>
+				<maxThreatScale>0.6</maxThreatScale>
+				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
+				<defendRadius>20</defendRadius>
+				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
+				<faction>DA_Troll</faction>
+			</li>
+			<li Class="CompProperties_SpawnerFilth">
+				<filthDef>DA_Filth_GnawedBones</filthDef>
+				<spawnCountOnSpawn>5</spawnCountOnSpawn>
+				<spawnMtbHours>500</spawnMtbHours>
+				<spawnRadius>5</spawnRadius>
+			</li>
+			<li Class="CompProperties_Spawner">
+				<thingToSpawn>DA_GnawedBones</thingToSpawn>
+				<spawnCount>1</spawnCount>
+				<spawnMaxAdjacent>1</spawnMaxAdjacent>
+			</li>
+			<li Class="CompProperties_WakeUpDormant"/>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal><!-- 60k ticks = 1 day, 10 hp per day -->
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<heatPerSecond>6</heatPerSecond>
+				<heatPushMaxTemperature>38</heatPushMaxTemperature>
+			</li>
+			<li Class="CompProperties_ProximityLetter">
+				<radius>8</radius>
+				<letterDef>NegativeEvent</letterDef>
+				<letterLabel>Troll burrow</letterLabel>
+				<letterText>{PAWN_nameDef} has noticed a large burrow nearby, most likely a troll nest.\n\nTrolls are voracious predators by nature and should be avoided.</letterText>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingNaturalBase">
+		<defName>DA_FreshTrollBurrow</defName>
+		<label>troll burrow</label>
+		<description>A large troll burrow that runs deep underground. Growling and scratching can be heard from within. This one is freshly dug.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Building/Natural/FreshBurrow</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<drawSize>3.6</drawSize>
+		</graphicData>
+		<size>(2,2)</size>
+		<uiIconScale>0.65</uiIconScale>
+		<altitudeLayer>Building</altitudeLayer>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<pathCost>42</pathCost>
+		<receivesSignals>true</receivesSignals>
+		<blockWind>true</blockWind>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<building>
+			<deconstructible>false</deconstructible>
+			<isEdifice>false</isEdifice>
+			<claimable>false</claimable>
+		</building>
+		<killedLeavings>
+			<DA_TrollMeat>120</DA_TrollMeat>
+		</killedLeavings>
+		<comps>
+			<li Class="CompProperties_CanBeDormant">
+				<startsDormant>false</startsDormant>
+				<canWakeUpFogged>false</canWakeUpFogged>
+			</li>
+			<li Class="Bestiary.CompProperties_BurrowSpawner">
+				<spawnablePawnKinds>
+					<li>DA_BeardedTroll</li>
+				</spawnablePawnKinds>
+				<lordJob>Bestiary.LordJob_TrollBurrow</lordJob>
+				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
+				<initialThreatScale>0.35</initialThreatScale>
+				<maxThreatScale>0.6</maxThreatScale>
+				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
+				<defendRadius>20</defendRadius>
+				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
+				<faction>DA_Troll</faction>
+			</li>
+			<li Class="CompProperties_WakeUpDormant"/>
+			<li Class="CompProperties_SelfhealHitpoints">
+				<ticksPerHeal>6000</ticksPerHeal><!-- 60k ticks = 1 day, 10 hp per day -->
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<heatPerSecond>6</heatPerSecond>
+				<heatPushMaxTemperature>38</heatPushMaxTemperature>
+			</li>
+		</comps>
+	</ThingDef>
+  
+	<ThingDef ParentName="BuildingBase">
+		<defName>DA_GnawedBones</defName>
+		<label>gnawed remains</label>
+		<description>Skeletal remains covered with teeth dents. Often signifying the presence of a nearby troll nest.</description>
+		<graphicData>
+			<texPath>Building/Natural/GnawedBones</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<drawSize>(1.3,1.3)</drawSize>
+		</graphicData>
+		<size>(1,1)</size>
+		<randomizeRotationOnSpawn>true</randomizeRotationOnSpawn>
+		<rotatable>true</rotatable>
+		<fillPercent>0.25</fillPercent>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+		</statBases>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<building>
+			<claimable>false</claimable>
+			<deconstructible>true</deconstructible>
+			<alwaysDeconstructible>true</alwaysDeconstructible>
+		</building>
+		<killedLeavings>
+			<DankPyon_Bone MayRequire="DankPyon.Medieval.Overhaul">5</DankPyon_Bone>
+		</killedLeavings>
+	</ThingDef>
+	
+  <ThingDef ParentName="BaseFilth">
+    <defName>DA_Filth_GnawedBones</defName>
+    <label>gnawed bones</label>
+    <graphicData>
+      <texPath>Filth/GnawedBones</texPath>
+    </graphicData>
+    <filth>
+      <rainWashes>true</rainWashes>
+      <cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+      <canFilthAttach>true</canFilthAttach>
+      <cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+    </filth>
+  </ThingDef>
+
+
+</Defs>

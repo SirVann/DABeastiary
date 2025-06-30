@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<BodyPartGroupDef>
+		<defName>DA_Sting</defName>
+		<label>stinger</label>
+	</BodyPartGroupDef>
+	
+	<BodyPartGroupDef>
+		<defName>DA_PincerPinch</defName>
+		<label>pincer</label>
+	</BodyPartGroupDef>
+	
+	
+</Defs>

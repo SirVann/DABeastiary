@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_NorthernDrog</defName>
+    <label>northern drog</label>
+    <description>The colossal northern cousin of the wild boar. The drog is a gigantic dendrovore that roams the colder regions of the world where it can be seen tearing down trees to feed on with it's massive tusks. Territorial by nature, it will not hesitate to crush anything that earns its ire.\n\nDespite its impressive size and strength, the drog is often hunted for it's thick fur and valuable tusks.</description>
+	<statBases>
+      <MoveSpeed>5.6</MoveSpeed>
+      <MarketValue>1750</MarketValue>
+      <ComfyTemperatureMin>-80</ComfyTemperatureMin>
+      <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <FilthRate>25</FilthRate>
+      <CaravanRidingSpeedFactor>1.5</CaravanRidingSpeedFactor>
+    </statBases>
+    <uiIconScale>2.25</uiIconScale>
+   
+   <tools>
+      <li>
+        <label>tusk</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>26</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>TuskAttackTool</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.6</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.5</chanceFactor>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>1</amount>
+			  <chance>0.5</chance>
+            </li>
+          </extraMeleeDamages>
+      </li>
+    
+	</tools>
+	
+   
+   <race>
+      <body>QuadrupedAnimalWithHoovesAndTusks</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>4.0</baseBodySize>
+      <baseHealthScale>9.0</baseHealthScale>
+      <baseHungerRate>1.1</baseHungerRate>
+      <foodType>DendrovoreAnimal</foodType>
+      <wildness>0.90</wildness>
+      <manhunterOnTameFailChance>0.40</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+	  <packAnimal>true</packAnimal>
+      <trainability>Advanced</trainability>
+      <useMeatFrom>Pig</useMeatFrom>
+      <leatherDef>DA_Leather_Drog</leatherDef>
+	  
+	<wildBiomes>
+     <Tundra>0.15</Tundra>
+	 <ColdBog>0.1</ColdBog>
+	 <BorealForest>0.25</BorealForest>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
+	</wildBiomes>
+	  
+      <willNeverEat>
+        <li MayRequire="Ludeon.RimWorld.Royalty">Plant_TreeAnima</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Plant_TreeGauranlen</li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">Plant_TreePolux</li>
+        <li MayRequire="Ludeon.RimWorld.Anomaly">Plant_TreeHarbinger</li>
+      </willNeverEat>
+     
+	 <gestationPeriodDays>12</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      
+	  <lifeExpectancy>100</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.65</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>1.332</minAge>
+          <soundWounded>Pawn_Wildboar_Wounded</soundWounded>
+          <soundDeath>Pawn_Wildboar_Death</soundDeath>
+          <soundCall>Pawn_Wildboar_Call</soundCall>
+          <soundAngry>Pawn_Wildboar_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+	
+    <butcherProducts>
+	   <DA_GiantBone>15</DA_GiantBone>
+	</butcherProducts>
+
+    
+    <tradeTags>
+      <li>AnimalExotic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_NorthernDrog</defName>
+    <label>northern drog</label>
+    <race>DA_NorthernDrog</race>
+    <combatPower>350</combatPower>
+    <ecoSystemWeight>1.4</ecoSystemWeight>
+    <wildGroupSize>1~2</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+	    <label>drog shaunt</label>
+        <labelPlural>drog shaunts</labelPlural>
+        <bodyGraphicData>
+          <texPath>Animal/NorthernDrog/DrogShaunt</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/NorthernDrog/DrogShaunt_dessicated</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrog</texPath>
+          <drawSize>2.5</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrog_dessicated</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+		<femaleGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrogFemale</texPath>
+          <drawSize>2.5</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </femaleGraphicData>
+        <femaleDessicatedBodyGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrogFemale_dessicated</texPath>
+          <drawSize>2.5</drawSize>
+        </femaleDessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrog</texPath>
+          <drawSize>4.5</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrog_dessicated</texPath>
+          <drawSize>4.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+		<femaleGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrogFemale</texPath>
+          <drawSize>4</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </femaleGraphicData>
+        <femaleDessicatedBodyGraphicData>
+          <texPath>Animal/NorthernDrog/NorthernDrogFemale_dessicated</texPath>
+          <drawSize>4</drawSize>
+        </femaleDessicatedBodyGraphicData>
+		
+		
+        <butcherBodyPart>
+          <bodyPartGroup>TuskAttackTool</bodyPartGroup>
+          <thing>DA_DrogTusk</thing>
+		  <allowFemale>false</allowFemale>
+        </butcherBodyPart> 
+      </li>
+	  
+    </lifeStages>
+    <modExtensions>
+      <li Class="Bestiary.ProductByBodySize">
+        <products> <!--The products list in the race determines the base amounts, while this list determines which ones to multiply by body size-->
+          <li>DA_GiantBone</li>
+        </products>
+      </li>
+    </modExtensions>
+
+  </PawnKindDef>
+
+
+</Defs>

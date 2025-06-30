@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_RedhornedLarpah</defName>
+    <label>red-horned larpah</label>
+    <description>An elusive and deceitful creature, the red-horned larpah is a large leporidae with tall brown antlers protruding from it's head. While it may look gentle, larpah's apperence bellies its predatory, fierce nature. As they grow older, a thick layer of dried blood from past battles coats their horns, earning them the moniker of "red-horned".\n\nDeadly and tough for its size, its aggressiveness rarely discourages hunters from trying their luck at slaying the beast for its durable pelt and valuable antlers, which can be turned into a powerful mixture.</description>
+	<statBases>
+      <MoveSpeed>6.5</MoveSpeed>
+      <MarketValue>850</MarketValue>
+	  <MeleeDodgeChance>15</MeleeDodgeChance>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+    </statBases>
+	
+   
+    <tools>
+	  <li>
+        <label>horn</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+      </li>
+	  
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
+	
+   
+   <race>
+      <body>DA_QuadrupedAnimalWithPawsAndHorn</body>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>6</baseHealthScale>
+      <baseHungerRate>0.4</baseHungerRate>
+      <foodType>CarnivoreAnimalStrict, OmnivoreAnimal, OvivoreAnimal</foodType>
+      <wildness>0.99</wildness>
+	  <roamMtbDays>2</roamMtbDays>
+	  <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+	  <packAnimal>false</packAnimal>
+      <trainability>Intermediate</trainability>
+      <useMeatFrom>Hare</useMeatFrom>
+      <leatherDef>DA_Leather_Larpah</leatherDef>
+	  
+	<wildBiomes>
+     <Tundra>0.01</Tundra>
+	 <ColdBog>0.005</ColdBog>
+	 <BorealForest>0.01</BorealForest>
+	 <TemperateForest>0.01</TemperateForest>
+	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.05</DankPyon_DarkForest>
+	 <ZBiome_AlpineMeadow MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_AlpineMeadow>
+	 <ZBiome_CloudForest MayRequire="zylle.MoreVanillaBiomes">0.01</ZBiome_CloudForest>
+	 <ZBiome_Grasslands MayRequire="zylle.MoreVanillaBiomes">0.01</ZBiome_Grasslands>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.005</ZBiome_GlacialShield>
+	</wildBiomes>
+	  
+     
+	 <gestationPeriodDays>12</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(1.0, 0)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 1)</li>
+          <li>(2.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      
+	  <lifeExpectancy>40</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.30</minAge>
+          <soundWounded>Pawn_Hare_Wounded</soundWounded>
+          <soundDeath>Pawn_Hare_Death</soundDeath>
+          <soundCall>Pawn_Hare_Call</soundCall>
+          <soundAngry>Pawn_Hare_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>PredatorLarge_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+	
+    <comps>
+      <li Class="Bestiary.CompProperties_AlternateGraphics">   <!-- Comp which lets you apply alternate graphics to lifestages -->
+        <alternateGraphics>
+          <li>
+  <!-- Lifestage 1 -->
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenB</texPath>
+            </li>
+          </li>
+  <!-- Lifestage 2 -->
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
+            </li>
+          </li>
+  <!-- Lifestage 3 -->
+          <li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+            </li>
+            <li>
+              <texPath>Animal/RedhornedLarpah/RedhornedLarpahB</texPath>
+            </li>
+          </li>
+        </alternateGraphics>
+      </li>
+    </comps>
+
+  
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_RedhornedLarpah</defName>
+    <label>red-horned larpah</label>
+    <race>DA_RedhornedLarpah</race>
+    <combatPower>350</combatPower>
+    <ecoSystemWeight>0.6</ecoSystemWeight>
+	<canArriveManhunter>false</canArriveManhunter>
+		
+    <lifeStages>
+	
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/RedhornedLarpah/RedhornedLarpahKittenA</texPath>
+          <drawSize>0.8</drawSize>
+          <shadowData>
+            <volume>(0.30, 0.25, 0.20)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/RedhornedLarpah/RedhornedLarpahKitten_dessicated</texPath>
+          <drawSize>0.8</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+          <drawSize>1.3</drawSize>
+          <shadowData>
+            <volume>(0.375, 0.375, 0.375)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/RedhornedLarpah/RedhornedLarpah_dessicated</texPath>
+          <drawSize>1.3</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/RedhornedLarpah/RedhornedLarpahA</texPath>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.5, 0.4)</volume>
+            <offset>(0,0,-0.05)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/RedhornedLarpah/RedhornedLarpah_dessicated</texPath>
+          <drawSize>1.6</drawSize>
+        </dessicatedBodyGraphicData>
+		
+		
+        <butcherBodyPart>
+          <bodyPartGroup>HornAttackTool</bodyPartGroup>
+          <thing>DA_LarpahAntlers</thing>
+		  <allowFemale>false</allowFemale>
+        </butcherBodyPart> 
+		
+		  </li>
+		
+    </lifeStages>
+  </PawnKindDef>
+  
+   <!-- Drug and hediff -->
+  
+  
+  <ThingDef ParentName="DrugBase">
+    <defName>DA_ScarletScent</defName>
+    <label>scarlet scent</label>
+    <description>A red mixture of bone marrow extracted from the antlers of a larpah and several herbs. It is consumed by burning the concoction and inhaling the fumes, which drastically increase one's abilities and strength.\n\nWhile the powerful drug is non-addictive, it can lead to a uncontrollable frenzy.</description>
+
+    <graphicData>
+      <texPath>Item/Drug/ScarletScent</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+	
+    <statBases>
+	  <MarketValue>55</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+	<stackLimit>20</stackLimit>
+    <techLevel>Neolithic</techLevel>
+	
+    <ingestible>
+      <ingestSound>Ingest_Smoke</ingestSound>
+      <ingestEffect>DA_Smoke_ScarletScent</ingestEffect>
+      <foodType>Processed</foodType>
+	  <baseIngestTicks>90</baseIngestTicks>
+      <nurseable>true</nurseable>
+      <drugCategory>Hard</drugCategory>
+	  <chairSearchRadius>0</chairSearchRadius>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Inhale {0}</ingestCommandString>
+      <ingestReportString>Inhaling {0}.</ingestReportString>
+	  
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DA_ScarletScentHigh</hediffDef>
+          <severity>1.3</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+		<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+	
+  </ThingDef>
+
+  <HediffDef>
+    <defName>DA_ScarletScentHigh</defName>
+    <label>scarlet fumes</label>
+    <description>Inhaled fumes from the red mix known as scarlet scent. Greatly increase one's combat capabilities, while possibly entering a blood fueled frenzy.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(153, 49, 49)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>2</maxSeverity>
+    <isBad>false</isBad>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-5</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+	  
+    </comps>
+      <stages>
+        <li>
+          <painFactor>0.5</painFactor>
+          <totalBleedFactor>0.95</totalBleedFactor>
+          <capMods>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>0.25</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.30</offset>
+            </li>
+          </capMods>
+		  
+              <mentalStateGivers>
+                <li>
+                  <mentalState>Berserk</mentalState>
+                  <mtbDays>20</mtbDays>
+                </li>
+              </mentalStateGivers>
+        </li>
+		
+        <li>
+		  <minSeverity>1</minSeverity>
+		  <label>Raging</label>
+          <painFactor>0.3</painFactor>
+          <totalBleedFactor>0.8</totalBleedFactor>
+          <statFactors>
+             <MeleeDamageFactor>1.1</MeleeDamageFactor>
+	         <IncomingDamageFactor>0.8</IncomingDamageFactor>
+          </statFactors>
+          <capMods>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>0.25</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.40</offset>
+            </li>
+          </capMods>
+		  
+              <mentalStateGivers>
+                <li>
+                  <mentalState>Berserk</mentalState>
+                  <mtbDays>10</mtbDays>
+                </li>
+              </mentalStateGivers>
+        </li>
+		
+        <li>
+		  <minSeverity>1.5</minSeverity>
+		  <label>Blood frenzy</label>
+          <painFactor>0.2</painFactor>
+          <totalBleedFactor>0.6</totalBleedFactor>
+          <statFactors>
+             <MeleeDamageFactor>1.3</MeleeDamageFactor>
+	         <IncomingDamageFactor>0.6</IncomingDamageFactor>
+          </statFactors>
+          <capMods>
+            <li>
+              <capacity>Sight</capacity>
+              <offset>0.45</offset>
+            </li>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.50</offset>
+            </li>
+          </capMods>
+		  
+              <mentalStateGivers>
+                <li>
+                  <mentalState>Berserk</mentalState>
+                </li>
+              </mentalStateGivers>
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <ThoughtDef>
+    <defName>DA_ScarletScentHigh</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>DA_ScarletScentHigh</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <label>clouded by the scarlet fumes</label>
+        <description>I feel my own blood boiling, i feel powerful.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Motes and effects -->
+  
+    <ThingDef ParentName="MoteBase">
+    <defName>DA_Mote_RedFumes</defName>
+    <thingClass>MoteThrown</thingClass>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <color>(153, 49, 49)</color>	  
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.25</fadeInTime>
+      <solidTime>2.75</solidTime>
+      <fadeOutTime>4.7</fadeOutTime>
+      <growthRate>0.47</growthRate>
+      <acceleration>(0,0,0.0014)</acceleration>
+    </mote>	
+  </ThingDef>
+  
+    <EffecterDef>
+    <defName>DA_Smoke_ScarletScent</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>DA_Mote_RedFumes</moteDef>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <scale>0.35~0.45</scale>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.18~0.3</speed>
+      </li>
+    </children>
+  </EffecterDef>
+  
+    <!-- Recipe -->
+  
+      <RecipeDef>
+    <defName>DA_Make_ScarletScent</defName>
+    <label>Mixing scarlet scent</label>
+    <description>Extract the bone marrow of a pair of larpah antlers and mix it with various herbs in order to create scarlet scent, a potent battle drug.</description>
+    <jobString>Mixing scarlet scent</jobString>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+	<unfinishedThingDef>DA_UnfinishedScarlentScent</unfinishedThingDef>
+    <workAmount>5,000</workAmount>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <targetCountAdjustment>50</targetCountAdjustment>
+	
+    <recipeUsers>
+      <li>CraftingSpot</li>
+	  <li>DrugLab</li>
+	  <li MayRequire="oskarpotocki.vfe.medieval2">VFEM2_AlchemicalWorkbench</li>
+      <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_AlchemyBench</li>
+    </recipeUsers>
+	
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DA_LarpahAntlers</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineHerbal</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>PsychoidLeaves</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DA_LarpahAntlers</li>
+		<li>MedicineHerbal</li>
+		<li>PsychoidLeaves</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+	
+    <products>
+      <DA_ScarletScent>20</DA_ScarletScent>
+    </products>
+	
+    <skillRequirements>
+		<Intellectual>6</Intellectual>
+	</skillRequirements>
+	
+    <workSkill>Intellectual</workSkill>
+    <displayPriority>0</displayPriority>
+  </RecipeDef>
+  
+    <ThingDef ParentName="UnfinishedBase">
+    <defName>DA_UnfinishedScarlentScent</defName>
+    <label>unfinished scarlet scent</label>
+    <description>Unfinished scarlet scent that is still in the mixing process.</description>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Item/Drug/ScarletScent/ScarletScent_b</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+</Defs>

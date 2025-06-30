@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_Goldilox</defName>
+    <label>goldilox</label>
+    <description>Tales are told of a gleaming giant gilding the very earth it walks upon, making a king out of the poorest serf with the treasure left in its wake. Many such myths surround the fabled goldilox, a legendary beast who roams the world. While peaceful by nature, goldilox is a fierce defender, trampling any who incur its wrath beneath golden hooves.\n\nThe few who ever managed to tame the beast were rewarded with a rich and creamy milk, and its glistening wool rumored to be made out of genuine gold.</description>
+	<statBases>
+      <MoveSpeed>5.5</MoveSpeed>
+	  <RoyalFavorValue>6</RoyalFavorValue>
+      <MarketValue>6450</MarketValue>
+      <ComfyTemperatureMin>-65</ComfyTemperatureMin>
+      <ComfyTemperatureMax>50</ComfyTemperatureMax>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <FilthRate>15</FilthRate>
+      <CaravanRidingSpeedFactor>1.3</CaravanRidingSpeedFactor>
+    </statBases>
+    <uiIconScale>1.6</uiIconScale>
+   
+    <comps>
+      <li Class="CompProperties_Shearable">
+        <woolDef>DA_WoolGoldilox</woolDef>
+        <shearIntervalDays>45</shearIntervalDays>
+        <woolAmount>80</woolAmount>
+      </li>
+	  
+      <li Class="CompProperties_Milkable">
+        <milkDef>DA_RegalMilk</milkDef>
+        <milkIntervalDays>12</milkIntervalDays>
+        <milkAmount>6</milkAmount>
+      </li>
+    </comps>
+   
+   <tools>
+      <li>
+        <label>horn</label>
+        <capacities>
+          <li>Scratch</li>
+          <li>Stab</li>
+        </capacities>
+        <power>24</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+      </li>
+	  
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.6</chanceFactor>
+      </li>
+	  
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.5</chanceFactor>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>1</amount>
+			  <chance>0.5</chance>
+            </li>
+          </extraMeleeDamages>
+      </li>
+    
+	</tools>
+	
+   
+   <race>
+      <body>QuadrupedAnimalWithHoovesAndHorn</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>4.0</baseBodySize>
+      <baseHealthScale>8.0</baseHealthScale>
+      <baseHungerRate>1.6</baseHungerRate>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <wildness>0.84</wildness>
+      <manhunterOnTameFailChance>0.10</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.6</manhunterOnDamageChance>
+      <trainability>Advanced</trainability>
+      <leatherDef>Leather_Plain</leatherDef>
+	  
+	<wildBiomes>
+	 <TemperateGuldenForest MayRequire="pphhyy.GuldenNew">0.3</TemperateGuldenForest>
+	</wildBiomes>
+     
+	 <gestationPeriodDays>15</gestationPeriodDays>
+      
+	  <lifeExpectancy>150</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.75</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>1.332</minAge>
+          <soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+          <soundDeath>Pawn_Muffalo_Death</soundDeath>
+          <soundCall>Pawn_Muffalo_Call</soundCall>
+          <soundAngry>Pawn_Muffalo_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+
+    
+    <tradeTags>
+      <li>AnimalExotic</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_Goldilox</defName>
+    <label>goldilox</label>
+    <race>DA_Goldilox</race>
+    <combatPower>250</combatPower>
+    <ecoSystemWeight>1</ecoSystemWeight>
+    <wildGroupSize>1~2</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+	    <label>goldilox calf</label>
+        <labelPlural>goldilox calves</labelPlural>
+        <bodyGraphicData>
+          <texPath>Animal/Goldilox/GoldiloxCalf</texPath>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Goldilox/GoldiloxCalf_dessicated</texPath>
+          <drawSize>1.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Goldilox/Goldilox</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Goldilox/Goldilox_dessicated</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Goldilox/Goldilox</texPath>
+          <drawSize>3.5</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Goldilox/Goldilox_dessicated</texPath>
+          <drawSize>3.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+        <butcherBodyPart>
+          <bodyPartGroup>HornAttackTool</bodyPartGroup>
+          <thing>DA_GoldiloxHorn</thing>
+		  <allowFemale>true</allowFemale>
+        </butcherBodyPart> 
+      </li>
+	  
+    </lifeStages>
+
+  </PawnKindDef>
+  
+  <!-- Milk -->
+  
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>DA_RegalMilk</defName>
+    <label>regal milk</label>
+    <description>The rich and creamy milk of a goldilox. While it taste better raw, it still maintain some of its flavors when cooked.</description>
+	
+    <graphicData>
+      <texPath>Item/RegalMilk</texPath>
+	  <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+	
+    <statBases>
+      <MarketValue>7</MarketValue>
+      <Mass>0.045</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <Nutrition>0.08</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.01</FoodPoisonChanceFixedHuman>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>8</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+	  
+      <li Class="CompProperties_Drug">
+        <chemical>DA_RegalMilk</chemical>
+        <addictiveness>0.010</addictiveness>
+        <minToleranceToAddict>0.15</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.1</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>30</listOrder>
+      </li>
+    </comps>
+	
+    <ingestible>
+	
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DA_MilkTolerance</hediffDef>
+          <toleranceChemical>DA_RegalMilk</toleranceChemical>
+          <severity>0.042</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+	
+      <joy>0.1</joy>
+      <joyKind>Gluttonous</joyKind>
+      <preferability>MealFine</preferability>
+	  <tasteThought>DA_DrankRegalMilk</tasteThought>
+	  <lowPriorityCaravanFood>true</lowPriorityCaravanFood>
+	  <specialThoughtAsIngredient>DA_CookedRegalMilk</specialThoughtAsIngredient>
+      <foodType>AnimalProduct, Fluid</foodType>
+      <babiesCanIngest>true</babiesCanIngest>
+    </ingestible>
+	
+	
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+	  <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Milk</li>
+    </thingCategories>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+  
+  <ThoughtDef>
+    <defName>DA_DrankRegalMilk</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>drank regal milk</label>
+        <description>I drank exquisite milk. The slight buttery notes and creamy texture were amazing.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>DA_CookedRegalMilk</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>ate cooked regal milk</label>
+        <description>I ate a meal containing regal milk, it really elevated the savors.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Raw Milk Addiction -->
+
+  <ChemicalDef>
+    <defName>DA_RegalMilk</defName>
+    <label>regal milk</label>
+    <addictionHediff>DA_MilkAddiction</addictionHediff>
+    <toleranceHediff>DA_MilkTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <generateAddictionGenes>false</generateAddictionGenes>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>DA_Chemical_Milk</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>regal milk</label>
+    <description>Because of a regal milk addiction, this person needs to regularly consume regal milk to avoid withdrawal symptoms.</description>
+    <listPriority>20</listPriority>
+  </NeedDef>
+  
+  <HediffDef>
+    <defName>DA_MilkTolerance</defName>
+    <label>milk tolerance</label>
+    <description>shouldn't see that</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>false</isBad>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.020</severityPerDay>
+      </li>
+      <li Class="HediffCompProperties_DrugEffectFactor">
+        <chemical>DA_RegalMilk</chemical>
+      </li>
+    </comps>
+	
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+		<becomeVisible>False</becomeVisible>
+        <label>small</label>
+      </li>
+      <li>
+        <minSeverity>0.50</minSeverity>
+		<becomeVisible>False</becomeVisible>
+        <label>large</label>
+      </li>
+      <li>
+        <minSeverity>0.80</minSeverity>
+		<becomeVisible>False</becomeVisible>
+        <label>massive</label>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddictionBase">
+    <defName>DA_MilkAddiction</defName>
+    <label>regal milk addiction</label>
+    <description>A psychological addiction to regal milk. Because of its exquisite taste the brain cannot function without it.
+\nWithout regular doses of regal milk, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <causesNeed>DA_Chemical_Milk</causesNeed>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+        <showDaysToRecover>true</showDaysToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+      </li>
+      <li>
+        <label>withdrawal</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>DA_MilkWithdrawal</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>DA_MilkAddiction</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <stages>
+      <li>
+        <visible>false</visible>
+      </li>
+      <li>
+        <label>milk withdrawal</label>
+        <description>Everything is tasteless, i desire nothing more than a drop of regal milk.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+
+</Defs>

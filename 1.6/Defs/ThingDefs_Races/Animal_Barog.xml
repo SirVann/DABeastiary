@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_Barog</defName>
+    <label>barogoth</label>
+    <description>A large herbivorous amphibian that thrives in humid environments. Barogoth are often found near swamps and wetlands, where they will mate and lay eggs for the great majority of their lives. Quite docile when tamed, they are regularly used as pack animals.\n\nBarogoth secrete a thick oily liquid that can be collected and used as a medicinal ointment. While applied on the body, it increase one's recovery against diseases and physical traumas.</description>
+	<statBases>
+      <MoveSpeed>4</MoveSpeed>
+      <MarketValue>340</MarketValue>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <ComfyTemperatureMax>45</ComfyTemperatureMax>
+      <FilthRate>16</FilthRate>
+    </statBases>
+    <uiIconScale>1.5</uiIconScale>
+	
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>EggBarogUnfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>EggBarogFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>2</eggFertilizationCountMax>
+        <eggLayIntervalDays>10</eggLayIntervalDays>
+        <eggCountRange>1~2</eggCountRange>
+      </li>
+	  
+	  <li Class="AnimalBehaviours.CompProperties_AnimalProduct">
+		 <resourceDef>DA_BarogOil</resourceDef>
+		 <gatheringIntervalDays>10</gatheringIntervalDays>
+		 <resourceAmount>5</resourceAmount>
+		 <customResourceString>DA_BarogOil</customResourceString>
+	  </li>
+	  
+    </comps>
+   
+    <tools>
+	
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>13</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+	  
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+      </li>
+	  
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+      </li>
+	  
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
+	
+   
+   <race>
+      <body>QuadrupedAnimalWithClawsTailAndJowl</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>2.4</baseBodySize>
+      <baseHealthScale>1.75</baseHealthScale>
+      <baseHungerRate>0.535</baseHungerRate>
+      <roamMtbDays>2</roamMtbDays>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <wildness>0.55</wildness>
+      <manhunterOnDamageChance>0.1</manhunterOnDamageChance>
+	  <packAnimal>true</packAnimal>
+      <trainability>None</trainability>
+      <leatherDef>DA_Leather_Barog</leatherDef>
+	  
+	<wildBiomes>
+     <TropicalSwamp>0.5</TropicalSwamp>
+	 <ColdBog>0.1</ColdBog>
+	 <TemperateSwamp>0.5</TemperateSwamp>
+	 <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.5</ZBiome_Marsh>
+	</wildBiomes>
+
+      
+	  <lifeExpectancy>22</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3333</minAge>
+          <soundWounded>DA_Pawn_Barog_Wounded</soundWounded>
+          <soundDeath>DA_Pawn_Barog_Death</soundDeath>
+          <soundAngry>DA_Pawn_Barog_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+	
+    <butcherProducts>
+	   <DA_GiantBone>15</DA_GiantBone>
+	</butcherProducts>
+
+    
+    <tradeTags>
+      <li>AnimalCommon</li>
+      <li>AnimalFarm</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_Barog</defName>
+    <label>barogoth</label>
+    <race>DA_Barog</race>
+    <combatPower>100</combatPower>
+    <ecoSystemWeight>1.1</ecoSystemWeight>
+    <wildGroupSize>3~5</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+	    <label>barogoth newt</label>
+        <labelPlural>barogoth newts</labelPlural>
+        <bodyGraphicData>
+          <texPath>Animal/Barog/BarogNewt</texPath>
+          <drawSize>1.3</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Barog/BarogNewt_dessicated</texPath>
+          <drawSize>1.3</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Barog/Barog</texPath>
+          <drawSize>2.25</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Barog/Barog_dessicated</texPath>
+          <drawSize>2.25</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Barog/Barog</texPath>
+          <drawSize>2.7</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Barog/Barog_dessicated</texPath>
+          <drawSize>2.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+    </lifeStages>
+
+  </PawnKindDef>
+  
+  	  <!--=============== Oil ================-->
+  
+  <ThingDef ParentName="DrugBase">
+    <defName>DA_BarogOil</defName>
+    <label>barogoth oil</label>
+    <description>The potent oil extracted from a barogoth, it is often applied on the body to help the body recover from various diseases and traumas.</description>
+
+    <graphicData>
+      <texPath>Item/BarogothOil</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+	
+    <statBases>
+	  <MarketValue>10</MarketValue>
+      <Mass>0.05</Mass>
+      <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+    <techLevel>Medieval</techLevel>
+	
+    <ingestible>
+      <foodType>Fluid</foodType>
+      <nurseable>true</nurseable>
+      <drugCategory>Medical</drugCategory>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestHoldUsesTable>false</ingestHoldUsesTable>
+      <ingestCommandString>Apply {0}</ingestCommandString>
+      <ingestReportString>Applying {0}.</ingestReportString>
+	  
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>DA_RapidRecovery</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>0.08~0.14</overdoseSeverityOffset>
+      </li>
+    </comps>
+	
+  </ThingDef>
+  
+  <HediffDef>
+    <defName>DA_RapidRecovery</defName>
+    <label>barogoth oil</label>
+    <description>Barogoth oil applied on the body, it helps the body recover from injuries and diseases quicker.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(111,142,117)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <statFactors>
+		    <ImmunityGainSpeed>1.1</ImmunityGainSpeed>
+            <InjuryHealingFactor>1.2</InjuryHealingFactor>
+          </statFactors>
+        </li>
+      </stages>
+  </HediffDef>
+
+  	  <!--=============== Eggs ================-->
+	  
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggBarogUnfertilized</defName>
+    <label>barogoth egg (unfert.)</label>
+    <description>The unfertilized egg of a barogoth. It can be eaten raw, but it's much, much better cooked.</description>
+	
+    <graphicData>
+	  <texPath>Item/AmphibianEgg</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+      <MarketValue>10</MarketValue>
+    </statBases>
+	
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggBarogFertilized</defName>
+    <label>barogoth egg (fert.)</label>
+    <description>A fertilized barogoth egg. If all goes well, it should hatch into a barogoth newt. It can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/AmphibianEgg</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>0.5</Nutrition>
+      <MarketValue>12</MarketValue>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>10</hatcherDaystoHatch>
+        <hatcherPawn>DA_Barog</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

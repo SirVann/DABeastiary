@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="DA_BaseTaraal">
+	<statBases>
+      <MoveSpeed>5.6</MoveSpeed>
+      <MarketValue>800</MarketValue>
+      <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+    </statBases>
+	
+    <uiIconScale>1.5</uiIconScale>
+   
+    <tools>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+	  
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+	  
+      <li>
+	    <label>beak</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>23.6</power>
+        <cooldownTime>2.6</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+	  
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>17</power>
+        <cooldownTime>2.2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+	  
+    </tools>
+	
+   
+   <race>
+      <body>QuadrupedAnimalWithPaws</body>
+      <predator>true</predator>
+      <maxPreyBodySize>3</maxPreyBodySize>
+      <baseBodySize>2.5</baseBodySize>
+      <baseHealthScale>3.0</baseHealthScale>
+      <baseHungerRate>0.5</baseHungerRate>
+      <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+      <wildness>0.80</wildness>
+      <manhunterOnTameFailChance>0.40</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0.70</manhunterOnDamageChance>
+      <trainability>Advanced</trainability>
+      <leatherDef>Leather_Bear</leatherDef>
+	  
+     
+	 <gestationPeriodDays>15</gestationPeriodDays>
+
+      
+	  <lifeExpectancy>30</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.3</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.6</minAge>
+          <soundWounded>Pawn_Bear_Injured</soundWounded>
+          <soundDeath>Pawn_Bear_Death</soundDeath>
+          <soundCall>Pawn_Bear_Call</soundCall>
+          <soundAngry>Pawn_Bear_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>PredatorLarge_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+
+    
+    <tradeTags>
+      <li>AnimalUncommon</li>
+      <li>AnimalFighter</li>
+    </tradeTags>
+  
+  </ThingDef>
+  
+  <PawnKindDef Abstract="True" ParentName="AnimalKindBase" Name="DA_TaraalBase">
+    <combatPower>200</combatPower>
+    <ecoSystemWeight>0.6</ecoSystemWeight>
+  </PawnKindDef>
+  
+ <ThingDef ParentName="DA_BaseTaraal">
+    <defName>DA_Taraal</defName>
+    <label>taraal</label>
+    <description>The taraal, also known as great land owl is a huge omnivorous bird that dwells in the many forests of the world. They primarily eat fish, and can be often seen near rivers and lakes in search of their favourite prey. In its absence, the taraal will not hesitate to use its immense, bear-like strength to hunt live prey instead..\n\nWhen the wind grows cold and the first snows begin, taraals leave their forests to seek shelter in the mountains where they will hibernate.</description>
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>EggTaraalUnfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>EggTaraalFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>10</eggLayIntervalDays>
+        <eggCountRange>1</eggCountRange>
+      </li>
+    </comps>
+	
+	<race>
+	<wildBiomes>
+     <TemperateForest>0.2</TemperateForest>
+	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.2</DankPyon_DarkForest>
+	 <Tundra>0.1</Tundra>
+	 <ColdBog>0.06</ColdBog>
+	 <BorealForest>0.08</BorealForest>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_GlacialShield>
+	</wildBiomes>
+	</race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="DA_TaraalBase">
+    <defName>DA_Taraal</defName>
+    <label>taraal</label>
+    <race>DA_Taraal</race>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+	
+      <li>
+	    <label>cub</label>
+        <bodyGraphicData>
+          <texPath>Animal/Taraal/TaraalCub</texPath>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Taraal/TaraalCub_dessicated</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Taraal/Taraal</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Taraal/Taraal_dessicated</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Taraal/Taraal</texPath>
+          <drawSize>2.5</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Taraal/Taraal_dessicated</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+    </lifeStages>
+  </PawnKindDef>
+  
+ <ThingDef ParentName="DA_BaseTaraal">
+    <defName>DA_SnowTaraal</defName>
+    <label>snow taraal</label>
+    <description>A cousin of the common taraal adapted to frozen climates. They wander in the frigid wastelands in search of carcasses from animals taken by the frost and snow hares for the majority of the year.\n\nWhen the wind grows colder and the snow thickens, the snow taraals leave the northern ices to seek shelter in the mountains where they will hibernate.</description>
+    <statBases>
+      <ComfyTemperatureMin>-60</ComfyTemperatureMin>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EggLayer">
+        <eggUnfertilizedDef>EggSnowTaraalUnfertilized</eggUnfertilizedDef>
+        <eggFertilizedDef>EggSnowTaraalFertilized</eggFertilizedDef>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>10</eggLayIntervalDays>
+        <eggCountRange>1</eggCountRange>
+      </li>
+    </comps>
+	
+	<race>
+	<wildBiomes>
+     <Tundra>0.1</Tundra>
+	 <SeaIce>0.15</SeaIce>
+	  <IceSheet>0.15</IceSheet>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.25</ZBiome_GlacialShield>
+	</wildBiomes>
+	</race>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="DA_TaraalBase">
+    <defName>DA_SnowTaraal</defName>
+    <label>snow taraal</label>
+    <race>DA_SnowTaraal</race>
+    <canArriveManhunter>false</canArriveManhunter>
+    <lifeStages>
+	
+      <li>
+	    <label>cub</label>
+        <bodyGraphicData>
+          <texPath>Animal/Taraal/SnowTaraalCub</texPath>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Taraal/TaraalCub_dessicated</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Taraal/SnowTaraal</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Taraal/Taraal_dessicated</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/Taraal/SnowTaraal</texPath>
+          <drawSize>2.5</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/Taraal/Taraal_dessicated</texPath>
+          <drawSize>2.5</drawSize>
+        </dessicatedBodyGraphicData>
+		
+      </li>
+	  
+    </lifeStages>
+  </PawnKindDef>
+ 
+	  <!--=============== Taraal Egg ================-->
+	  
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggTaraalUnfertilized</defName>
+    <label>taraal egg (unfert.)</label>
+    <description>A large and heavy taraal egg. It is very nutritious and can be eaten raw, but it's much, much better cooked.</description>
+	
+    <graphicData>
+	  <texPath>Item/TaraalEgg</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>1.3</Nutrition>
+      <MarketValue>80</MarketValue>
+	  <Flammability>1</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+	
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggTaraalFertilized</defName>
+    <label>taraal egg (fert.)</label>
+    <description>A fertilized taraal egg. If all goes well, it should hatch into a taraal cub. It is very nutritious and can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/TaraalEgg</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>1.3</Nutrition>
+      <MarketValue>100</MarketValue>
+	  <Flammability>1</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>10</hatcherDaystoHatch>
+        <hatcherPawn>DA_Taraal</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!--=============== Snow Taraal Egg ================-->
+  
+  <ThingDef ParentName="EggUnfertBase">
+    <defName>EggSnowTaraalUnfertilized</defName>
+    <label>snow taraal (unfert.)</label>
+    <description>A large and heavy taraal egg. It is very nutritious and can be eaten raw, but it's much, much better cooked.</description>
+	
+    <graphicData>
+	  <texPath>Item/TaraalEgg</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>1.3</Nutrition>
+      <MarketValue>80</MarketValue>
+	  <Flammability>1</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+	
+  </ThingDef>
+
+  <ThingDef ParentName="EggFertBase">
+    <defName>EggSnowTaraalFertilized</defName>
+    <label>snow taraal egg (fert.)</label>
+    <description>A fertilized taraal egg. If all goes well, it should hatch into a taraal cub. It is very nutritious and can be eaten raw, but it's much better cooked.</description>
+    <possessionCount>1</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/TaraalEgg</texPath>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <Nutrition>1.3</Nutrition>
+      <MarketValue>100</MarketValue>
+	  <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Hatcher">
+        <hatcherDaystoHatch>10</hatcherDaystoHatch>
+        <hatcherPawn>DA_SnowTaraal</hatcherPawn>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+</Defs>

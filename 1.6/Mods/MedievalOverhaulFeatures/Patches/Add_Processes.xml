@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DankPyon_Presser"]/comps/li[2]/processes</xpath>
+		<value>
+			<li>DA_PressGoldfortProcess</li>
+		</value>
+	</Operation>
+	
+		<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DankPyon_Presser"]/comps/li[2]/processes</xpath>
+		<value>
+			<li>DA_PressMufftonCheeseProcess</li>
+		</value>
+	</Operation>
+  
+</Patch>

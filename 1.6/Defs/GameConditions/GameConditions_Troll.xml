@@ -1,0 +1,35 @@
+<Defs>
+  <GameConditionDef>
+    <defName>DA_TrollOutbreak</defName>
+    <label>pale scourge</label>
+    <conditionClass>Bestiary.GameCondition_TrollOutbreak</conditionClass>
+    <description>The area is suffering the effects of a troll outbreak.</description>
+    <descriptionFuture>a troll outbreak has been detected in the region surrounding [map_definite], potentially causing dangerous trolls to build burrows or wander in.</descriptionFuture>
+    <endMessage>The pale scourge has ended</endMessage>
+    <letterText>Growls can be heard from within the dark tunnels serpenting beneath the cold earth. A second winter struck, as countless ravenous trolls tear through the land and emerge to the surface in search of food.\n\nThis can last between days to several weeks.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <startMessage>A pale scourge has begun</startMessage>
+    <letterHyperlinks>
+      <li>DA_TrollBurrow</li>
+      <li>DA_BeardedTroll</li>
+      <li>DA_Leather_Troll</li>
+      <li>Door</li>
+      <li>Wall</li>
+    </letterHyperlinks>
+    <allowUnderground>true</allowUnderground>
+    <exclusiveConditions>
+      <li>HeatWave</li>
+    </exclusiveConditions>
+    <modExtensions>
+      <li Class="Bestiary.GameConditionExtension">
+        <chancePerDay>0.5</chancePerDay>
+        <!-- <chancePerDay>24</chancePerDay> Testing...-->
+        <weightedIncidents>
+          <DA_TrollBurrow_Incident>0.5</DA_TrollBurrow_Incident>
+          <DA_TrollWander_Incident>0.5</DA_TrollWander_Incident>
+        </weightedIncidents>
+      </li>
+    </modExtensions>
+  </GameConditionDef>
+
+</Defs>

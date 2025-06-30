@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_DwarvenMuffton</defName>
+    <label>dwarven muffton</label>
+    <description>The dwarven muffton is sheep-like herbivore known for its warm brown wool and gigantic horns. Herds can be often seen hopping around in the cold northern mountains where they live most of the year. Prideful and with a firey temperament, the males tends to fight by ramming their heads until one or the other is killed.\n\nThere are tales of a stoneborn king who fought countless battles on the back of a dwarven muffton. This legend gave rise to a tradition among certain clans, in which upon reaching puberty each stoneborn would be given a baby muffton.</description>
+	<statBases>
+      <MoveSpeed>5</MoveSpeed>
+      <MarketValue>350</MarketValue>
+      <ComfyTemperatureMin>-45</ComfyTemperatureMin>
+      <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <FilthRate>8</FilthRate>
+      <CaravanRidingSpeedFactor>1.1</CaravanRidingSpeedFactor>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Milkable">
+        <milkDef>DA_MufftonMilk</milkDef>
+        <milkIntervalDays>1</milkIntervalDays>
+        <milkAmount>10</milkAmount>
+      </li>
+	
+      <li Class="CompProperties_Shearable">
+        <woolDef>DA_WoolMuffton</woolDef>
+        <shearIntervalDays>15</shearIntervalDays>
+        <woolAmount>30</woolAmount>
+      </li>
+    </comps>
+   
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>DA_Rambash</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.9</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+		<chanceFactor>0.8</chanceFactor>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>5</amount>
+			  <chance>0.6</chance>
+            </li>
+          </extraMeleeDamages>
+      </li>
+	  
+      <li>
+        <label>left hoof</label>
+        <labelNoLocation>hoof</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+      </li>
+	  
+      <li>
+        <label>right hoof</label>
+        <labelNoLocation>hoof</labelNoLocation>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+      </li>
+	  
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.5</chanceFactor>
+      </li>
+    </tools>
+	
+   
+   <race>
+      <body>QuadrupedAnimalWithHoovesAndTusks</body>
+      <herdAnimal>true</herdAnimal>
+      <baseBodySize>1.3</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <baseHungerRate>0.3</baseHungerRate>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <wildness>0.45</wildness>
+	  <roamMtbDays>2</roamMtbDays>
+      <manhunterOnDamageChance>0.2</manhunterOnDamageChance>
+	  <packAnimal>false</packAnimal>
+      <useMeatFrom>Sheep</useMeatFrom>
+      <leatherDef>Leather_Plain</leatherDef>
+	  
+	<wildBiomes>
+     <Tundra>0.5</Tundra>
+	 <ColdBog>0.2</ColdBog>
+	 <BorealForest>0.5</BorealForest>
+	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.2</DankPyon_DarkForest>
+	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
+	</wildBiomes>
+	  
+     
+	 <gestationPeriodDays>12</gestationPeriodDays>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.5, 1)</li>
+          <li>(2.0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      
+	  <lifeExpectancy>38</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.30</minAge>
+          <soundWounded>Pawn_Sheep_Wounded</soundWounded>
+          <soundDeath>Pawn_Sheep_Death</soundDeath>
+          <soundCall>Pawn_Sheep_Call</soundCall>
+          <soundAngry>Pawn_Sheep_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+     
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.4)</li>
+        <li>(0.27, 0, 0.18)</li>
+        <li>(0.0, 0, 0.1)</li>
+        <li>(-0.27, 0, 0.18)</li>
+      </headPosPerRotation>
+    </race>
+
+    <tradeTags>
+      <li>AnimalCommon</li>
+      <li>AnimalFarm</li>
+    </tradeTags>
+  
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_DwarvenMuffton</defName>
+    <label>dwarven muffton</label>
+    <race>DA_DwarvenMuffton</race>
+    <combatPower>65</combatPower>
+    <ecoSystemWeight>0.6</ecoSystemWeight>
+    <wildGroupSize>2~4</wildGroupSize>
+    <lifeStages>
+	
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMufftonBaby</texPath>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.30, 0.25, 0.20)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMufftonBaby_dessicated</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMuffton</texPath>
+          <drawSize>1.3</drawSize>
+          <shadowData>
+            <volume>(0.375, 0.375, 0.375)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMuffton_dessicated</texPath>
+          <drawSize>1.3</drawSize>
+        </dessicatedBodyGraphicData>
+		
+		<femaleGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMufftonFemale</texPath>
+          <drawSize>1.3</drawSize>
+          <shadowData>
+            <volume>(0.375, 0.375, 0.375)</volume>
+          </shadowData>
+        </femaleGraphicData>
+        <femaleDessicatedBodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMufftonFemale_dessicated</texPath>
+          <drawSize>1.3</drawSize>
+        </femaleDessicatedBodyGraphicData>
+		
+      </li>
+	  
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMuffton</texPath>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.5, 0.5, 0.4)</volume>
+            <offset>(0,0,-0.05)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMuffton_dessicated</texPath>
+          <drawSize>1.6</drawSize>
+        </dessicatedBodyGraphicData>
+		
+		<femaleGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMufftonFemale</texPath>
+          <drawSize>1.6</drawSize>
+          <shadowData>
+            <volume>(0.375, 0.375, 0.375)</volume>
+          </shadowData>
+        </femaleGraphicData>
+        <femaleDessicatedBodyGraphicData>
+          <texPath>Animal/DwarvenMuffton/DwarvenMufftonFemale_dessicated</texPath>
+          <drawSize>1.6</drawSize>
+        </femaleDessicatedBodyGraphicData>
+		</li>
+		
+    </lifeStages>
+  </PawnKindDef>
+  
+  	<HediffDef>
+    <defName>DA_Disoriented</defName>
+    <label>disoriented</label>
+    <description>Disoriented by a powerful blunt shock.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(214,197,77)</defaultLabelColor>
+    <maxSeverity>0.5</maxSeverity>
+    <isBad>true</isBad>
+	
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-20.0</severityPerDay>
+        <showHoursToRecover>true</showHoursToRecover>
+      </li>
+    </comps>
+      <stages>
+        <li>
+          <statFactors>
+            <MeleeDodgeChance>0.8</MeleeDodgeChance>
+			<MeleeHitChance>0.8</MeleeHitChance>
+			<ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+          </statFactors>
+		  
+          <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>-0.15</offset>
+            </li>
+          </capMods>
+		  
+        </li>
+      </stages>
+  </HediffDef>
+  
+  <!-- Milk -->
+  
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>DA_MufftonMilk</defName>
+    <label>muffton milk</label>
+    <description>The strong and pungent milk of a dwarven muffton. It is rather acidic and leaves a sour aftertaste if eaten raw, fortunately it loose most of its acidity when cooked.</description>
+	
+    <graphicData>
+      <texPath>Item/MufftonMilk</texPath>
+	  <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+	
+    <statBases>
+      <MarketValue>1.9</MarketValue>
+      <Mass>0.045</Mass>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <Nutrition>0.05</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+    </statBases>
+	
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>10</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+	
+    <ingestible>
+      <preferability>RawTasty</preferability>
+	  <tasteThought>DA_DrankMufftonMilk</tasteThought>
+	  <lowPriorityCaravanFood>true</lowPriorityCaravanFood>
+      <foodType>AnimalProduct, Fluid</foodType>
+      <babiesCanIngest>true</babiesCanIngest>
+    </ingestible>
+	
+	
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+	  <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Milk</li>
+    </thingCategories>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+  
+  <ThoughtDef>
+    <defName>DA_DrankMufftonMilk</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>0.2</durationDays>
+    <stages>
+      <li>
+        <label>drank muffton milk</label>
+        <description>I drank muffton milk. The sharp, pungent flavor leaves a bad aftertaste.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Karhan Recipes -->
+  
+    <ThingDef ParentName="DrugBase">
+    <defName>DA_Karhan</defName>
+    <label>karhan</label>
+    <description>Muffton milk which has been stirred and fermented for a extended duration. While not as alcoholic as other beverages excessive consumption can lead to alcohol blackouts and, over time, addiction.</description>
+    <possessionCount>6</possessionCount>
+	
+    <graphicData>
+      <texPath>Item/Drug/Karhan</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+	
+    <equippedAngleOffset>-150</equippedAngleOffset>
+    <rotatable>false</rotatable>
+    <stackLimit>25</stackLimit>
+	
+    <statBases>
+      <DeteriorationRate>0.5</DeteriorationRate>
+      <MarketValue>12</MarketValue>
+      <Mass>0.3</Mass>
+      <Flammability>0.5</Flammability>
+      <Nutrition>0.08</Nutrition>
+    </statBases>
+	
+    <ingestible>
+      <foodType>Fluid, Processed, Liquor</foodType>
+      <joyKind>Chemical</joyKind>
+      <joy>0.17</joy>
+      <nurseable>true</nurseable>
+      <drugCategory>Social</drugCategory>
+      <ingestSound>Ingest_Beer</ingestSound>
+      <ingestHoldOffsetStanding>
+        <northDefault>
+          <offset>(0.18,0,0)</offset>
+        </northDefault>
+      </ingestHoldOffsetStanding>
+      <ingestCommandString>Drink {0}</ingestCommandString>
+      <ingestReportString>Drinking {0}.</ingestReportString>
+      <chairSearchRadius>25</chairSearchRadius>
+      <canAutoSelectAsFoodForCaravan>false</canAutoSelectAsFoodForCaravan>
+      <tableDesired>false</tableDesired>
+	  
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>AlcoholHigh</hediffDef>
+          <severity>0.1</severity>
+          <toleranceChemical>Alcohol</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>AlcoholTolerance</hediffDef>
+          <toleranceChemical>Alcohol</toleranceChemical>
+          <severity>0.06</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <techLevel>Neolithic</techLevel>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Alcohol</chemical>
+        <addictiveness>0.010</addictiveness>
+        <minToleranceToAddict>0.25</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>10</listOrder>
+      </li>
+    </comps>
+
+    <allowedArchonexusCount>50</allowedArchonexusCount>
+  </ThingDef>
+  
+    <RecipeDef>
+    <defName>DA_Make_Karhan</defName>
+    <label>stir muffton milk</label>
+    <description>Stir muffton milk for a long period of time until fermentation, resulting in a alcoholic drink called karhan.</description>
+    <jobString>stirring muffton milk.</jobString>
+    <workSpeedStat>DrugCookingSpeed</workSpeedStat>
+    <effectWorking>Tailor</effectWorking>
+    <soundWorking>Recipe_Brewing</soundWorking>
+	<unfinishedThingDef>DA_FermentingMufftonMilk</unfinishedThingDef>
+    <workAmount>50,000</workAmount>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <targetCountAdjustment>50</targetCountAdjustment>
+	
+    <recipeUsers>
+      <li>CraftingSpot</li>
+      <li>Brewery</li>
+    </recipeUsers>
+	
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>DA_MufftonMilk</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>DA_MufftonMilk</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+	
+    <products>
+      <DA_Karhan>10</DA_Karhan>
+    </products>
+	
+    <workSkill>Cooking</workSkill>
+    <displayPriority>0</displayPriority>
+  </RecipeDef>
+  
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>DA_FermentingMufftonMilk</defName>
+    <label>fermenting muffton milk</label>
+    <description>Fermenting muffton milk that needs to be stirred regularly in order to produce karhan.</description>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Item/Drug/FermentingMufftonMilk</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+</Defs>
