@@ -241,15 +241,15 @@
             <li Class="EmergingAnimals.CompProperties_RockCamo" />
             <li Class="EmergingAnimals.CompProperties_EmergingAnimal">
                 <pawnKind>DA_RockTroll</pawnKind>
-				<emergeAtThresholdDelay>500</emergeAtThresholdDelay>
-				<delayEffecter>EmergencePointSustained2X2</delayEffecter>
-				<delaySustainer>TunnelLoop</delaySustainer>
+				<emergeAtThresholdDelay>600</emergeAtThresholdDelay>
+				<naturalEmergeDelay>600</naturalEmergeDelay>
+				<delayEffecter>EmergencePointSustained3X3</delayEffecter>
+				<delaySustainer>Tunnel</delaySustainer>
+				<delaySustainerEnd>BuildingDestroyed_Stone_Big</delaySustainerEnd>
                 <earlyMentalState>Manhunter</earlyMentalState> <!--Happens when the rocks are destroyed before the delay ends-->
                 <emergeOnAttack>False</emergeOnAttack> <!--Makes the emergence happen on any amount of damage-->
+				<emergeAfter>900000</emergeAfter>
 				<emergeAtHealthThreshold>0.5</emergeAtHealthThreshold>
-            </li>
-            <li Class="CompProperties_DestroyAfterDelay">
-                <delayTicks>60000</delayTicks> <!--After this interval, the animal peacefully comes out. -->                
             </li>
 			<li Class="CompProperties_ProximityLetter">
 				<radius>8</radius>
