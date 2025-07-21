@@ -4,4 +4,10 @@
 		<li>1.5</li>
         <li IfModActive="dankpyon.medieval.overhaul">1.5/Mods/MedievalOverhaulFeatures</li>			
 	</v1.5>
+	
+    <v1.6>
+		<li>/</li>
+		<li>1.6</li>
+        <li IfModActive="dankpyon.medieval.overhaul">1.6/Mods/MedievalOverhaulFeatures</li>			
+	</v1.6>
 </loadFolders>

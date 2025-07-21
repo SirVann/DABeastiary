@@ -9,6 +9,7 @@
       <MoveSpeed>6.5</MoveSpeed>
       <MarketValue>850</MarketValue>
 	  <MeleeDodgeChance>15</MeleeDodgeChance>
+      <Wildness>0.99</Wildness>
       <ComfyTemperatureMin>-30</ComfyTemperatureMin>
     </statBases>
 	
@@ -43,7 +44,6 @@
       <baseHealthScale>6</baseHealthScale>
       <baseHungerRate>0.4</baseHungerRate>
       <foodType>CarnivoreAnimalStrict, OmnivoreAnimal, OvivoreAnimal</foodType>
-      <wildness>0.99</wildness>
 	  <roamMtbDays>2</roamMtbDays>
 	  <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>

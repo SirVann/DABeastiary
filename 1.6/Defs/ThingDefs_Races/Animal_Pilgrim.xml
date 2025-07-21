@@ -10,6 +10,7 @@
       <MarketValue>550</MarketValue>
       <ComfyTemperatureMax>60</ComfyTemperatureMax>
 	  <CaravanRidingSpeedFactor>1.7</CaravanRidingSpeedFactor>
+      <Wildness>0.35</Wildness>
       <FilthRate>14</FilthRate>
     </statBases>
 	
@@ -65,7 +66,6 @@
       <baseHealthScale>1.8</baseHealthScale>
       <baseHungerRate>0.325</baseHungerRate>
       <foodType>OvivoreAnimal, VegetarianRoughAnimal</foodType>
-      <wildness>0.35</wildness>
       <manhunterOnDamageChance>0.1</manhunterOnDamageChance>
       <trainability>None</trainability>
 	  

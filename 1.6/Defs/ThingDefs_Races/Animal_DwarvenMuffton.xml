@@ -12,6 +12,7 @@
       <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
       <ArmorRating_Heat>0.10</ArmorRating_Heat>
+	  <Wildness>0.45</Wildness>
       <FilthRate>8</FilthRate>
       <CaravanRidingSpeedFactor>1.1</CaravanRidingSpeedFactor>
     </statBases>
@@ -93,7 +94,6 @@
       <baseHealthScale>1</baseHealthScale>
       <baseHungerRate>0.3</baseHungerRate>
       <foodType>VegetarianRoughAnimal</foodType>
-      <wildness>0.45</wildness>
 	  <roamMtbDays>2</roamMtbDays>
       <manhunterOnDamageChance>0.2</manhunterOnDamageChance>
 	  <packAnimal>false</packAnimal>
@@ -104,6 +104,7 @@
      <Tundra>0.5</Tundra>
 	 <ColdBog>0.2</ColdBog>
 	 <BorealForest>0.5</BorealForest>
+	 <GlacialPlain MayRequire="Ludeon.RimWorld.Odyssey">0.1</GlacialPlain>
 	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.2</DankPyon_DarkForest>
 	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
 	</wildBiomes>

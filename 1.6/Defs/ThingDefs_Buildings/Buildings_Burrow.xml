@@ -46,7 +46,7 @@
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
 				<initialThreatScale>0.35</initialThreatScale>
 				<maxThreatScale>0.6</maxThreatScale>
-				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
+				<pawnSpawnIntervalDays>1~2.0</pawnSpawnIntervalDays>
 				<defendRadius>20</defendRadius>
 				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>
@@ -124,7 +124,7 @@
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
 				<initialThreatScale>0.35</initialThreatScale>
 				<maxThreatScale>0.6</maxThreatScale>
-				<pawnSpawnIntervalDays>0~2.0</pawnSpawnIntervalDays>
+				<pawnSpawnIntervalDays>1~2.0</pawnSpawnIntervalDays>
 				<defendRadius>20</defendRadius>
 				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>

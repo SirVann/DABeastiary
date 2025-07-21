@@ -10,6 +10,7 @@
       <MarketValue>340</MarketValue>
       <ComfyTemperatureMin>-20</ComfyTemperatureMin>
       <ComfyTemperatureMax>45</ComfyTemperatureMax>
+	  <Wildness>0.55</Wildness>
       <FilthRate>16</FilthRate>
     </statBases>
     <uiIconScale>1.5</uiIconScale>
@@ -23,7 +24,7 @@
         <eggCountRange>1~2</eggCountRange>
       </li>
 	  
-	  <li Class="AnimalBehaviours.CompProperties_AnimalProduct">
+	  <li Class="VEF.AnimalBehaviours.CompProperties_AnimalProduct">
 		 <resourceDef>DA_BarogOil</resourceDef>
 		 <gatheringIntervalDays>10</gatheringIntervalDays>
 		 <resourceAmount>5</resourceAmount>
@@ -87,7 +88,6 @@
       <baseHungerRate>0.535</baseHungerRate>
       <roamMtbDays>2</roamMtbDays>
       <foodType>VegetarianRoughAnimal</foodType>
-      <wildness>0.55</wildness>
       <manhunterOnDamageChance>0.1</manhunterOnDamageChance>
 	  <packAnimal>true</packAnimal>
       <trainability>None</trainability>

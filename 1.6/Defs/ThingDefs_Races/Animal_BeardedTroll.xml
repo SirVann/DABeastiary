@@ -14,6 +14,7 @@
 	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
 	  <Flammability>2</Flammability>
 	  <EatingSpeed>1.5</EatingSpeed>
+	  <Wildness>0.80</Wildness>
       <FilthRate>8</FilthRate>
 	  <MeatAmount>80</MeatAmount>
     </statBases>
@@ -69,7 +70,7 @@
         <onlySendSignalOnce>false</onlySendSignalOnce>
       </li>
 	  
-	  <li Class="AnimalBehaviours.CompProperties_Regeneration">
+	  <li Class="VEF.AnimalBehaviours.CompProperties_Regeneration">
 		  <rateInTicks>5</rateInTicks>
 	  </li>
 	  
@@ -85,7 +86,6 @@
       <baseHungerRate>1.5</baseHungerRate>
       <trainability>Intermediate</trainability>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
-      <wildness>0.80</wildness>
 	  <manhunterOnTameFailChance>0.5</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
 	  <packAnimal>false</packAnimal>
@@ -98,6 +98,7 @@
 	 <BorealForest>0.3</BorealForest>
 	 <IceSheet>0.1</IceSheet>
 	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.2</DankPyon_DarkForest>
+	 <GlacialPlain MayRequire="Ludeon.RimWorld.Odyssey">0.1</GlacialPlain>
 	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.3</ZBiome_GlacialShield>
 	</wildBiomes>
 	  

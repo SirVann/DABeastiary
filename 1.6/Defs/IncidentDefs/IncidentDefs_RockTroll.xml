@@ -1,0 +1,65 @@
+<Defs>
+    <IncidentDef>
+        <defName>DA_EmergingOrlok</defName>
+        <label>suspicious stone</label>
+        <letterLabel>strange stone formation</letterLabel>
+        <letterText>Strong winds brushed the soil, revealing a peculiar stone formation.</letterText>
+		<letterDef>PositiveEvent</letterDef>
+        <category>ThreatSmall</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>EmergingAnimals.IncidentWorker_SpawnThing</workerClass>
+        <baseChance>0.4</baseChance>
+		<minRefireDays>30</minRefireDays>
+        <pointsScaleable>false</pointsScaleable>
+        <ignoreRecentSelectionWeighting>true</ignoreRecentSelectionWeighting>
+        <modExtensions>
+            <li Class="EmergingAnimals.EmergingAnimalsExtension">
+                <thing>DA_HibernatingRockTroll</thing> <!--The thing that gets spawned-->
+                <avoidedThings> <!--Avoid destroying special trees while emerging-->
+                    <li MayRequire="Ludeon.RimWorld.Royalty">Plant_TreeAnima</li>
+                    <li MayRequire="Ludeon.RimWorld.Ideology">Plant_TreeGauranlen</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">Plant_TreePolux</li>
+                    <li MayRequire="Ludeon.RimWorld.Anomaly">Plant_TreeHarbinger</li>
+                </avoidedThings>
+                <requiredTerrainTags> <!--Only pop up on terrain tagged as soil-->
+                    <li>Soil</li>
+                </requiredTerrainTags>
+                <requiredAffordance> <!--Only pop up on terrain that can support heavy weights-->
+                    <li>Heavy</li>
+                </requiredAffordance>
+            </li>
+        </modExtensions>
+    </IncidentDef>
+	
+    <IncidentDef>
+        <defName>DA_MigratingRockTroll</defName>
+        <label>rock troll emergence</label>
+        <letterLabel>strange stone formation</letterLabel>
+        <letterText>Strong winds brushed the soil, revealing a peculiar stone formation.</letterText>
+		<letterDef>PositiveEvent</letterDef>
+        <category>ThreatSmall</category>
+        <pawnKind>DA_RockTroll</pawnKind>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>EmergingAnimals.IncidentWorker_MigratingAnimals</workerClass>
+        <baseChance>100</baseChance>
+        <minRefireDays>0</minRefireDays>
+        <modExtensions>
+            <li Class="EmergingAnimals.EmergingAnimalsExtension">
+			    <maxSpawn>1</maxSpawn>
+			    <requiredTileMutations>
+			      <li>Caves</li>
+			    </requiredTileMutations>
+				
+                <disablingConditions>
+                    <li>ToxicFallout</li>
+                    <li MayRequire="Ludeon.Rimworld.Biotech">NoxiousHaze</li>
+                </disablingConditions>
+            </li>
+        </modExtensions>
+    </IncidentDef>
+
+</Defs>

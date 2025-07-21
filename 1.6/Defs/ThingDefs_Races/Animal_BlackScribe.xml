@@ -12,11 +12,12 @@
       <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.72</ArmorRating_Sharp>
       <ArmorRating_Heat>0.15</ArmorRating_Heat>
+	  <Wildness>0.87</Wildness>
     </statBases>
     <uiIconScale>1.3</uiIconScale>
 	
 	<comps>
-		<li Class="AnimalBehaviours.CompProperties_AnimalProduct">
+		<li Class="VEF.AnimalBehaviours.CompProperties_AnimalProduct">
 		 <resourceDef>DA_RedTear</resourceDef>
 		 <gatheringIntervalDays>15</gatheringIntervalDays>
 		 <resourceAmount>5</resourceAmount>
@@ -77,7 +78,6 @@
 	  <fleshType>Insectoid</fleshType>
 	  <bloodDef>Filth_BloodInsect</bloodDef>
 	  <useMeatFrom>Megaspider</useMeatFrom>
-      <wildness>0.87</wildness>
       <manhunterOnTameFailChance>0.7</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
       <trainability>Intermediate</trainability>
@@ -425,7 +425,7 @@
     <description>A chemical addiction to the red ink. Long exposure to its euphoric effects has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
 \nWithout regular doses of red ink, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
     <hediffClass>Hediff_Addiction</hediffClass>
-    <causesNeed>Chemical_Ambrosia</causesNeed>
+    <chemicalNeed>DA_Chemical_RedInk</chemicalNeed>
     <comps>
       <li Class="HediffCompProperties_SeverityPerDay">
         <severityPerDay>-0.1</severityPerDay>

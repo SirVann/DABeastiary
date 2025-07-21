@@ -59,5 +59,67 @@
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
     <allowedArchonexusCount>80</allowedArchonexusCount>
   </ThingDef>
+  
+    <ThingDef ParentName="ResourceBase">
+    <defName>DA_Sangonite</defName>
+    <label>sangonite</label>
+    <description>desc</description>
+	
+    <graphicData>
+      <texPath>Item/Resource/Sacralite</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+	
+    <soundInteract>ChunkRock_Drop</soundInteract>
+    <soundDrop>ChunkRock_Drop</soundDrop>
+	
+    <statBases>
+      <MarketValue>11</MarketValue>
+      <Mass>0.35</Mass>
+      <StuffPower_Armor_Sharp>1.2</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.40</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.75</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>0.9</SharpDamageMultiplier>
+      <BluntDamageMultiplier>1.5</BluntDamageMultiplier>
+    </statBases>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+	
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+
+    <burnableByRecipe>false</burnableByRecipe>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+		<li>Stony</li>
+      </categories>
+      <appearance>Bricks</appearance>
+      <commonality>0.02</commonality>
+      <constructEffect>ConstructMetal</constructEffect>
+      <color>(204,187,146)</color>
+      <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
+      <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
+      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+	  
+      <statFactors>
+        <MaxHitPoints>3.5</MaxHitPoints>
+        <Beauty>1.2</Beauty>
+        <Flammability>0</Flammability>
+        <WorkToMake>2.6</WorkToMake>
+        <WorkToBuild>2.6</WorkToBuild>
+        <MeleeWeapon_CooldownMultiplier>1.2</MeleeWeapon_CooldownMultiplier>
+      </statFactors>
+	  
+      <canSuggestUseDefaultStuff>true</canSuggestUseDefaultStuff>
+    </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+
 
 </Defs>

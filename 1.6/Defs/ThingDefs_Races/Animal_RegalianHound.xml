@@ -11,19 +11,19 @@
       <MarketValue>1250</MarketValue>
       <ComfyTemperatureMin>-45</ComfyTemperatureMin>
       <FilthRate>2</FilthRate>
+      <Wildness>0.15</Wildness>
       <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">0.8</ToxicEnvironmentResistance>
     </statBases>
     <uiIconScale>1.5</uiIconScale>
 
     <comps>
-			<li Class="AnimalBehaviours.CompProperties_Draftable">
+			<li Class="VEF.AnimalBehaviours.CompProperties_Draftable">
 				<makeNonFleeingToo>true</makeNonFleeingToo>
 			</li>
 	</comps>
 	
     <race>
       <animalType>Canine</animalType>
-	  <overrideShouldHaveAbilityTracker>true</overrideShouldHaveAbilityTracker>
       <body>QuadrupedAnimalWithPawsAndTail</body>
       <predator>true</predator>
       <petness>0.5</petness>
@@ -36,7 +36,6 @@
       <gestationPeriodDays>10</gestationPeriodDays>
       <nameOnTameChance>1</nameOnTameChance>
       <trainability>Advanced</trainability>
-      <wildness>0.15</wildness>
       <manhunterOnTameFailChance>0.40</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
 	  

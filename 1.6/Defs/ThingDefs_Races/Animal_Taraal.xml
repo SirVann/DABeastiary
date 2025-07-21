@@ -5,6 +5,7 @@
 	<statBases>
       <MoveSpeed>5.6</MoveSpeed>
       <MarketValue>800</MarketValue>
+      <Wildness>0.80</Wildness>
       <ComfyTemperatureMin>-30</ComfyTemperatureMin>
     </statBases>
 	
@@ -91,7 +92,6 @@
       <baseHealthScale>3.0</baseHealthScale>
       <baseHungerRate>0.5</baseHungerRate>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
-      <wildness>0.80</wildness>
       <manhunterOnTameFailChance>0.40</manhunterOnTameFailChance>
       <manhunterOnDamageChance>0.70</manhunterOnDamageChance>
       <trainability>Advanced</trainability>
@@ -250,6 +250,7 @@
      <Tundra>0.1</Tundra>
 	 <SeaIce>0.15</SeaIce>
 	  <IceSheet>0.15</IceSheet>
+	  <GlacialPlain MayRequire="Ludeon.RimWorld.Odyssey">0.2</GlacialPlain>
 	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.25</ZBiome_GlacialShield>
 	</wildBiomes>
 	</race>

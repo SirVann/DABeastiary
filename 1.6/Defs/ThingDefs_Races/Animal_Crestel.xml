@@ -12,6 +12,7 @@
       <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
       <ArmorRating_Heat>0.10</ArmorRating_Heat>
+      <Wildness>0.97</Wildness>
       <FilthRate>5</FilthRate>
 	  <Flammability>0.3</Flammability>
     </statBases>
@@ -25,7 +26,7 @@
         <eggCountRange>1</eggCountRange>
       </li>
 	  
-	<li Class="AnimalBehaviours.CompProperties_FilthProducer">
+	<li Class="VEF.AnimalBehaviours.CompProperties_FilthProducer">
 		<filthType>DA_Filth_BlueFeathers</filthType> 
 		<rate>0.3</rate> 
 		<radius>1</radius> 
@@ -76,7 +77,6 @@
       <baseHealthScale>6.0</baseHealthScale>
       <baseHungerRate>1.1</baseHungerRate>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
-      <wildness>0.97</wildness>
       <manhunterOnTameFailChance>0.50</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
       <trainability>Advanced</trainability>
@@ -87,6 +87,7 @@
 	 <DankPyon_DarkForest MayRequire="DankPyon.Medieval.Overhaul">0.1</DankPyon_DarkForest>
 	 <ColdBog>0.1</ColdBog>
 	 <BorealForest>0.1</BorealForest>
+	 <GlacialPlain MayRequire="Ludeon.RimWorld.Odyssey">0.1</GlacialPlain>
 	 <ZBiome_GlacialShield MayRequire="zylle.MoreVanillaBiomes">0.15</ZBiome_GlacialShield>
 	</wildBiomes>
 	  

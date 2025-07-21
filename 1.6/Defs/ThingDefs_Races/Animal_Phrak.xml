@@ -10,13 +10,14 @@
 	  <MeleeDodgeChance>35</MeleeDodgeChance>
       <ToxicResistance>1</ToxicResistance>
       <ComfyTemperatureMax>60</ComfyTemperatureMax>
+      <Wildness>0.7</Wildness>
       <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1</ToxicEnvironmentResistance>
       <MarketValue>250</MarketValue>
     </statBases>
     <uiIconScale>2.25</uiIconScale>
 	
 		<comps>
-	  <li Class="AnimalBehaviours.CompProperties_Floating">
+	  <li Class="VEF.AnimalBehaviours.CompProperties_Floating">
 
 	  </li>
       <li Class="CompProperties_EggLayer">
@@ -91,7 +92,6 @@
    
    <race>
       <body>BeetleLike</body>
-	  <overrideShouldHaveAbilityTracker>true</overrideShouldHaveAbilityTracker>
       <predator>true</predator>
       <baseBodySize>0.3</baseBodySize>
       <baseHealthScale>1.1</baseHealthScale>
@@ -101,7 +101,6 @@
 	  <fleshType>Insectoid</fleshType>
 	  <bloodDef>Filth_BloodInsect</bloodDef>
 	  <useMeatFrom>Megaspider</useMeatFrom>
-      <wildness>0.7</wildness>
       <manhunterOnTameFailChance>0.4</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1.00</manhunterOnDamageChance>
       <trainability>Intermediate</trainability>

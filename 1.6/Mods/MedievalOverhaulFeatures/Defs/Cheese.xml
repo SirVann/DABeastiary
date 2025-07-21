@@ -79,7 +79,7 @@
 			<li>
 				<compClass>CompQuality</compClass>
 			</li>
-			<li Class="VFECore.CompProperties_IngestedThoughtFromQuality">
+			<li Class="VEF.Cooking.CompProperties_IngestedThoughtFromQuality">
 				<ingestedThought>DA_AteGoldfortCheese</ingestedThought>
 			</li>
 			<li MayRequire="vanillaexpanded.vcooke" Class="VanillaCookingExpanded.CompProperties_StackByQuality"/>
@@ -141,7 +141,7 @@
 			<!-- Excellent cheese -->
 			<li>
 				<label>ate excellent goldfort cheese</label>
-				<description>I savoured excellent-quality goldfort cheese. A heavenly taste overtook me and i cannot wait to eat more of it.</description>
+				<description>I savoured excellent-quality goldfort cheese. A heavenly taste overtook me and I cannot wait to eat more of it.</description>
 				<baseMoodEffect>12</baseMoodEffect>
 			</li>
 			<!-- Masterwork cheese -->

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffGiverSetDef>
+    <defName>RockTroll</defName>
+    <hediffGivers>
+      <li Class="HediffGiver_Bleeding">
+        <hediff>DA_BloodPetrification</hediff>
+      </li>
+    </hediffGivers>
+	
+  </HediffGiverSetDef>
+
+</Defs>
