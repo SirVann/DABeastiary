@@ -36,11 +36,8 @@
     <IncidentDef>
         <defName>DA_MigratingRockTroll</defName>
         <label>rock troll emergence</label>
-        <letterLabel>strange stone formation</letterLabel>
-        <letterText>Strong winds brushed the soil, revealing a peculiar stone formation.</letterText>
-		<letterDef>PositiveEvent</letterDef>
-        <category>ThreatSmall</category>
         <pawnKind>DA_RockTroll</pawnKind>
+		<category>ThreatSmall</category>
         <targetTags>
             <li>Map_PlayerHome</li>
         </targetTags>
