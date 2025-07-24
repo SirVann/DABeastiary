@@ -31,6 +31,8 @@ namespace Bestiary
 
         public float maxThreatScale = 0.5f;
 
+        public int maxSpawnedAtSameTime = 10;
+
         public FloatRange pawnSpawnIntervalDays = new FloatRange(0.85f, 1.15f);
 
         public int pawnSpawnRadius = 2;

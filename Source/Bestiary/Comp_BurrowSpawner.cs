@@ -78,7 +78,7 @@ namespace Bestiary
         public void SpawnPawnsUntilPoints(float points)
         {
             int num = 0;
-            while (SpawnedPawnsPoints < points)
+            while (SpawnedPawnsPoints < points && (spawnedPawns?.Count ?? 0) < Props.maxSpawnedAtSameTime)
             {
                 num++;
                 if (num > 1000)
@@ -96,9 +96,11 @@ namespace Bestiary
 
         private void CalculateNextPawnSpawnTick()
         {
-            CalculateNextPawnSpawnTick(Props.pawnSpawnIntervalDays.RandomInRange * 60000f);
+            nextPawnSpawnTick = (int)Math.Ceiling(Find.TickManager.TicksGame + (Props.pawnSpawnIntervalDays.RandomInRange * 60000f));
+            //CalculateNextPawnSpawnTick(Props.pawnSpawnIntervalDays.RandomInRange * 60000f);
         }
 
+        /* Code commented out in case something similar to the old system is desired again in the future
         public void CalculateNextPawnSpawnTick(float delayTicks)
         {
             float num = GenMath.LerpDouble(0f, 5f, 1f, 0.5f, (float)spawnedPawns.Count);
@@ -109,6 +111,7 @@ namespace Bestiary
             }
             nextPawnSpawnTick = Find.TickManager.TicksGame + (int)delayTicks;
         }
+        */
 
         private void FilterOutUnspawnedPawns()
         {
