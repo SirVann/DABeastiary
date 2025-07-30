@@ -18,6 +18,7 @@ namespace Bestiary
             {
                 return;
             }
+            if (pawn?.Faction == Faction.OfPlayerSilentFail) return;
 
             if (pawn.Spawned && !pawn.DeadOrDowned && pawn.kindDef == DADefOfs.DA_BeardedTroll)
             {
@@ -62,17 +63,6 @@ namespace Bestiary
                     __instance.StartFleeingBecauseOfPawnAction(dinfo.Instigator);
             }
         }
-
-        private static bool StartManhunterBecauseOfPawnAction(Pawn pawn, Pawn instigator, string letterTextKey, bool causedByDamage = false)
-        {
-            return false;
-        }
-
-        private static void SendLetter()
-        {
-
-        }
-
         public static void StartPackManhunterBecauseOfPawnAction(this Pawn_MindState mState, Pawn instigator, string letterTextKey, bool causedByDamage = false)
         {
             Pawn pawn = mState.pawn;
