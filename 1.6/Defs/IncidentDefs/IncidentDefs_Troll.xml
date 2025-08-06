@@ -11,10 +11,10 @@
     <minThreatPoints>300</minThreatPoints>
     <allowedBiomes>
       <li>Tundra</li>
-      <li>AridShrubland</li>
       <li>BorealForest</li>
       <li>ColdBog</li>
       <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+	  <li MayRequire="Ludeon.RimWorld.Odyssey">GlacialPlain</li>
     </allowedBiomes>
     <durationDays>1~8</durationDays>
     <baseChance>0.5</baseChance>
@@ -36,10 +36,10 @@
     </targetTags>
     <allowedBiomes>
       <li>Tundra</li>
-      <li>AridShrubland</li>
       <li>BorealForest</li>
       <li>ColdBog</li>
       <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+	  <li MayRequire="Ludeon.RimWorld.Odyssey">GlacialPlain</li>
     </allowedBiomes>
     <workerClass>Bestiary.IncidentWorker_TrollBurrowsErupts</workerClass>
     <!--Section only relevant for when occuring outside of the outbreak gamecondition.-->
@@ -64,10 +64,10 @@
     <letterDef>ThreatSmall</letterDef>
     <allowedBiomes>
       <li>Tundra</li>
-      <li>AridShrubland</li>
       <li>BorealForest</li>
       <li>ColdBog</li>
       <li MayRequire="zylle.MoreVanillaBiomes">ZBiome_GlacialShield</li>
+	  <li MayRequire="Ludeon.RimWorld.Odyssey">GlacialPlain</li>
     </allowedBiomes>
     <targetTags>
       <li>Map_PlayerHome</li>

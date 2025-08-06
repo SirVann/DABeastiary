@@ -63,7 +63,7 @@
     <ThingDef ParentName="ResourceBase">
     <defName>DA_Sangonite</defName>
     <label>sangonite</label>
-    <description>desc</description>
+    <description>The petrified blood of a rock troll. Sangonite is a exceedingly hard and dense material which can be shaped into weapons and armors given the right amount of heat.\n\nThe sangonite carapace of a rock troll is often shaped by countless battles, as they fight for territory. Some even say that the mountains themselves are colossal trolls which existed ever since the first dust settled on the earth.</description>
 	
     <graphicData>
       <texPath>Item/Resource/Sacralite</texPath>
@@ -100,7 +100,7 @@
       <appearance>Bricks</appearance>
       <commonality>0.02</commonality>
       <constructEffect>ConstructMetal</constructEffect>
-      <color>(204,187,146)</color>
+      <color>(127,61,57)</color>
       <soundImpactBullet>BulletImpact_Ground</soundImpactBullet>
       <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Stone</soundImpactMelee>
       <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>

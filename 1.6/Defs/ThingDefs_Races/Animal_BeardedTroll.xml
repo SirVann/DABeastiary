@@ -10,8 +10,7 @@
       <MarketValue>550</MarketValue>
       <ComfyTemperatureMin>-55</ComfyTemperatureMin>
 	  <ArmorRating_Heat>-2</ArmorRating_Heat>
-	  <InjuryHealingFactor>3</InjuryHealingFactor>
-	  <IncomingDamageFactor>0.8</IncomingDamageFactor>
+	  <InjuryHealingFactor>2.5</InjuryHealingFactor>
 	  <Flammability>2</Flammability>
 	  <EatingSpeed>1.5</EatingSpeed>
 	  <Wildness>0.80</Wildness>

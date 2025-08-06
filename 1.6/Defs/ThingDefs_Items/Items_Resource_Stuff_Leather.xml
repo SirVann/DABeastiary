@@ -90,6 +90,40 @@
   </ThingDef>
   
   <ThingDef ParentName="LeatherBase">
+    <defName>DA_Leather_RockTroll</defName>
+    <label>hardened pelt</label>
+    <description>The incredibly heavy and durable pelt of a rock troll. It is as hard as a chainmail and requires tremendous work to shape.</description>
+	<possessionCount>20</possessionCount>
+	
+    <graphicData>
+      <color>(150,139,129)</color>
+	  <texPath>Item/Resource/HeavyPelt</texPath>
+	  <drawSize>1.2</drawSize>
+    </graphicData>
+	
+    <statBases>
+      <MarketValue>12.0</MarketValue>
+	  <Mass>0.5</Mass>
+      <StuffPower_Armor_Sharp>1.9</StuffPower_Armor_Sharp>
+	  <StuffPower_Armor_Heat>1</StuffPower_Armor_Heat>
+      <StuffPower_Armor_Blunt>0.7</StuffPower_Armor_Blunt>
+      <StuffPower_Insulation_Cold>18</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>10</StuffPower_Insulation_Heat>
+    </statBases>
+	
+    <stuffProps>
+      <color>(150,139,129)</color>
+      <commonality>0.0045</commonality>
+      <statFactors>
+        <MaxHitPoints>2.5</MaxHitPoints>
+        <WorkToMake>2.6</WorkToMake>
+        <WorkToBuild>2.6</WorkToBuild>
+        <Beauty>1.5</Beauty>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+  <ThingDef ParentName="LeatherBase">
     <defName>DA_Leather_Troll</defName>
     <label>trollpelt</label>
     <description>The strong pelt of a troll. Very weak to fire but exceptionally durable.</description>

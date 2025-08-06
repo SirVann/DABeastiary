@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <!-- Ability -->
+
+
+	<AbilityDef>
+		<defName>DA_ToxicBarbspike</defName>
+		<label>barbed quills</label>
+		<description>Throw four toxic barbspikes at a medium distance, can inflict tox.</description>
+		<iconPath>UI/PhrakShot_Icon</iconPath>
+		<cooldownTicksRange>180</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<writeCombatLog>True</writeCombatLog>
+		<verbProperties>
+			<verbClass>Verb_AbilityShoot</verbClass>
+			<defaultProjectile>DA_Shot_Phrak</defaultProjectile>
+			<accuracyTouch>0.4</accuracyTouch>
+			<accuracyShort>0.8</accuracyShort>
+			<accuracyMedium>1</accuracyMedium>
+			<accuracyLong>0.6</accuracyLong>
+			<range>20</range>
+			<muzzleFlashScale>0</muzzleFlashScale>
+			<warmupTime>3</warmupTime>
+			<soundCast>DA_PhrakShot</soundCast>
+			<burstShotCount>4</burstShotCount>
+			<commonality>.8</commonality>
+			<ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+			<minRange>2</minRange>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+			</targetParams>
+			<ai_IsWeapon>false</ai_IsWeapon>
+		</verbProperties>
+	</AbilityDef>
+
+</Defs>

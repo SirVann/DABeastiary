@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_RedhornedLarpah</defName>
     <label>red-horned larpah</label>
-    <description>An elusive and deceitful creature, the red-horned larpah is a large leporidae with tall brown antlers protruding from it's head. While it may look gentle, larpah's apperence bellies its predatory, fierce nature. As they grow older, a thick layer of dried blood from past battles coats their horns, earning them the moniker of "red-horned".\n\nDeadly and tough for its size, its aggressiveness rarely discourages hunters from trying their luck at slaying the beast for its durable pelt and valuable antlers, which can be turned into a powerful mixture.</description>
+    <description>An elusive and deceitful creature, the red-horned larpah is a large leporidae with tall brown antlers protruding from it's head. While it may look gentle, larpah's apperence belies its predatory, fierce nature. As they grow older, a thick layer of dried blood from past battles coats their horns, earning them the moniker of "red-horned".\n\nDeadly and tough for its size, its aggressiveness rarely discourages hunters from trying their luck at slaying the beast for its durable pelt and valuable antlers, which can be turned into a powerful mixture.</description>
 	<statBases>
       <MoveSpeed>6.5</MoveSpeed>
       <MarketValue>850</MarketValue>
@@ -44,7 +44,6 @@
       <baseHealthScale>6</baseHealthScale>
       <baseHungerRate>0.4</baseHungerRate>
       <foodType>CarnivoreAnimalStrict, OmnivoreAnimal, OvivoreAnimal</foodType>
-	  <roamMtbDays>2</roamMtbDays>
 	  <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
 	  <packAnimal>false</packAnimal>

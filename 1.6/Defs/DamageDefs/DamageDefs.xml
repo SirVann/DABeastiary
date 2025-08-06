@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+  <DamageDef ParentName="BluntBase">
+    <defName>DA_DemolishTroll</defName>
+    <buildingDamageFactor>6</buildingDamageFactor>
+    <buildingDamageFactorImpassable>0.75</buildingDamageFactorImpassable>
+  </DamageDef>
 	
    <DamageDef ParentName="Bite">
 		<defName>DA_KarabalBite</defName>

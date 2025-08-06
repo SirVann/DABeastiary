@@ -20,4 +20,8 @@
 		<label>petrifying bite</label>
 	</ToolCapacityDef>
 	
+	<ToolCapacityDef>
+		<defName>DA_DemolishTroll</defName>
+		<label>demolish</label>
+	</ToolCapacityDef>
 </Defs>

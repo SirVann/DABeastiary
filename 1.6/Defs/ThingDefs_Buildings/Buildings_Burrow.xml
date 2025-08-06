@@ -45,8 +45,9 @@
 				<lordJob>Bestiary.LordJob_TrollBurrow</lordJob>
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
 				<initialThreatScale>0.35</initialThreatScale>
-				<maxThreatScale>0.6</maxThreatScale>
-				<pawnSpawnIntervalDays>1~2.0</pawnSpawnIntervalDays>
+				<maxThreatScale>0.7</maxThreatScale>
+				<pawnSpawnIntervalDays>1</pawnSpawnIntervalDays>
+				<maxSpawnedAtSameTime>12</maxSpawnedAtSameTime>
 				<defendRadius>20</defendRadius>
 				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>
@@ -123,8 +124,9 @@
 				<lordJob>Bestiary.LordJob_TrollBurrow</lordJob>
 				<spawnSound>Pawn_Thrumbo_Angry</spawnSound>
 				<initialThreatScale>0.35</initialThreatScale>
-				<maxThreatScale>0.6</maxThreatScale>
-				<pawnSpawnIntervalDays>1~2.0</pawnSpawnIntervalDays>
+				<maxThreatScale>0.7</maxThreatScale>
+				<pawnSpawnIntervalDays>1</pawnSpawnIntervalDays>
+				<maxSpawnedAtSameTime>12</maxSpawnedAtSameTime>
 				<defendRadius>20</defendRadius>
 				<maxTimeSpentHunting>20000</maxTimeSpentHunting>
 				<faction>DA_Troll</faction>

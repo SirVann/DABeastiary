@@ -4,7 +4,7 @@
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_RockTroll</defName>
     <label>rock troll</label>
-    <description>This large, eyeless predator roams the frigid landscape, constantly in search of food. During winter, they often retreat deep into underground burrows, to feast on the many corpses they hoarded throughout the rest of the year. Relentless and capable of quickly regenerating its wounds, it allows the trolls to take down creatures much stronger than itself.\n\nTrolls spread quickly and are considered a dangerous pest as they frequently attack caravans and travelers. However their hide and delicious meat makes them a target of many hunters.</description>
+    <description>The rock troll is a colossal, eyeless creature often found living in caves and underground chasms. Much more reclusive than its northern cousins, the rock troll will only surface from its underground lair when provoked.\n\nLacking regenerative abilities, the rock troll makes up for it through a strange process known as self-petrification. Any open wound will almost immediately be closed by ultra-fast blood clotting that ossifies soon after, creating dense stone-like formations that provide the beast with temporary ablative armor.</description>
 	<statBases>
       <MoveSpeed>3.5</MoveSpeed>
       <MarketValue>5300</MarketValue>
@@ -27,7 +27,7 @@
       <li>
         <label>head</label>
         <capacities>
-          <li>Demolish</li>
+          <li>DA_DemolishTroll</li>
         </capacities>
         <power>20</power>
         <cooldownTime>2</cooldownTime>
@@ -67,6 +67,13 @@
 
     <comps>
       <li Class="EmergingAnimals.CompProperties_RockCamo" />
+	  
+			<li Class="CompProperties_ProximityLetter">
+				<radius>12</radius>
+				<letterDef>ThreatBig</letterDef>
+				<letterLabel>Rock troll sighted</letterLabel>
+				<letterText>{PAWN_nameDef} has sighted a giant rock troll ! Stories of the beast are told from far and wide. Walls of stone turned into rubble and entire villages ravaged by its wrath. Taking it down will be no small feat.</letterText>
+			</li>
     </comps>
 	
     <butcherProducts>
@@ -79,20 +86,20 @@
 	  <maxPreyBodySize>8.5</maxPreyBodySize>
       <baseBodySize>4.5</baseBodySize>
       <baseHealthScale>10</baseHealthScale>
-      <baseHungerRate>0.5</baseHungerRate>
+      <baseHungerRate>0.2</baseHungerRate>
       <trainability>Intermediate</trainability>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
-	  <manhunterOnTameFailChance>0.5</manhunterOnTameFailChance>
+	  <manhunterOnTameFailChance>0.7</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>
 	  <packAnimal>false</packAnimal>
-      <leatherDef>DA_Leather_Troll</leatherDef>
+      <leatherDef>DA_Leather_RockTroll</leatherDef>
 	  
       <hediffGiverSets>
         <li>RockTroll</li>
       </hediffGiverSets>
 	  
      
-	 <gestationPeriodDays>12</gestationPeriodDays>
+	 <gestationPeriodDays>40</gestationPeriodDays>
       <litterSizeCurve>
         <points>
           <li>(0.5, 0)</li>
@@ -102,7 +109,7 @@
         </points>
       </litterSizeCurve>
       
-	  <lifeExpectancy>10</lifeExpectancy>
+	  <lifeExpectancy>750</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>AnimalBaby</def>
@@ -110,11 +117,11 @@
         </li>
         <li>
           <def>AnimalJuvenile</def>
-          <minAge>0.25</minAge>
+          <minAge>0.10</minAge>
         </li>
         <li>
           <def>AnimalAdult</def>
-          <minAge>0.6</minAge>
+          <minAge>0.20</minAge>
           <soundWounded>Pawn_Thrumbo_Pain</soundWounded>
           <soundDeath>Pawn_Thrumbo_Death</soundDeath>
           <soundCall>Pawn_Thrumbo_Call</soundCall>
@@ -145,7 +152,7 @@
     <defName>DA_RockTroll</defName>
     <label>rock troll</label>
     <race>DA_RockTroll</race>
-    <combatPower>130</combatPower>
+    <combatPower>650</combatPower>
     <lifeStages>
 	
       <li>
@@ -214,7 +221,7 @@
       <ThingDef ParentName="RockBase">
         <defName>DA_HibernatingRockTroll</defName>
         <label>strange stone formation</label>
-        <description>Something about this large stone just feels really wrong.</description>
+        <description>A large jagged rock formation.</description>
         <tickerType>Normal</tickerType>
         <graphicData>
             <texPath>Animal/RockTroll/RockTroll_Hidden</texPath>
@@ -230,10 +237,12 @@
         </statBases>
         <rotatable>false</rotatable>
         <building>
+		    <repairable>false</repairable>
             <isResourceRock>false</isResourceRock>
             <isNaturalRock>false</isNaturalRock>
             <claimable>false</claimable>
             <mineableScatterCommonality>0</mineableScatterCommonality>
+			<mineablePreventMeteorite>true</mineablePreventMeteorite>
             <mineableScatterLumpSizeRange>0</mineableScatterLumpSizeRange>
             <smoothedThing />
         </building>
@@ -245,8 +254,8 @@
 				<naturalEmergeDelay>600</naturalEmergeDelay>
 				<delayEffecter>EmergencePointSustained3X3</delayEffecter>
 				<delaySustainer>Tunnel</delaySustainer>
-				<delaySustainerEnd>BuildingDestroyed_Stone_Big</delaySustainerEnd>
-                <earlyMentalState>Manhunter</earlyMentalState> <!--Happens when the rocks are destroyed before the delay ends-->
+				<delaySustainerEnd>Crater_FilledIn</delaySustainerEnd>
+                <earlyMentalState>ManhunterAttackColony</earlyMentalState> <!--Happens when the rocks are destroyed before the delay ends-->
                 <emergeOnAttack>False</emergeOnAttack> <!--Makes the emergence happen on any amount of damage-->
 				<emergeAfter>900000</emergeAfter>
 				<emergeAtHealthThreshold>0.5</emergeAtHealthThreshold>
@@ -255,7 +264,7 @@
 				<radius>8</radius>
 				<letterDef>PositiveEvent</letterDef>
 				<letterLabel>Strange stone formation</letterLabel>
-				<letterText>{PAWN_nameDef} has noticed a seemingly large chunk of stone emerging from the earth. Valuable minerals could be found within.</letterText>
+				<letterText>{PAWN_nameDef} has noticed a seemingly large chunk of stone emerging from the earth. Valuable minerals could be found within.\n\nA small thumping can be heard from beneath.</letterText>
 			</li>
         </comps>
     </ThingDef>

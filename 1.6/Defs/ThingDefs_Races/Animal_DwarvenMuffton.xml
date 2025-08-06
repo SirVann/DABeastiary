@@ -414,7 +414,7 @@
     <effectWorking>Tailor</effectWorking>
     <soundWorking>Recipe_Brewing</soundWorking>
 	<unfinishedThingDef>DA_FermentingMufftonMilk</unfinishedThingDef>
-    <workAmount>50,000</workAmount>
+    <workAmount>35,000</workAmount>
     <allowMixingIngredients>true</allowMixingIngredients>
     <targetCountAdjustment>50</targetCountAdjustment>
 	

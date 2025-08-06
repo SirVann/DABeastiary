@@ -21,6 +21,7 @@
 			<texPath>Building/Rug/TrollRug</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2.5,2.5)</drawSize>
+			<drawOffset>(0,-1,0)</drawOffset>
 		</graphicData>
 		
 		
@@ -70,6 +71,7 @@
 			<texPath>Building/Rug/LarpahRug</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
+			<drawOffset>(0,-1,0)</drawOffset>
 		</graphicData>
 		<uiIconScale>0.7</uiIconScale>
 		
@@ -128,7 +130,7 @@
 			<texPath>Building/Rug/DrogRug</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(5.2,5.2)</drawSize>
-			<drawOffset>(0,-5,0)</drawOffset>
+			<drawOffset>(0,-1,0)</drawOffset>
 		</graphicData>
 		
 		

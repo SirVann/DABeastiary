@@ -1,6 +1,6 @@
 <Defs>
     <IncidentDef>
-        <defName>DA_EmergingOrlok</defName>
+        <defName>DA_HibernatingTroll</defName>
         <label>suspicious stone</label>
         <letterLabel>strange stone formation</letterLabel>
         <letterText>Strong winds brushed the soil, revealing a peculiar stone formation.</letterText>
@@ -10,8 +10,8 @@
             <li>Map_PlayerHome</li>
         </targetTags>
         <workerClass>EmergingAnimals.IncidentWorker_SpawnThing</workerClass>
-        <baseChance>0.4</baseChance>
-		<minRefireDays>30</minRefireDays>
+        <baseChance>0.3</baseChance>
+		<minRefireDays>20</minRefireDays>
         <pointsScaleable>false</pointsScaleable>
         <ignoreRecentSelectionWeighting>true</ignoreRecentSelectionWeighting>
         <modExtensions>
@@ -42,8 +42,9 @@
             <li>Map_PlayerHome</li>
         </targetTags>
         <workerClass>EmergingAnimals.IncidentWorker_MigratingAnimals</workerClass>
-        <baseChance>100</baseChance>
-        <minRefireDays>0</minRefireDays>
+        <baseChance>0.3</baseChance>
+        <minRefireDays>20</minRefireDays>
+		<pointsScaleable>false</pointsScaleable>
         <modExtensions>
             <li Class="EmergingAnimals.EmergingAnimalsExtension">
 			    <maxSpawn>1</maxSpawn>

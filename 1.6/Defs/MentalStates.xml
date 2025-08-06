@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <MentalStateDef ParentName="Manhunter">
+        <defName>ManhunterAttackColony</defName>
+        <stateClass>EmergingAnimals.MentalState_ManhunterAttackColony</stateClass>
+        <minTicksBeforeRecovery>1000</minTicksBeforeRecovery>
+		<maxTicksBeforeRecovery>37500</maxTicksBeforeRecovery>
+		<category>Aggro</category>
+        <recoverFromSleep>true</recoverFromSleep>
+        <recoverFromDowned>false</recoverFromDowned>
+        <recoverFromCollapsingExhausted>true</recoverFromCollapsingExhausted>
+    </MentalStateDef>
+	
+</Defs>
