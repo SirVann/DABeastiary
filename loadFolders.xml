@@ -8,6 +8,8 @@
     <v1.6>
 		<li>/</li>
 		<li>1.6</li>
-        <li IfModActive="dankpyon.medieval.overhaul">1.6/Mods/MedievalOverhaulFeatures</li>			
+        <li IfModActive="dankpyon.medieval.overhaul">1.6/Mods/MedievalOverhaulFeatures</li>	
+		<li IfModActive="Ludeon.RimWorld.Odyssey">1.6/Mods/Odyssey</li>
+		<li IfModActive="VanillaExpanded.VCEF" IfModNotActive="Ludeon.RimWorld.Odyssey">1.6/Mods/VEFishing</li>
 	</v1.6>
 </loadFolders>

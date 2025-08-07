@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <NegativeFishingOutcomeDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>DA_TadpoleBite</defName>
+    <fishType>DA_Fish_SnappingTadpole</fishType>
+    <letterLabel>Snapping tadpole bite</letterLabel>
+    <letterText>While reaching out for {PAWN_possessive} catch, {PAWN_nameDef} was bitten by a snapping tadpole!\n\nThe the fish was lost in the commotion.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <damageDef>Bite</damageDef>
+    <damageAmountRange>3~5</damageAmountRange>
+  </NegativeFishingOutcomeDef>
+
+</Defs>

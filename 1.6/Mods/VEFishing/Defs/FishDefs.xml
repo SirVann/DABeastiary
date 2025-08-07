@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VCE_Fishing.BiomeTempDef>
+		<defName>DA_BiomeSwampland</defName>  
+		<biomeTempLabel>Swampland</biomeTempLabel>
+		<biomes>
+			<li>ColdBog</li>
+			<li>TemperateSwamp</li>
+			<li>TropicalSwamp</li>
+		</biomes>      
+	</VCE_Fishing.BiomeTempDef>
+
+	<ThingDef ParentName="VCEF_RawFishBase">
+		<defName>DA_RawTadpole</defName>
+		<label>snapping tadpole</label>
+		<description>The larval stage of giant snaptoad. Their spongy flesh tastes of mud and little else, but is nevertheless considered a delicacy in some cultures.</description>
+		<graphicData>
+			<texPath>Item/Resource/SnappingTadpole</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<MarketValue>1.1</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+		<uiIconForStackCount>1</uiIconForStackCount>
+	</ThingDef>
+	
+	<VCE_Fishing.FishDef>
+		<defName>DA_Fish_SnappingTadpole</defName>
+		<thingDef>DA_RawTadpole</thingDef>    
+		<fishSizeCategory>Medium</fishSizeCategory>
+		<canBeFreshwater>true</canBeFreshwater>
+		<canBeSaltwater>false</canBeSaltwater>
+		<allowedBiomes>
+			<li>Swampland</li>
+		</allowedBiomes>  		
+		<baseFishingYield>16</baseFishingYield>
+	</VCE_Fishing.FishDef>
+
+</Defs>

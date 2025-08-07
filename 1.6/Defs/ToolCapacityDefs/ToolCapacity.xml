@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+	
 	<ToolCapacityDef>
 		<defName>DA_Quillsting</defName>
 		<label>quill-sting</label>
@@ -24,4 +25,10 @@
 		<defName>DA_DemolishTroll</defName>
 		<label>demolish</label>
 	</ToolCapacityDef>
+
+	<ToolCapacityDef>
+		<defName>DA_ToadDevour</defName>
+		<label>devour</label>
+	</ToolCapacityDef>
+
 </Defs>

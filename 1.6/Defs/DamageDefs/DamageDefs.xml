@@ -98,5 +98,18 @@
       </li>
     </children>
   </EffecterDef>
+
+    <DamageDef>
+		<defName>DA_ToadDevour</defName>
+		<label>devour</label>
+		<workerClass>VEF.AnimalBehaviours.DamageWorker_SwallowWhole</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been bitten to death.</deathMessage>
+		<hediff>Stab</hediff>
+		<hediffSolid>Crack</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Slice</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+	</DamageDef>
 	
 </Defs>

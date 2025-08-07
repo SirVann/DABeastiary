@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ThingDef -->
+  
+  <!-- Base -->
+  <ThingDef ParentName="AnimalThingBase">
+    <thingClass>VEF.AnimalBehaviours.Pawn_SwallowWhole</thingClass>
+    <defName>DA_Snaptoad</defName>
+    <label>giant snaptoad</label>
+    <description>An enormous, carnivorous amphibian reigning as swamplands' apex predator. The tooth-filled maw that earned giant snaptoad its moniker can easily crush bone, and unhinge to swallow smaller prey whole. Its dentation, unique among contemporary amphibians, leads to speculation among scholars about whether giant snaptoad is a true toad, or an unrelated amphibian that convergently developed toad-like traits.\n\nGiant snaptoads practice a rare form of child rearing called gastric brooding: upon fertilization, the eggs are immediately swallowed by the female and stored in a special chamber in their stomach. There, the tadpoles can safely hatch and develop, regurgitated by their parent only once they have transformed into froglets. However, in rare cases, the practice is omitted, and the tadpoles are left to fend for themselves in marshy waters.</description>
+	  <statBases>
+      <MoveSpeed>4.5</MoveSpeed>
+      <MarketValue>800</MarketValue>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+      <ComfyTemperatureMax>45</ComfyTemperatureMax>
+	    <Wildness>0.9</Wildness>
+    </statBases>
+    <uiIconScale>1.5</uiIconScale>
+    <comps>
+      <li Class="VEF.AnimalBehaviours.CompProperties_SwallowWhole">	
+        <stomachCapacity>3</stomachCapacity>
+        <maximumBodysize>0.7</maximumBodysize>
+        <digestionPeriod>80</digestionPeriod>
+      </li>
+      <li Class="VEF.AnimalBehaviours.CompProperties_InitialAbility">
+        <initialAbility>DA_FrogLeap</initialAbility>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+      <li>
+				<capacities>
+					<li>DA_ToadDevour</li>
+				</capacities>
+				<power>24</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+			</li>
+    </tools>
+   <race>
+      <body>QuadrupedAnimalWithPaws</body>
+      <baseBodySize>2.3</baseBodySize>
+      <baseHealthScale>2.75</baseHealthScale>
+      <baseHungerRate>0.22</baseHungerRate>
+      <foodType>CarnivoreAnimal</foodType>
+      <predator>true</predator>
+      <maxPreyBodySize>3</maxPreyBodySize>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0.85</manhunterOnTameFailChance>
+	    <packAnimal>false</packAnimal>
+      <trainability>Intermediate</trainability>
+      <specialTrainables>
+        <li MayRequire="Ludeon.RimWorld.Odyssey">AttackTarget</li>
+      </specialTrainables>
+      <leatherDef>DA_Leather_Snaptoad</leatherDef>
+      <waterSeeker>true</waterSeeker>
+      <waterCellCost>1</waterCellCost>
+      <gestationPeriodDays>5.661</gestationPeriodDays>
+	    <wildBiomes>
+        <TropicalSwamp>0.5</TropicalSwamp>
+	      <ColdBog>0.1</ColdBog>
+	      <TemperateSwamp>0.5</TemperateSwamp>
+	      <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.5</ZBiome_Marsh>
+	    </wildBiomes>
+	    <lifeExpectancy>30</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.3333</minAge>
+          <soundWounded>todo</soundWounded>
+          <soundDeath>todo</soundDeath>
+          <soundAngry>todo</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <soundEating>Reptile_Eat</soundEating>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.2)</li>
+        <li>(0.3, 0, 0.1)</li>
+        <li>(0.0, 0, -0.06)</li>
+        <li>(-0.3, 0, 0.1)</li>
+      </headPosPerRotation>
+    </race>
+    <butcherProducts>
+	   <DA_GiantBone>10</DA_GiantBone>
+	  </butcherProducts>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+      <li>AnimalFighter</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <!-- Pawnkinds -->
+
+  <!-- Base -->
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_Snaptoad</defName>
+    <label>giant snaptoad</label>
+    <race>DA_Snaptoad</race>
+    <combatPower>230</combatPower>
+    <ecoSystemWeight>0.5</ecoSystemWeight>
+    <lifeStages>
+      <li>
+	      <label>giant snaptoad froglet</label>
+        <labelPlural>snaptoad froglets</labelPlural>
+        <bodyGraphicData>
+          <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Baby</texPath>
+          <drawSize>1.32</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.4, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Baby_Dessicated</texPath>
+          <drawSize>1.32</drawSize>
+        </dessicatedBodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Animal/GiantSnaptoad/Swimming_GiantSnaptoad_Baby</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.32</drawSize>
+        </swimmingGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/GiantSnaptoad/GiantSnaptoad</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.6, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Dessicated</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Animal/GiantSnaptoad/Swimming_GiantSnaptoad</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+        </swimmingGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/GiantSnaptoad/GiantSnaptoad</texPath>
+          <drawSize>2.75</drawSize>
+          <shadowData>
+            <volume>(1, 0.6, 1)</volume>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Dessicated</texPath>
+          <drawSize>2.75</drawSize>
+        </dessicatedBodyGraphicData>
+        <swimmingGraphicData>
+          <texPath>Animal/GiantSnaptoad/Swimming_GiantSnaptoad</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.75</drawSize>
+        </swimmingGraphicData>
+      </li>
+    </lifeStages>
+    <modExtensions>
+      <li Class="Bestiary.ProductByBodySize">
+        <products>
+          <li>DA_GiantBone</li>
+        </products>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+</Defs>

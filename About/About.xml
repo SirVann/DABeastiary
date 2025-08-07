@@ -17,11 +17,12 @@
 		</li>
 	</modDependencies>
 	<loadAfter>
-		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Odyssey</li>
 		<li>syrchalis.processor.framework</li>
 		<li>dankpyon.medieval.overhaul</li>
 		<li>owlchemist.giddyup</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>VanillaExpanded.VCEF</li>
 	</loadAfter>
 	<packageId>Van.Beasts</packageId>
 	<description>Adds a variety of animals, beasts and monsters to your biomes.</description>

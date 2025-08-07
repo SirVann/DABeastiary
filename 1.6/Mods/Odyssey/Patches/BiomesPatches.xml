@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/BiomeDef[defName="ColdBog" or defName="TemperateSwamp" or defName="TropicalSwamp"]/fishTypes/freshwater_Uncommon</xpath>
+		<value>
+			<DA_Fish_SnappingTadpole>1</DA_Fish_SnappingTadpole>
+		</value>
+	</Operation>
+
+</Patch>

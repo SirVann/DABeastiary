@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingDef ParentName="FishBase" MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>DA_Fish_SnappingTadpole</defName>
+    <label>snapping tadpole</label>
+    <description>The larval stage of giant snaptoad. Their spongy flesh tastes of mud and little else, but is nevertheless considered a delicacy in some cultures.</description>
+    <graphicData>
+      <texPath>Item/Resource/SnappingTadpole</texPath>
+    </graphicData>
+  </ThingDef>
+
+</Defs>
