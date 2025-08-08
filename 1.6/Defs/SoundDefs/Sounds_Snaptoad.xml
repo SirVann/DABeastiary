@@ -61,7 +61,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipFolderPath>Snaptoad/Pawn_Snaptoad_Angry</clipFolderPath>
+            <clipPath>Snaptoad/Pawn_Snaptoad_Angry</clipPath>
           </li>
         </grains>
         <volumeRange>25~25</volumeRange>
@@ -79,7 +79,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipFolderPath>Snaptoad/Pawn_Snaptoad_Death</clipFolderPath>
+            <clipPath>Snaptoad/Pawn_Snaptoad_Death</clipPath>
           </li>
         </grains>
         <volumeRange>25~25</volumeRange>
@@ -96,7 +96,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipFolderPath>Snaptoad/Pawn_Snaptoad_Pain</clipFolderPath>
+            <clipPath>Snaptoad/Pawn_Snaptoad_Pain</clipPath>
           </li>
         </grains>
         <volumeRange>21~21</volumeRange>
