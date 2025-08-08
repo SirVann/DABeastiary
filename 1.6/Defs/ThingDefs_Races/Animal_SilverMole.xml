@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="AnimalThingBase">
     <defName>DA_SilverMole</defName>
-    <label>silvery mole</label>
-    <description>A small burrowing mammal with glistening silver fur. Elusive and skittish, the silver mole can rarely be seen outside the safety of its underground den deep in the mountains.\n\nMany woodsmen make a habit of patrolling silvery mole habitats, hoping to catch the critter while it digs for its favourite food - white truffles, rare mushrooms with sublime taste that grows under stony soils.</description>
+    <label>silver mole</label>
+    <description>A small burrowing mammal with glistening silver fur. Elusive and skittish, the silver mole can rarely be seen outside the safety of its underground den deep in the mountains.\n\nMany woodsmen make a habit of patrolling silver mole habitats, hoping to catch the critter while it digs for its favourite food - white truffles, rare mushrooms with sublime taste that grows under stony soils.</description>
 	
     <statBases>
       <MoveSpeed>7.0</MoveSpeed>
@@ -142,7 +142,7 @@
 
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>DA_SilverMole</defName>
-    <label>silvery mole</label>
+    <label>silver mole</label>
     <race>DA_SilverMole</race>
     <combatPower>33</combatPower>
     <ecoSystemWeight>0.3</ecoSystemWeight>

@@ -4,7 +4,7 @@
         <defName>DA_SilveryMoleSpawn</defName>
         <label>silvery mole spawn</label>
         <pawnKind>DA_SilverMole</pawnKind>
-		<category>ThreatSmall</category>
+		<category>Misc</category>
         <targetTags>
             <li>Map_PlayerHome</li>
         </targetTags>
