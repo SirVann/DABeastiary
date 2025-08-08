@@ -21,6 +21,7 @@
       <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
       <warmupTime>0</warmupTime>
       <range>9.9</range>
+      <commonality>1</commonality>
       <requireLineOfSight>true</requireLineOfSight>
       <soundCast>DA_FrogLeap_Start</soundCast>
       <soundLanding>DA_FrogLeap_Landing</soundLanding>
