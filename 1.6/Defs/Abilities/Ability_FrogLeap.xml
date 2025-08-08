@@ -22,8 +22,8 @@
       <warmupTime>0</warmupTime>
       <range>9.9</range>
       <requireLineOfSight>true</requireLineOfSight>
-      <soundCast>todo</soundCast>
-      <soundLanding>todo</soundLanding>
+      <soundCast>DA_FrogLeap_Start</soundCast>
+      <soundLanding>DA_FrogLeap_Landing</soundLanding>
       <targetParams>
         <canTargetLocations>true</canTargetLocations>
         <canTargetPawns>true</canTargetPawns>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <!-- ThingDef -->
@@ -95,9 +95,10 @@
         <li>
           <def>AnimalAdult</def>
           <minAge>0.3333</minAge>
-          <soundWounded>todo</soundWounded>
-          <soundDeath>todo</soundDeath>
-          <soundAngry>todo</soundAngry>
+          <soundWounded>DA_Pawn_Snaptoad_Wounded</soundWounded>
+          <soundDeath>DA_Pawn_Snaptoad_Death</soundDeath>
+          <soundCall>DA_Pawn_Snaptoad_Call</soundCall>
+          <soundAngry>DA_Pawn_Snaptoad_Angry</soundAngry>
         </li>
       </lifeStageAges>
       <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
