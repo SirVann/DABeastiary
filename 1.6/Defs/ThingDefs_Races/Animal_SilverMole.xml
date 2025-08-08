@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>DA_SilverMole</defName>
+    <label>silvery mole</label>
+    <description>A small burrowing mammal with glistening silver fur. Elusive and skittish, the silver mole can rarely be seen outside the safety of its underground den deep in the mountains.\n\nMany woodsmen make a habit of patrolling silvery mole habitats, hoping to catch the critter while it digs for its favourite food - white truffles, rare mushrooms with sublime taste that grows under stony soils.</description>
+	
+    <statBases>
+      <MoveSpeed>7.0</MoveSpeed>
+      <MarketValue>1500</MarketValue>
+      <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+      <ComfyTemperatureMax>55</ComfyTemperatureMax>
+      <Wildness>0.6</Wildness>
+    </statBases>
+	
+        <comps>
+		
+	        <li Class="VEF.AnimalBehaviours.CompProperties_DigWhenHungry">
+		      <customThingToDig>DA_WhiteTruffle</customThingToDig>
+		      <customAmountToDig>10</customAmountToDig>
+			  <spawnForbidden>true</spawnForbidden>
+			  
+			  <digAnywayEveryXTicks>true</digAnywayEveryXTicks>
+			  <timeToDigForced>180000</timeToDigForced>
+			  
+			  <acceptedTerrains>
+	 		   <li>StonySoil</li>
+			   <li>Soil</li>
+			  </acceptedTerrains>
+	        </li>
+	
+            <li Class="CompProperties_Effecter">
+                <effecterDef>DA_SilverySparkle</effecterDef>
+            </li>
+        </comps>
+	
+    <race>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <baseBodySize>0.2</baseBodySize>
+      <baseHealthScale>0.4</baseHealthScale>
+      <baseHungerRate>0.1</baseHungerRate>
+      <foodType>VegetarianRoughAnimal</foodType>
+      <leatherDef>DA_Leather_SilverMole</leatherDef>
+      <trainability>None</trainability>
+      <petness>0.40</petness>
+      <mateMtbHours>8</mateMtbHours>
+      <nuzzleMtbHours>35</nuzzleMtbHours>
+      <gestationPeriodDays>6.66</gestationPeriodDays>
+      <soundEating>Rodent_Eat</soundEating>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(2.5, 1)</li>
+          <li>(3, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>7</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.15</minAge>
+          <soundWounded>Pawn_GuineaPig_Wounded</soundWounded>
+          <soundDeath>Pawn_GuineaPig_Death</soundDeath>
+          <soundCall>Pawn_GuineaPig_Call</soundCall>
+          <soundAngry>Pawn_GuineaPig_Angry</soundAngry>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.2</minAge>
+          <soundWounded>Pawn_GuineaPig_Wounded</soundWounded>
+          <soundDeath>Pawn_GuineaPig_Death</soundDeath>
+          <soundCall>Pawn_GuineaPig_Call</soundCall>
+          <soundAngry>Pawn_GuineaPig_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+	  
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <headPosPerRotation>
+        <li>(0.0, 0, 0.3)</li>
+        <li>(0.21, 0, 0.02)</li>
+        <li>(0.0, 0, -0.2)</li>
+        <li>(-0.21, 0, 0.02)</li>
+      </headPosPerRotation>
+    </race>
+	
+    <tradeTags>
+      <li>AnimalPet</li>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+	
+    <tools>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3.6</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>3.6</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>5.8</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>DA_SilverMole</defName>
+    <label>silvery mole</label>
+    <race>DA_SilverMole</race>
+    <combatPower>33</combatPower>
+    <ecoSystemWeight>0.3</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/SilverMole/SilverMole</texPath>
+          <drawSize>0.5</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/SilverMole/SilverMole</texPath>
+          <drawSize>0.5</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/SilverMole/SilverMole</texPath>
+          <drawSize>0.75</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/SilverMole/SilverMole</texPath>
+          <drawSize>0.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Animal/SilverMole/SilverMole</texPath>
+          <drawSize>1.15</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Animal/SilverMole/SilverMole</texPath>
+          <drawSize>1</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+	
+  </PawnKindDef>
+  
+  <!-- ======================= Truffle =============================== -->
+	
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>DA_WhiteTruffle</defName>
+    <label>white truffle</label>
+    <description>Often growing beneath stony soil, the white truffles are a rare delicacy in high demand for their unique taste.</description>
+    <possessionCount>10</possessionCount>
+    <graphicData>
+      <texPath>Item/WhiteTruffle</texPath>
+	  <graphicClass>Graphic_StackCount</graphicClass>
+	  <drawSize>0.8</drawSize>
+    </graphicData>
+	<stackLimit>25</stackLimit>
+    <statBases>
+      <Nutrition>0.08</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+      <Mass>0.03</Mass>
+      <MarketValue>10</MarketValue>
+    </statBases>
+	<socialPropernessMatters>true</socialPropernessMatters>
+	
+    <thingCategories>
+      <li>PlantFoodRaw</li>
+    </thingCategories>
+	
+    <ingestible>
+      <foodType>Fungus</foodType>
+	  <preferability>RawBad</preferability>
+	  <tasteThought>DA_AteWhiteTruffle</tasteThought>
+	  <specialThoughtAsIngredient>DA_AteCookedWhiteTruffle</specialThoughtAsIngredient>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+      <joy>0.1</joy>
+      <joyKind>Gluttonous</joyKind>
+    </ingestible>
+	
+    <ingredient>
+      <mergeCompatibilityTags>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Fungus</li>
+      </mergeCompatibilityTags>
+    </ingredient>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThoughtDef>
+    <defName>DA_AteWhiteTruffle</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>0.3</durationDays>
+    <stages>
+      <li>
+        <label>ate raw white truffle</label>
+        <description>I ate a delicate white mushroom. While it would taste much better cooked and prepared, it tasted very good by itself.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+    <ThoughtDef>
+    <defName>DA_AteCookedWhiteTruffle</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>0.3</durationDays>
+    <stages>
+      <li>
+        <label>ate cooked white truffle</label>
+        <description>I ate a delicate white mushroom. The sublime taste accompanies my food perfectly.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- ======================= Effecter =============================== -->
+  
+  <ThingDef ParentName="MoteBase">
+  <defName>Mote_SilverySparkle</defName>
+  <graphicData>
+    <texPath>Mote/SilverySparkle</texPath>
+  </graphicData>
+  <thingClass>MoteThrownAttached</thingClass>
+  <altitudeLayer>MetaOverlays</altitudeLayer>
+  <mote>
+    <fadeInTime>0.30</fadeInTime>
+    <solidTime>0.80</solidTime>
+    <fadeOutTime>0.40</fadeOutTime>
+    <attachedDrawOffset>(0, 0, 0.1)</attachedDrawOffset>
+  </mote>
+</ThingDef>
+
+  <EffecterDef>
+    <defName>DA_SilverySparkle</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
+        <scale>0.1~0.3</scale>
+        <chancePerTick>0.004</chancePerTick>
+        <positionRadius>0.3</positionRadius>
+        <burstCount>1~2</burstCount>
+        <moteDef>Mote_SilverySparkle</moteDef>
+        <speed>0</speed>
+        <rotation>0</rotation>
+        <angle>0</angle>
+      </li>
+    </children>
+  </EffecterDef>
+
+</Defs>

@@ -59,6 +59,31 @@
   </ThingDef>
   
   <ThingDef ParentName="LeatherBase">
+    <defName>DA_Leather_SilverMole</defName>
+    <label>silverfur</label>
+    <description>Bright sheets of a silvery mole. It is delicate, but luxurious.</description>
+    <possessionCount>20</possessionCount>
+    <graphicData>
+      <color>(199,195,187)</color>
+    </graphicData>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <StuffPower_Armor_Sharp>0.57</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.10</StuffPower_Armor_Blunt>
+      <StuffPower_Insulation_Cold>38</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>18</StuffPower_Insulation_Heat>
+    </statBases>
+    <stuffProps>
+      <color>(199,195,187)</color>
+      <commonality>0.025</commonality>
+      <statFactors>
+        <MaxHitPoints>0.5</MaxHitPoints>
+        <Beauty>6</Beauty>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+  <ThingDef ParentName="LeatherBase">
     <defName>DA_Leather_Crestel</defName>
     <label>crestel stonefeather</label>
     <description>A thin pelt covered in numerous blue feathers. Incredibly hard by nature, they however shatter quite easily against blunt shocks.</description>
