@@ -47,7 +47,7 @@
             <clipFolderPath>Snaptoad/Snaptoad_Call</clipFolderPath>
           </li>
         </grains>
-        <volumeRange>15~15</volumeRange>
+        <volumeRange>18~18</volumeRange>
         <pitchRange>1~1.12</pitchRange>
         <distRange>0~50</distRange>
       </li>
