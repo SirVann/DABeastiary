@@ -15,14 +15,18 @@ namespace Bestiary
                 Map map = pawn.Map;
                 foreach (TileMutatorDef mutatorDef in map.Tile.Tile.Mutators)
                 {
-                    NegativeFishingOutcomeDef negativeOutcome = mutatorDef.GetModExtension<TileMutatorExtension>()?.negativeFishingOutcomeDef;
-                    if (negativeOutcome != null)
+                    List<NegativeFishingOutcomeDef> outcomeList = mutatorDef.GetModExtension<TileMutatorExtension>()?.negativeFishingOutcomeDef;
+                    if (!outcomeList.NullOrEmpty())
                     {
-                        __result.Add(negativeOutcome);
+                        foreach (NegativeFishingOutcomeDef negativeOutcomeDef in outcomeList)
+                        {
+                            __result.Add(negativeOutcomeDef);
+                        }
                         break;
                     }
                 }
             }
         }
     }
+
 }

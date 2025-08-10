@@ -22,22 +22,15 @@
         </biomeWhitelist>
         <modExtensions>
             <li Class="Bestiary.TileMutatorExtension">
-                <negativeFishingOutcomeDef>DA_SnaptoadInfestation</negativeFishingOutcomeDef>
+                <negativeFishingOutcomeDef>
+                    <li>DA_SnaptoadInfestation</li>
+                    <li>DA_TadpoleBite</li>
+                </negativeFishingOutcomeDef>
+                <fishThings>
+                    <li>DA_Fish_SnappingTadpole</li>
+                </fishThings>
             </li>
         </modExtensions>
     </TileMutatorDef>
-
-    <NegativeFishingOutcomeDef MayRequire="Ludeon.RimWorld.Odyssey">
-        <defName>DA_SnaptoadInfestation</defName>
-        <letterLabel>Snaptoad Attack</letterLabel>
-        <letterText>Snaptoad Attacks.</letterText>
-        <letterDef>NegativeEvent</letterDef>
-       <modExtensions>
-           <li Class="Bestiary.NegativeFishingExtension">
-               <pawnKindDef>DA_Snaptoad</pawnKindDef>
-               <pawnAge>1</pawnAge>
-           </li>
-       </modExtensions>
-    </NegativeFishingOutcomeDef>
 
 </Defs>

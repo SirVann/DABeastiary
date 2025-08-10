@@ -1,11 +1,13 @@
-﻿using RimWorld;
+﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 
 namespace Bestiary
 {
     public class TileMutatorExtension : DefModExtension
     {
-        public NegativeFishingOutcomeDef negativeFishingOutcomeDef;
+        public List<NegativeFishingOutcomeDef> negativeFishingOutcomeDef;
+        public List<ThingDef> fishThings;
 
     }
 

@@ -42,6 +42,7 @@
 		<Compile Include="HarmonyPatches\FishingUtilityPatch.cs"/>
 		<Compile Include="HarmonyPatches\JobDriver_FishingPatch.cs"/>
 		<Compile Include="HarmonyPatches\NotifyDamageTakenPatch.cs"/>
+		<Compile Include="HarmonyPatches\WaterBodyPatch.cs" />
 		<Compile Include="TileMutatorExtension.cs"/>
 		<Compile Include="Utilities\FoodUtilities.cs"/>
 		<Compile Include="GameConditions\GameConditionExtension.cs"/>
