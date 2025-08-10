@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <TileMutatorDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DA_SnaptoadInfestation</defName>
+        <label>snaptoad infestation</label>
+        <description>A snaptoad infestation.</description>
+        <chanceOnNonLandmarkTile>500</chanceOnNonLandmarkTile>
+        <pollutionRange>0~0.25</pollutionRange>
+        <biomeWhitelist>
+            <li>AridShrubland</li>
+            <li>BorealForest</li>
+            <li>ColdBog</li>
+            <li>GlacialPlain</li>
+            <li>Grasslands</li>
+            <li>LavaField</li>
+            <li>TemperateForest</li>
+            <li>TemperateSwamp</li>
+            <li>TropicalRainforest</li>
+            <li>TropicalSwamp</li>
+            <li>Tundra</li>
+        </biomeWhitelist>
+        <modExtensions>
+            <li Class="Bestiary.TileMutatorExtension">
+                <negativeFishingOutcomeDef>DA_SnaptoadInfestation</negativeFishingOutcomeDef>
+            </li>
+        </modExtensions>
+    </TileMutatorDef>
+
+    <NegativeFishingOutcomeDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DA_SnaptoadInfestation</defName>
+        <letterLabel>Snaptoad Attack</letterLabel>
+        <letterText>Snaptoad Attacks.</letterText>
+        <letterDef>NegativeEvent</letterDef>
+       <modExtensions>
+           <li Class="Bestiary.NegativeFishingExtension">
+               <pawnKindDef>DA_Snaptoad</pawnKindDef>
+               <pawnAge>1</pawnAge>
+           </li>
+       </modExtensions>
+    </NegativeFishingOutcomeDef>
+
+</Defs>
