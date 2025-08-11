@@ -232,6 +232,7 @@
         <staticSunShadowHeight>0</staticSunShadowHeight>
         <size>(2,2)</size>
 		<castEdgeShadows>false</castEdgeShadows>
+		<saveCompressible>false</saveCompressible>
         <statBases>
             <MaxHitPoints>1000</MaxHitPoints>
         </statBases>
