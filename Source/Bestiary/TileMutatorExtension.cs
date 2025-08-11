@@ -15,6 +15,7 @@ namespace Bestiary
     {
         public PawnKindDef pawnKindDef;
         public float pawnAge = 1f;
+        public bool manHunter = false;
 
     }
 }

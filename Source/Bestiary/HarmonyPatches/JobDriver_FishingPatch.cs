@@ -94,7 +94,10 @@ namespace Bestiary
             Pawn spawned = PawnGenerator.GeneratePawn(modExtension.pawnKindDef, null);
             spawned.ageTracker.AgeBiologicalTicks = (long)(3600000 * modExtension.pawnAge);
             GenSpawn.Spawn(spawned, intVec3, fisher.Map, Rot4.Random, WipeMode.Vanish, false);
-            spawned.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, false, null, false, false, false);
+            if (modExtension.manHunter)
+            {
+                spawned.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Manhunter, null, true, false, false, null, false, false, false);
+            }
         }
 
     }

@@ -20,6 +20,7 @@
       <li Class="Bestiary.NegativeFishingExtension">
         <pawnKindDef>DA_Snaptoad</pawnKindDef>
         <pawnAge>1</pawnAge>
+        <manHunter>true</manHunter>
       </li>
     </modExtensions>
   </NegativeFishingOutcomeDef>
