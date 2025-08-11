@@ -12,14 +12,14 @@
   </NegativeFishingOutcomeDef>
 
   <NegativeFishingOutcomeDef MayRequire="Ludeon.RimWorld.Odyssey">
-    <defName>DA_SnaptoadInfestation</defName>
-    <letterLabel>Snaptoad Attack</letterLabel>
-    <letterText>Snaptoad Attacks.</letterText>
+    <defName>DA_FrogletAttack</defName>
+    <letterLabel>Froglet Attack</letterLabel>
+    <letterText>todo</letterText>
     <letterDef>NegativeEvent</letterDef>
     <modExtensions>
       <li Class="Bestiary.NegativeFishingExtension">
         <pawnKindDef>DA_Snaptoad</pawnKindDef>
-        <pawnAge>1</pawnAge>
+        <pawnAge>0.1</pawnAge>
       </li>
     </modExtensions>
   </NegativeFishingOutcomeDef>
