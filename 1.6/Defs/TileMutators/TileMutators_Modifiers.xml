@@ -4,7 +4,7 @@
     <TileMutatorDef MayRequire="Ludeon.RimWorld.Odyssey">
         <defName>DA_SnaptoadBreedingGrounds</defName>
         <label>snaptoad breeding grounds</label>
-        <description>todo</description>
+        <description>A wetland used by giant snaptoads as spawning pools, its waters teeming with the dangerous amphibians and their offsprings.</description>
         <chanceOnNonLandmarkTile>500</chanceOnNonLandmarkTile>
         <pollutionRange>0~0.25</pollutionRange>
         <biomeWhitelist>
