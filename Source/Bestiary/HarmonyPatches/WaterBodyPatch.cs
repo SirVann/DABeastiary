@@ -5,14 +5,15 @@ using Verse;
 
 namespace Bestiary
 {
-    [HarmonyPatch(typeof(WaterBody), nameof(WaterBody.CommonFishIncludingExtras), MethodType.Getter)]
-    public static class WaterBody_CommonFishIncludingExtras
+
+    [HarmonyPatch(typeof(WaterBody), nameof(WaterBody.SetFishTypes))]
+    public static class WaterBody_SetFishTypes
     {
-        private static IEnumerable<ThingDef> Postfix(IEnumerable<ThingDef> __result, WaterBody __instance)
+        private static void Postfix(WaterBody __instance, ref List<ThingDef> ___commonFish)
         {
-            foreach (ThingDef thingDef in __result)
+            if (__instance.map?.Biome.fishTypes == null)
             {
-                yield return thingDef;
+                return;
             }
             IList<TileMutatorDef> mutator = __instance.map.Tile.Tile.Mutators;
             foreach (TileMutatorDef mutatorDef in mutator)
@@ -22,10 +23,11 @@ namespace Bestiary
                 {
                     foreach (ThingDef thingDef in outcomeList)
                     {
-                        yield return thingDef;
+                        ___commonFish.AddDistinct(thingDef);
                     }
                 }
             }
+
         }
     }
 }
