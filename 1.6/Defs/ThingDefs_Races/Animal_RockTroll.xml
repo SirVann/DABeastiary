@@ -66,6 +66,8 @@
     </tools>
 
     <comps>
+	  <li Class="WanderPreference.MountainPreference" />
+	
       <li Class="EmergingAnimals.CompProperties_RockCamo" />
 	  
 			<li Class="CompProperties_ProximityLetter">

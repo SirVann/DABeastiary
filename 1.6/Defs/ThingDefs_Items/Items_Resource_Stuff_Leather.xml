@@ -283,7 +283,7 @@
     </statBases>
 	
     <stuffProps>
-      <color>(117,110,101)</color>
+      <color>(204,158,68)</color>
 	  <commonality>0.0045</commonality>
       <statFactors>
         <MaxHitPoints>0.7</MaxHitPoints>
