@@ -19,5 +19,6 @@ namespace Bestiary
         public static DutyDef DA_HunterDuty;
 
         public static JobDef DA_HuntAndReturn;
+
     }
 }

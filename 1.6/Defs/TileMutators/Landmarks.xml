@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <LandmarkDef MayRequire="Ludeon.RimWorld.Odyssey">
+    <defName>DA_SnaptoadSpawningPools</defName>
+    <label>snaptoad spawning pools</label>
+    <iconTexturePath>World/Landmarks/SnaptoadSpawnPools</iconTexturePath>
+    <drawScale>0.7</drawScale>
+    <atlasSize>(2, 2)</atlasSize>
+    <commonality>0.55</commonality>
+    <nameMaker>NamerLandmark_Wetland</nameMaker>
+    <mutatorChances>
+      <Wetland Required="True"/>
+      <DA_SnaptoadBreedingGrounds Required="True"/>
+      <Muddy>0.5</Muddy>
+      <Fish_Increased>0.5</Fish_Increased>
+      <FoggyMutator>0.3</FoggyMutator>
+      <WetClimate>0.2</WetClimate>
+      <WildPlants>0.1</WildPlants>
+      <PlantLife_Increased>0.05</PlantLife_Increased>
+      <WildTropicalPlants>0.03</WildTropicalPlants>
+    </mutatorChances>
+  </LandmarkDef>
+
+</Defs>

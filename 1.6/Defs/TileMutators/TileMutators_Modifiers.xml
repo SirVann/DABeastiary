@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <TileMutatorDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DA_SnaptoadBreedingGrounds</defName>
+        <label>snaptoad breeding grounds</label>
+        <description>A wetland used by giant snaptoads as spawning pools. Its waters teem with the dangerous amphibians and their offsprings.</description>
+        <pollutionRange>0~0.25</pollutionRange>
+        <biomeWhitelist>
+            <li>ColdBog</li>
+            <li>TemperateSwamp</li>
+            <li>TropicalSwamp</li>
+        </biomeWhitelist>
+        <modExtensions>
+            <li Class="Bestiary.TileMutatorExtension">
+                <negativeFishingOutcomeDef>
+                    <li>DA_FrogletAttack</li>
+                    <li>DA_TadpoleBite</li>
+                </negativeFishingOutcomeDef>
+                <fishThings>
+                    <li>DA_Fish_SnappingTadpole</li>
+                </fishThings>
+            </li>
+        </modExtensions>
+    </TileMutatorDef>
+
+</Defs>

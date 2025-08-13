@@ -1,112 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.props" Condition="Exists('packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{118233CF-2632-4584-9D72-AAFA3331AAA4}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bestiary</RootNamespace>
-    <AssemblyName>Bestiary</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <LangVersion>latest</LangVersion>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="CompProperties_AlternateGraphics.cs" />
-    <Compile Include="Comp_AlternateGraphics.cs" />
-    <Compile Include="Comp_BurrowSpawner.cs" />
-    <Compile Include="CompProperties_BurrowSpawner.cs" />
-    <Compile Include="DADefOfs.cs" />
-    <Compile Include="HarmonyPatches\NotifyDamageTakenPatch.cs" />
-    <Compile Include="Utilities\FoodUtilities.cs" />
-    <Compile Include="GameConditions\GameConditionExtension.cs" />
-    <Compile Include="IncidentWorkers\IncidentDefExtension.cs" />
-    <Compile Include="IncidentWorkers\IncidentWorker_TrollsWander.cs" />
-    <Compile Include="JobDrivers\JobDriver_HuntAndReturn.cs" />
-    <Compile Include="JobGivers\JobGiver_Hunter.cs" />
-    <Compile Include="Lords\LordJob_TrollBurrow.cs" />
-    <Compile Include="Lords\LordToil_DenAnimal.cs" />
-    <Compile Include="Lords\LordToil_DenAnimalHunt.cs" />
-    <Compile Include="Settings\TrollSettings.cs" />
-    <Compile Include="GameConditions\GameCondition_TrollOutbreak.cs" />
-    <Compile Include="GenStep_Scatterer_Biome.cs" />
-    <Compile Include="IncidentWorkers\IncidentWorker_TrollBurrow.cs" />
-    <Compile Include="IncidentWorkers\IncidentWorker_TrollOutbreak.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="ProductByBodySize.cs" />
-    <Compile Include="Utilities\TrollOutbreakUtils.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.BestPawnToHuntForPredator" />
-    <Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.IsPreyProtectedFromPredatorByFence" />
-    <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.StartManhunterBecauseOfPawnAction" />
-    <Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.GetPackmates" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\System.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="mscorlib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\mscorlib.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemDefinitionGroup>
-    <Reference>
-      <Private>False</Private>
-    </Reference>
-    <ProjectReference>
-      <Private>False</Private>
-    </ProjectReference>
-  </ItemDefinitionGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.props'))" />
-    <Error Condition="!Exists('packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.targets'))" />
-  </Target>
-  <Import Project="packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.targets" Condition="Exists('packages\Krafs.Publicizer.2.3.0\build\Krafs.Publicizer.targets')" />
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{118233CF-2632-4584-9D72-AAFA3331AAA4}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>Bestiary</RootNamespace>
+		<AssemblyName>Bestiary</AssemblyName>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<Deterministic>true</Deterministic>
+		<LangVersion>latest</LangVersion>
+		<NuGetPackageImportStamp>
+		</NuGetPackageImportStamp>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>false</DebugSymbols>
+		<DebugType>none</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>..\..\1.6\Assemblies\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>..\..\1.6\Assemblies\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="CompProperties_AlternateGraphics.cs"/>
+		<Compile Include="Comp_AlternateGraphics.cs"/>
+		<Compile Include="Comp_BurrowSpawner.cs"/>
+		<Compile Include="CompProperties_BurrowSpawner.cs"/>
+		<Compile Include="DADefOfs.cs"/>
+		<Compile Include="HarmonyPatches\FishingUtilityPatch.cs"/>
+		<Compile Include="HarmonyPatches\JobDriver_FishingPatch.cs"/>
+		<Compile Include="HarmonyPatches\NotifyDamageTakenPatch.cs"/>
+		<Compile Include="HarmonyPatches\WaterBodyPatch.cs" />
+		<Compile Include="TileMutatorExtension.cs"/>
+		<Compile Include="Utilities\FoodUtilities.cs"/>
+		<Compile Include="GameConditions\GameConditionExtension.cs"/>
+		<Compile Include="IncidentWorkers\IncidentDefExtension.cs"/>
+		<Compile Include="IncidentWorkers\IncidentWorker_TrollsWander.cs"/>
+		<Compile Include="JobDrivers\JobDriver_HuntAndReturn.cs"/>
+		<Compile Include="JobGivers\JobGiver_Hunter.cs"/>
+		<Compile Include="Lords\LordJob_TrollBurrow.cs"/>
+		<Compile Include="Lords\LordToil_DenAnimal.cs"/>
+		<Compile Include="Lords\LordToil_DenAnimalHunt.cs"/>
+		<Compile Include="Settings\TrollSettings.cs"/>
+		<Compile Include="GameConditions\GameCondition_TrollOutbreak.cs"/>
+		<Compile Include="GenStep_Scatterer_Biome.cs"/>
+		<Compile Include="IncidentWorkers\IncidentWorker_TrollBurrow.cs"/>
+		<Compile Include="IncidentWorkers\IncidentWorker_TrollOutbreak.cs"/>
+		<Compile Include="Properties\AssemblyInfo.cs"/>
+		<Compile Include="HarmonyPatches.cs"/>
+		<Compile Include="ProductByBodySize.cs"/>
+		<Compile Include="Utilities\TrollOutbreakUtils.cs"/>
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+	<ItemGroup>
+		<Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.BestPawnToHuntForPredator"/>
+		<Publicize Include="Assembly-CSharp:RimWorld.FoodUtility.IsPreyProtectedFromPredatorByFence"/>
+		<Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.StartManhunterBecauseOfPawnAction"/>
+		<Publicize Include="Assembly-CSharp:Verse.AI.Pawn_MindState.GetPackmates"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="System">
+			<HintPath>..\..\..\..\RimWorldWin64_Data\Managed\System.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="System.Xml"/>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="mscorlib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>..\..\..\..\RimWorldWin64_Data\Managed\mscorlib.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Krafs.Publicizer" Version="2.3.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4543"/>
+		<PackageReference Include="Lib.Harmony">
+			<ExcludeAssets>runtime</ExcludeAssets>
+			<Version>2.3.6</Version>
+		</PackageReference>
+	</ItemGroup>
+	<ItemDefinitionGroup>
+		<Reference>
+			<Private>False</Private>
+		</Reference>
+		<ProjectReference>
+			<Private>False</Private>
+		</ProjectReference>
+	</ItemDefinitionGroup>
 </Project>
