@@ -14,7 +14,7 @@
   <NegativeFishingOutcomeDef MayRequire="Ludeon.RimWorld.Odyssey">
     <defName>DA_FrogletAttack</defName>
     <letterLabel>Froglet Attack</letterLabel>
-    <letterText>todo</letterText>
+    <letterText>Reeling in {PAWN_possessive} catch after a fierce battle with what {PAWN_pronoun} presumed to be a fish, {PAWN_nameDef} came face to face with a very angry giant snaptoad froglet!\n\nThe maddened animal turned manhunter and will try and hunt your colonists until it becomes exhausted.</letterText>
     <letterDef>NegativeEvent</letterDef>
     <modExtensions>
       <li Class="Bestiary.NegativeFishingExtension">

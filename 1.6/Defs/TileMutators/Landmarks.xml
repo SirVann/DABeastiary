@@ -7,15 +7,15 @@
     <iconTexturePath>World/Landmarks/SnaptoadSpawnPools</iconTexturePath>
     <drawScale>0.7</drawScale>
     <atlasSize>(2, 2)</atlasSize>
-    <commonality>500</commonality>
+    <commonality>0.55</commonality>
     <nameMaker>NamerLandmark_Wetland</nameMaker>
     <mutatorChances>
       <Wetland Required="True"/>
       <DA_SnaptoadBreedingGrounds Required="True"/>
       <Muddy>0.5</Muddy>
+      <Fish_Increased>0.5</Fish_Increased>
       <FoggyMutator>0.3</FoggyMutator>
       <WetClimate>0.2</WetClimate>
-      <Fish_Increased>0.2</Fish_Increased>
       <WildPlants>0.1</WildPlants>
       <PlantLife_Increased>0.05</PlantLife_Increased>
       <WildTropicalPlants>0.03</WildTropicalPlants>

@@ -136,37 +136,37 @@
         <labelPlural>snaptoad froglets</labelPlural>
         <bodyGraphicData>
           <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Baby</texPath>
-          <drawSize>1.32</drawSize>
+          <drawSize>2</drawSize>
           <shadowData>
             <volume>(0.4, 0.4, 0.4)</volume>
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Baby_Dessicated</texPath>
-          <drawSize>1.32</drawSize>
+          <drawSize>2</drawSize>
         </dessicatedBodyGraphicData>
         <swimmingGraphicData>
           <texPath>Animal/GiantSnaptoad/Swimming_GiantSnaptoad_Baby</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.32</drawSize>
+          <drawSize>2</drawSize>
         </swimmingGraphicData>
       </li>
       <li>
         <bodyGraphicData>
           <texPath>Animal/GiantSnaptoad/GiantSnaptoad</texPath>
-          <drawSize>2</drawSize>
+          <drawSize>2.2</drawSize>
           <shadowData>
             <volume>(0.6, 0.6, 0.6)</volume>
           </shadowData>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
           <texPath>Animal/GiantSnaptoad/GiantSnaptoad_Dessicated</texPath>
-          <drawSize>2</drawSize>
+          <drawSize>2.2</drawSize>
         </dessicatedBodyGraphicData>
         <swimmingGraphicData>
           <texPath>Animal/GiantSnaptoad/Swimming_GiantSnaptoad</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>2</drawSize>
+          <drawSize>2.2</drawSize>
         </swimmingGraphicData>
       </li>
       <li>
