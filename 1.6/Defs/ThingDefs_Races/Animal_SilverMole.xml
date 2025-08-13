@@ -16,6 +16,8 @@
 	
         <comps>
 		
+			<li Class="WanderPreference.MountainPreference" />
+		
 	        <li Class="VEF.AnimalBehaviours.CompProperties_DigWhenHungry">
 		      <customThingToDig>DA_WhiteTruffle</customThingToDig>
 		      <customAmountToDig>10</customAmountToDig>

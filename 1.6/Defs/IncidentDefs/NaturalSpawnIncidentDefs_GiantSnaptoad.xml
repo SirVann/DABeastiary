@@ -1,0 +1,25 @@
+<Defs>
+	
+    <IncidentDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DA_SnaptoadSpawn</defName>
+        <label>snaptoad sighting</label>
+        <pawnKind>DA_Snaptoad</pawnKind>
+		<category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>EmergingAnimals.IncidentWorker_MigratingAnimals</workerClass>
+        <baseChance>0.6</baseChance>
+        <minRefireDays>10</minRefireDays>
+		<pointsScaleable>false</pointsScaleable>
+        <modExtensions>
+            <li Class="EmergingAnimals.EmergingAnimalsExtension">
+			    <maxSpawn>1~2</maxSpawn>
+			    <requiredTileMutations>
+			      <li>DA_SnaptoadBreedingGrounds</li>
+			    </requiredTileMutations>
+            </li>
+        </modExtensions>
+    </IncidentDef>
+
+</Defs>
