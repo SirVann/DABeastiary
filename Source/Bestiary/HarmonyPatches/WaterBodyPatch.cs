@@ -15,7 +15,7 @@ namespace Bestiary
             {
                 return;
             }
-            IList<TileMutatorDef> mutator = __instance.map.Tile.Tile.Mutators;
+            IList<TileMutatorDef> mutator = __instance.map.TileInfo.Mutators;
             foreach (TileMutatorDef mutatorDef in mutator)
             {
                 List<ThingDef> outcomeList = mutatorDef.GetModExtension<TileMutatorExtension>()?.fishThings;
