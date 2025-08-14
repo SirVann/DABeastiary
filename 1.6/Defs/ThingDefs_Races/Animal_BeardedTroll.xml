@@ -83,7 +83,7 @@
       <baseBodySize>2</baseBodySize>
       <baseHealthScale>2</baseHealthScale>
       <baseHungerRate>1.5</baseHungerRate>
-      <trainability>Intermediate</trainability>
+      <trainability>Advanced</trainability>
       <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
 	  <manhunterOnTameFailChance>0.5</manhunterOnTameFailChance>
       <manhunterOnDamageChance>1</manhunterOnDamageChance>

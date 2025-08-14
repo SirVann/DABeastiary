@@ -16,6 +16,13 @@
 	
         <comps>
 		
+	       <li Class="VEF.AnimalBehaviours.CompProperties_HediffAfterHealthLoss">
+		      <healthPercent>80</healthPercent>
+		      <tickInterval>60</tickInterval>
+		      <hediff>DA_MolePanic</hediff>
+		      <severity>1</severity>
+	        </li>
+		
 			<li Class="WanderPreference.MountainPreference" />
 		
 	        <li Class="VEF.AnimalBehaviours.CompProperties_DigWhenHungry">
@@ -186,6 +193,48 @@
     </lifeStages>
 	
   </PawnKindDef>
+  
+  <!-- ======================= Hediff =============================== -->
+  
+  	<HediffDef>
+    <defName>DA_MolePanic</defName>
+    <label>mole panic</label>
+    <description>Fleeing in panic after witnessing danger.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(214,197,77)</defaultLabelColor>
+    <maxSeverity>1</maxSeverity>
+    <isBad>false</isBad>
+	
+    <comps>
+	  <li Class="HediffCompProperties_Disappears">
+		<disappearsAfterTicks>2000~3000</disappearsAfterTicks>
+		<showRemainingTime>True</showRemainingTime>
+	  </li>
+	  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+      <stages>
+        <li>
+		  <becomeVisible>False</becomeVisible>
+          <statFactors>
+            <MeleeDodgeChance>1.1</MeleeDodgeChance>
+          </statFactors>
+		  
+          <capMods>
+            <li>
+              <capacity>Moving</capacity>
+              <offset>0.15</offset>
+            </li>
+          </capMods>
+		  
+          <mentalStateGivers>
+             <li>
+               <mentalState>PanicFlee</mentalState>
+             </li>
+          </mentalStateGivers>
+		  
+        </li>
+      </stages>
+  </HediffDef>
   
   <!-- ======================= Truffle =============================== -->
 	

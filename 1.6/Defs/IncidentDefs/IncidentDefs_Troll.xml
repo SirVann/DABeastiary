@@ -74,7 +74,7 @@
     </targetTags>
     <workerClass>Bestiary.IncidentWorker_TrollsWander</workerClass>
     <pointsScaleable>true</pointsScaleable>
-    <baseChance>0.35</baseChance>
+    <baseChance>0</baseChance>
     <minRefireDays>10</minRefireDays>
     <minThreatPoints>150</minThreatPoints>
   </IncidentDef>

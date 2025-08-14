@@ -321,7 +321,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(1,0,0.5)</defaultLabelColor>
     <maxSeverity>1.0</maxSeverity>
-    <scenarioCanAdd>true</scenarioCanAdd>
+    <scenarioCanAdd>false</scenarioCanAdd>
     <isBad>false</isBad>
 	
     <comps>

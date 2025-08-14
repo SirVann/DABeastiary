@@ -21,5 +21,28 @@
             </li>
         </modExtensions>
     </IncidentDef>
+	
+    <IncidentDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>DA_SnaptoadFrogletSpawn</defName>
+        <label>snaptoad froglet sighting</label>
+        <pawnKind>DA_Snaptoad</pawnKind>
+		<category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>EmergingAnimals.IncidentWorker_MigratingAnimals</workerClass>
+        <baseChance>0.6</baseChance>
+        <minRefireDays>10</minRefireDays>
+		<pointsScaleable>false</pointsScaleable>
+        <modExtensions>
+            <li Class="EmergingAnimals.EmergingAnimalsExtension">
+			    <maxSpawn>2~3</maxSpawn>
+				<ageRange>0.1</ageRange>
+			    <requiredTileMutations>
+			      <li>DA_SnaptoadBreedingGrounds</li>
+			    </requiredTileMutations>
+            </li>
+        </modExtensions>
+    </IncidentDef>
 
 </Defs>
